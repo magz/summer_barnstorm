@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  color: MyString
+  small_image: MyString
+  x_map_point: 
+  y_map_point: 
+
+two:
+  color: MyString
+  small_image: MyString
+  x_map_point: 
+  y_map_point: 

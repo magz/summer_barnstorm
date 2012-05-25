@@ -1,0 +1,29 @@
+<h1>Listing team_data</h1>
+
+<table>
+  <tr>
+    <th>Color</th>
+    <th>Small image</th>
+    <th>X map point</th>
+    <th>Y map point</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @team_data.each do |team_datum| %>
+  <tr>
+    <td><%= team_datum.color %></td>
+    <td><%= team_datum.small_image %></td>
+    <td><%= team_datum.x_map_point %></td>
+    <td><%= team_datum.y_map_point %></td>
+    <td><%= link_to 'Show', team_datum %></td>
+    <td><%= link_to 'Edit', edit_team_datum_path(team_datum) %></td>
+    <td><%= link_to 'Destroy', team_datum, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Team datum', new_team_datum_path %>
