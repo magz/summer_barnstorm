@@ -1,3 +1,31 @@
 // Place all the styles related to the main controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+background:url('/assets/barnstorm_background.jpg');
+}
+
+#header_box {
+	height: 100px;
+}
+
+#side_content {
+	width: 75px;
+	float: left;
+}
+
+#map {
+	float: right;
+}
+#logo_box {
+	height: 75px;
+	width: 300px;
+}
+
+#logo_box img {
+	height: 75px;
+	width: 300px;
+	float: left;
+
+}
