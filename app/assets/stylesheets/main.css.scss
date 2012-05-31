@@ -53,8 +53,17 @@ img#map {
 }
 
 
-img#appstore_logo {
+#appstore_logo {
 	width: 50%;
+	background-image: url("assets/image/appstore_logo.png");
+
+}
+
+#appstore_logo:hover {
+	width: 50%;
+	background-image: url("assets/image/appstore_hover.png");
+
+
 }
 
 div#top {

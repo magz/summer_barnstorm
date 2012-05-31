@@ -11,7 +11,6 @@ def disc(team, size = "small")
 		end
 
 		image_path += team.team_name.downcase
-
 		style = "left: #{team.x_map_point}px; bottom: #{team.y_map_point}px"
 		
 		image_tag image_path + ".png", :class => "#{size}_disc", :style => style 
