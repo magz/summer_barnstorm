@@ -18,18 +18,11 @@ ActiveRecord::Schema.define(:version => 20120529150809) do
     t.string   "small_image"
     t.integer  "x_map_point"
     t.integer  "y_map_point"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
     t.string   "city"
     t.string   "team_name"
-  end
-
-  create_table "users", :force => true do |t|
-    t.string   "email"
-    t.string   "password_digest"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
-    t.string   "role"
+    t.boolean  "done",        :default => false
   end
 
 end

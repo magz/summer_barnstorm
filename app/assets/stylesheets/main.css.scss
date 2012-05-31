@@ -13,7 +13,7 @@ border-style: solid;
 
 
 div#side_content {
-	width: 350px;
+	width: 30%;
 	float: left;
 	margin-left: 60px;
 	clear: both;
@@ -23,7 +23,7 @@ div#logo_box {
 	margin: 0px 150px 150px 0px;
 }
 img#logo {
-	width: 300px;
+	width: 27%;
 	margin-left: 60px;
 	display: inline;
 	float: left;
@@ -35,10 +35,11 @@ div#map  {
 } 
 
 div#map img {
+	width: 600px;
 }
 
 
-div#appstore_logo {
+img#appstore_logo {
 	width: 50%;
 }
 
