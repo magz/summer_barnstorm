@@ -2,30 +2,48 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+div {
+	border-style: solid;
+}
 body {
+margin-top: 75px;
 background:url('/assets/barnstorm_background.jpg');
+border-style: solid; 
 }
 
-#header_box {
-	height: 100px;
+
+div#side_content {
+	width: 350px;
+	float: left;
+	margin-left: 60px;
+	clear: both;
 }
 
-#side_content {
-	width: 75px;
+div#logo_box {
+	margin: 0px 150px 150px 0px;
+}
+img#logo {
+	width: 300px;
+	margin-left: 60px;
+	display: inline;
 	float: left;
 }
-
-#map {
-	float: right;
-}
-#logo_box {
-	height: 75px;
-	width: 300px;
-}
-
-#logo_box img {
-	height: 75px;
-	width: 300px;
+div#map  {
+	border-style: solid; 
 	float: left;
+	margin-left: 10px;
+} 
 
+div#map img {
 }
+
+
+div#appstore_logo {
+	width: 50%;
+}
+
+div#top {
+	padding: 0;
+	margin: 0;
+}
+
