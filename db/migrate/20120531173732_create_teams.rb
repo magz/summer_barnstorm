@@ -1,10 +1,11 @@
-class CreateTeamData < ActiveRecord::Migration
+class CreateTeams < ActiveRecord::Migration
   def change
-    create_table :team_data do |t|
+    create_table :teams do |t|
       t.string :color
-      t.string :small_image
       t.integer :x_map_point
       t.integer :y_map_point
+      t.string :city
+      t.string :team_name
 
       t.timestamps
     end

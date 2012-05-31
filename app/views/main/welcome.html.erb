@@ -23,11 +23,21 @@
 	</div>
 	
 	<div  id="main_content">
-		
+
 		<div id="map">
-			<%= image_tag "blank_us_map.png" %>
+			<%= image_tag "blank_us_map.png", :id => "map" %>
+			<% @teams.each do |team| %>
+				<%= disc team %>
+			<% end %>
+
 		</div>
+		<div id="news_stories">
+			Recent Headlines:
+			<%= image_tag "techcrunch.png" %>
+			<%= image_tag "intomobile.png" %>
+			<%= image_tag "nytimes.png" %>
+
+		</div>
+
 	</div>
-
-
 

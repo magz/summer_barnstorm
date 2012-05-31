@@ -1,7 +1,7 @@
 SummerBarnstorm::Application.routes.draw do
-  get "main/welcome"
+  resources :teams
 
-  resources :team_data
+  get "main/welcome"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

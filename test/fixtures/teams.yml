@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  color: MyString
+  x_map_point: 1
+  y_map_point: 1
+  city: MyString
+  team_name: MyString
+
+two:
+  color: MyString
+  x_map_point: 1
+  y_map_point: 1
+  city: MyString
+  team_name: MyString

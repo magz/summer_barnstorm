@@ -10,7 +10,6 @@ IMAGE_SIZE = 75
 GREY = "#b0aeae"
 
 disc_layer = Image.new(IMAGE_SIZE, IMAGE_SIZE)
-disc_layer.transparent_color = "white"
 
 circle = Draw.new
 circle.fill_color(GREY)
@@ -22,25 +21,30 @@ disc_layer.write("app/assets/images/small_logo_icons/grey_blank_color_disc.png")
 
 colors_and_team_names.each do |color, team|
 	disc_layer = Image.new(IMAGE_SIZE, IMAGE_SIZE)
-	disc_layer.transparent_color = "white"
+	disc_layer.transparent_color = 'white'
 
 	circle = Draw.new
 	circle.fill_color(color)
 	circle.stroke_width = 0
 	circle.circle(IMAGE_SIZE/2, IMAGE_SIZE/2, IMAGE_SIZE/2 + RADIUS, IMAGE_SIZE/2)
+	
 	circle.draw(disc_layer)
-	disc_layer.write("app/assets/images/small_logo_icons/" + team + "_blank_color_disc.png")
+	disc_layer.transparent('white').write("app/assets/images/small_logo_icons/" + team + "_blank_color_disc.png")
 
 
 	img_list = ImageList.new("app/assets/images/small_logo_icons/" + team + "_small.png", "app/assets/images/small_logo_icons/" + team + "_blank_color_disc.png")
+	img_list.background_color = "none"
 	img_list[0].page = Rectangle.new(img_list[1].page.width, img_list[1].page.height, (IMAGE_SIZE/2 - img_list[0].page.width/2), (IMAGE_SIZE/2 - img_list[0].page.height/2))
 	img_list.reverse.flatten_images.write "app/assets/images/small_logo_icons/color_disc_" + team.downcase + ".png"
 
 	img_list = ImageList.new("app/assets/images/small_logo_icons/" + team + "_small.png", "app/assets/images/small_logo_icons/grey_blank_color_disc.png")
+	img_list.background_color = "none"
 	img_list[0].page = Rectangle.new(img_list[1].page.width, img_list[1].page.height, (IMAGE_SIZE/2 - img_list[0].page.width/2), (IMAGE_SIZE/2 - img_list[0].page.height/2))
+
 	img_list.reverse.flatten_images.write "app/assets/images/small_logo_icons/grey_disc_" + team.downcase + ".png"
 
 
-	# img.transparent("white").write(team + ".png")
 
 end
+
+

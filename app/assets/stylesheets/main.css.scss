@@ -2,39 +2,54 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+//ok my body size is apparently like 1200
 div {
 	border-style: solid;
 }
 body {
-margin-top: 75px;
-background:url('/assets/barnstorm_background.jpg');
-border-style: solid; 
+	margin-top: 75px;
+	background:url('/assets/barnstorm_background.jpg');
+	border-style: solid; 
+	min-width: 1200px;
 }
 
 
 div#side_content {
-	width: 350px;
+	width: 21%;
 	float: left;
-	margin-left: 60px;
+	margin-left: 2.5%;
 	clear: both;
 }
 
 div#logo_box {
-	margin: 0px 150px 150px 0px;
+	margin: 60px 12.5% 12.5% 0px;
 }
 img#logo {
-	width: 300px;
-	margin-left: 60px;
+	width: 18.5%;
+	margin-left: 5%;
 	display: inline;
 	float: left;
 }
 div#map  {
 	border-style: solid; 
-	float: left;
-	margin-left: 10px;
+	float: right;
+	width: 70%;
+	position: relative;
 } 
 
-div#map img {
+.small_disc {
+	z-index: 4;
+	position: absolute;
+	height: 5%; 
+}
+
+.large_disc {
+	z-index: 5;
+}
+
+
+img#map {
+	width: 100%;
 }
 
 
@@ -47,3 +62,7 @@ div#top {
 	margin: 0;
 }
 
+#news_stories {
+	height: 50px;
+	float: right;
+}

@@ -11,17 +11,28 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120529150809) do
+ActiveRecord::Schema.define(:version => 20120531173332) do
 
   create_table "team_data", :force => true do |t|
     t.string   "color"
     t.string   "small_image"
     t.integer  "x_map_point"
     t.integer  "y_map_point"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
     t.string   "city"
     t.string   "team_name"
+    t.boolean  "done",        :default => false
+  end
+
+  create_table "teams", :force => true do |t|
+    t.string   "color"
+    t.integer  "x_map_point"
+    t.integer  "y_map_point"
+    t.string   "city"
+    t.string   "team_name"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "users", :force => true do |t|
