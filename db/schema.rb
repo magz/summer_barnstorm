@@ -11,19 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120601161839) do
-
-  create_table "team_data", :force => true do |t|
-    t.string   "color"
-    t.string   "small_image"
-    t.integer  "x_map_point"
-    t.integer  "y_map_point"
-    t.datetime "created_at",                     :null => false
-    t.datetime "updated_at",                     :null => false
-    t.string   "city"
-    t.string   "team_name"
-    t.boolean  "done",        :default => false
-  end
+ActiveRecord::Schema.define(:version => 20120601193400) do
 
   create_table "teams", :force => true do |t|
     t.string   "color"
@@ -34,14 +22,6 @@ ActiveRecord::Schema.define(:version => 20120601161839) do
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
     t.string   "twitter_tags"
-  end
-
-  create_table "users", :force => true do |t|
-    t.string   "email"
-    t.string   "password_digest"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
-    t.string   "role"
   end
 
 end
