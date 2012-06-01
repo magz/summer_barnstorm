@@ -24,15 +24,13 @@
 }
 
 
-div {
-	border-style: solid;
-}
 body {
 	margin-top: 75px;
 	background:url('/assets/barnstorm_background.jpg');
-	border-style: solid; 
 	min-width: 1200px;
 	font-family: "Futura";
+	margin-left: 3.2%;
+	margin-right: 3.2%;
 	
 }
 #pitch_box, #top, #appstore_box {
@@ -45,23 +43,21 @@ body {
 }
 
 div#side_content {
-	width: 21%;
+	width: 27%;
 	float: left;
-	margin-left: 2.5%;
 	clear: both;
 }
 
-div#logo_box {
+/*div#logo_box {
 	margin: 60px 12.5% 12.5% 0%;
 }
-img#logo {
-	width: 18.5%;
-	margin-left: 5%;
+*/img#logo {
+	height: 125px;
 	display: inline;
 	float: left;
+	vertical-align:middle
 }
 div#map  {
-	border-style: solid; 
 	float: right;
 	width: 70%;
 	position: relative;
@@ -84,24 +80,29 @@ img#map {
 
 
 #appstore_logo {
-	width: 50%;
-	background-image: url("assets/image/appstore_logo.png");
-
+	height: 85px;
 }
 
-#appstore_logo:hover {
-	width: 50%;
-	background-image: url("assets/image/appstore_hover.png");
-
-
+#logo_box h1 {
+	position: relative;
+	top: 50%;
+	left: 25%;
 }
+
 
 div#top {
 	padding: 0;
 	margin: 0;
+	height: 180px;
 }
 
 #news_stories {
 	height: 50px;
 	float: right;
+
+}
+
+#news_stories img {
+	position: relative;
+	padding-left: 5px;
 }
