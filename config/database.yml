@@ -16,12 +16,17 @@ defaults: &defaults
   adapter: postgresql
   pool: 5
   timeout: 5000
+  username: postgres
+  password: starmane
+
+
   
 development:
   database: development
-  adapter: sqlite3
   pool: 5
   timeout: 5000
+  <<: *defaults
+
 
 test:
   database: test

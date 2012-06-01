@@ -3,6 +3,27 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 //ok my body size is apparently like 1200
+
+@font-face {
+	font-family: "Futura";
+	src: url("/assets/futura_lt_book-webfont.eot");
+	src: url("/assets/futura_lt_book-webfont.eot?iefix") format("eot"), 
+	url("/assets/futura_lt_book-webfont.woff") format("woff"),
+	url("/assets/futura_lt_book-webfont.svg") format("svg"),
+	url("/assets/futura_lt_book-webfont.otf") format("openttype");
+}
+
+@font-face {
+	font-family: "Futura";
+	font-style: "bold";
+	src: url("/assets/futura_lt_bold-webfont.eot");
+	src: url("/assets/futura_lt_bold-webfont.eot?iefix") format("eot"), 
+	url("/assets/futura_lt_bold-webfont.woff") format("woff"),
+	url("/assets/futura_lt_bold-webfont.svg") format("svg"),
+	url("/assets/futura_lt_bold-webfont.otf") format("openttype");
+}
+
+
 div {
 	border-style: solid;
 }
@@ -11,8 +32,17 @@ body {
 	background:url('/assets/barnstorm_background.jpg');
 	border-style: solid; 
 	min-width: 1200px;
+	font-family: "Futura";
+	
+}
+#pitch_box, #top, #appstore_box {
+	font-family: "Futura";
+	
 }
 
+#pitch_box em {
+	font-style: bold;
+}
 
 div#side_content {
 	width: 21%;
@@ -22,7 +52,7 @@ div#side_content {
 }
 
 div#logo_box {
-	margin: 60px 12.5% 12.5% 0px;
+	margin: 60px 12.5% 12.5% 0%;
 }
 img#logo {
 	width: 18.5%;

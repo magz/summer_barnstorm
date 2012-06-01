@@ -1,45 +1,47 @@
-	<div id="top">
-		<div id="logo_box">
-			<%= image_tag "summerbarnstorm_logo.png", :id => "logo" %>
-			<em>Add your favorite memories</em> 
-			<p>to contribute to the Summer Barnstorm scrapbook!<p>
-		</div>
+
+
+<div id="top">
+	<div id="logo_box">
+		<%= image_tag "summerbarnstorm_logo.png", :id => "logo" %>
+		<em>Add your favorite memories</em> 
+		to contribute to the Summer Barnstorm scrapbook!
+	</div>
+
+</div>
+<br>
+<div id="side_content">
+
+	<div id= "pitch_box">
+		Win World Series Tickets and <br>
+		<em>celebrate your favorite team!</em>
+	</div>
+
+	<div id="appstore_box">
+		<%= image_tag "appstore_logo.png", :id => "appstore_logo" %><br>
+		Available for <b>iPhone</b> and <b>iPad.</b>
+	</div>
+
+	<div id="social_box"></div>
+</div>
+
+<div  id="main_content">
+
+	<div id="map">
+		<%= image_tag "blank_us_map.png", :id => "map" %>
+		<% @teams.each do |team| %>
+			<%= disc team %>
+		<% end %>
 
 	</div>
-	<br>
-	<div id="side_content">
-
-		<div id= "pitch_box">
-			Win World Series Tickets and <br>
-			<b>celebrate your favorite team!</b>
-		</div>
-
-		<div id="appstore_box">
-			<%= image_tag "appstore_logo.png", :id => "appstore_logo" %><br>
-			Available for <b>iPhone</b> and <b>iPad.</b>
-		</div>
-	
-		<div id="social_box"></div>
-	</div>
-	
-	<div  id="main_content">
-
-		<div id="map">
-			<%= image_tag "blank_us_map.png", :id => "map" %>
-			<% @teams.each do |team| %>
-				<%= disc team %>
-			<% end %>
-
-		</div>
-		<div id="news_stories">
-			Recent Headlines:
-			<%= image_tag "techcrunch.png" %>
-			<%= image_tag "intomobile.png" %>
-			<%= image_tag "nytimes.png" %>
-
-		</div>
+	<div id="news_stories">
+		Recent Headlines:
+		<%= image_tag "techcrunch.png", id: "techcrunch" %>
+		<%= image_tag "intomobile.png", id: "intomobile" %>
+		<%= image_tag "nytimes.png",  id: "nytimes" %>
 
 	</div>
+
+</div>
 
 
 
