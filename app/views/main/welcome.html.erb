@@ -1,9 +1,8 @@
 
-
 <div id="top">
 	<div id="logo_box">
 		<%= image_tag "summerbarnstorm_logo.png", :id => "logo" %>
-			<p><h1>Add your favorite memories</h1></p>
+			<p><h1>Add your favorite baseball memories</h1></p>
 			<p><h1>to contribute to the Summer Barnstorm scrapbook!</h1></p>
 		</h1>
 	</div>
@@ -22,7 +21,11 @@
 		Available for <b>iPhone</b> and <b>iPad.</b>
 	</div>
 
-	<div id="social_box"></div>
+	<div id="social_box">
+		<%= image_tag "follow.png" %>
+		<%= link_to image_tag("tweet.png"), "https://twitter.com/intent/tweet?hashtags=summerbarnstorm,mlb&original_referer=http%3A%2F%2Fsummerbarnstorm.com%2F&related=toppspennant&source=tweetbutton&text=Share%20your%20favorite%20baseball%20memories%20to%20win%20world%20series%20tickets.&url=http%3A%2F%2Fsummerbarnstorm.com%2F&original_referer=http://summerbarnstorm.com/&original_referer=http://summerbarnstorm.com/" %>
+		<%= image_tag "like.png" %>
+	</div>
 </div>
 
 <div  id="main_content">
@@ -44,5 +47,6 @@
 
 </div>
 
+<%= image_tag "howto_tab.png", :style => "float:right; position: absolute; right: 0px; top: 75px;" %>
 
 
