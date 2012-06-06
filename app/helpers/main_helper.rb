@@ -18,8 +18,8 @@ def disc(team, size = "large", color=true)
 		end
 		style = "left: #{team.x_map_point}px; bottom: #{team.y_map_point}px"
 		
-		image_tag image_path + ".png", :class => "#{size}_disc", :style => style, :size => image_size
-
+		#image_tag image_path + ".png", :class => "#{size}_disc", :style => style, :size => image_size
+		image_path
 end
 
 
