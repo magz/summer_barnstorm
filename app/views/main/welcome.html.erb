@@ -64,3 +64,34 @@ window.open(c,
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
 <%= image_tag "large_logo_icons/color_disc_cardinals.png" %>
+
+<script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
+<script>
+new TWTR.Widget({
+  version: 2,
+  type: 'search',
+  search: '#tigersmemories OR #tigersmemory OR #tigermemories OR #tigermemories',
+  interval: 30000,
+  title: 'It\'s a double rainbow',
+  subject: 'Across the sky',
+  width: 250,
+  height: 300,
+  theme: {
+    shell: {
+      background: 'none',
+      color: '#ffffff'
+    },
+    tweets: {
+      background: 'none',
+      color: '#444444',
+      links: '#1985b5'
+    }
+  },
+  features: {
+    scrollbar: false,
+    loop: true,
+    live: true,
+    behavior: 'default'
+  }
+}).render().start();
+</script>

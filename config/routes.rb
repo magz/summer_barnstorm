@@ -5,6 +5,7 @@ SummerBarnstorm::Application.routes.draw do
   match "welcome" => "main#welcome", :as => :welcome
 
   match "how_to" => "main#how_to", :as => :how_to
+  match "main/coming_soon" => "main#coming_soon"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
