@@ -7,4 +7,7 @@ class MainController < ApplicationController
 
   end
 
+  def how_to
+
+  end
 end

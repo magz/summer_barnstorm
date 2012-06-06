@@ -1,7 +1,10 @@
 SummerBarnstorm::Application.routes.draw do
   resources :teams
 
-  get "main/welcome"
+  match "main/welcome" => "main#welcome"
+  match "welcome" => "main#welcome", :as => :welcome
+
+  match "how_to" => "main#how_to", :as => :how_to
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -52,7 +55,7 @@ SummerBarnstorm::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'main#coming_soon'
+  root :to => 'main#welcome'
 
   # See how all your routes lay out with "rake routes"
 

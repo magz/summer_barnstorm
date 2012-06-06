@@ -3,7 +3,7 @@
 	<div id="logo_box">
 		<%= image_tag "summerbarnstorm_logo.png", :id => "logo" %>
 			<p><h1>Add your favorite baseball memories</h1></p>
-			<p><h1>to contribute to the Summer Barnstorm scrapbook!</h1></p>
+			<p><h2>to contribute to the Summer Barnstorm scrapbook!</h2></p>
 		</h1>
 	</div>
 
@@ -12,8 +12,8 @@
 <div id="side_content">
 
 	<div id= "pitch_box">
-		Win World Series Tickets and <br>
-		<em>celebrate your favorite team!</em>
+		Win World Series Tickets and<br>
+		<b>celebrate your favorite team!</b>
 	</div>
 
 	<div id="appstore_box">
@@ -22,8 +22,8 @@
 	</div>
 
 	<div id="social_box">
-		<%= image_tag "follow.png" %>
-		<%= link_to image_tag("tweet.png"), "https://twitter.com/intent/tweet?hashtags=summerbarnstorm,mlb&original_referer=http%3A%2F%2Fsummerbarnstorm.com%2F&related=toppspennant&source=tweetbutton&text=Share%20your%20favorite%20baseball%20memories%20to%20win%20world%20series%20tickets.&url=http%3A%2F%2Fsummerbarnstorm.com%2F&original_referer=http://summerbarnstorm.com/&original_referer=http://summerbarnstorm.com/" %>
+	<a href="https://twitter.com/ToppsPennant" ><%= image_tag "follow.png" %></a>
+		<%= link_to image_tag("tweet.png"), "https://twitter.com/intent/tweet?hashtags=toppspennant,mlb&original_referer=http%3A%2F%2Fsummerbarnstorm.com%2F&related=toppspennant&source=tweetbutton&text=Share%20your%20favorite%20baseball%20memories%20to%20win%20world%20series%20tickets.&url=http%3A%2F%2Fsummerbarnstorm.com%2F&original_referer=http://summerbarnstorm.com/&original_referer=http://summerbarnstorm.com/", :onclick => "OpenPopup(this.href); return false" %>
 		<%= image_tag "like.png" %>
 	</div>
 </div>
@@ -33,7 +33,7 @@
 	<div id="map">
 		<%= image_tag "blank_us_map.png", :id => "map" %>
 		<% @teams.each do |team| %>
-			<%= disc team %>
+			<%= disc team, "small" %>
 		<% end %>
 
 	</div>
@@ -47,6 +47,18 @@
 
 </div>
 
-<%= image_tag "howto_tab.png", :style => "float:right; position: absolute; right: 0px; top: 75px;" %>
+<%= link_to (image_tag "howto_tab.png", :style => "float:right; position: absolute; right: 0px; top: 75px;"), how_to_path %>
 
 
+<script>
+
+function OpenPopup (c) {
+window.open(c,
+'window',
+'width=480,height=480,scrollbars=yes,status=yes');
+}
+
+</script>
+
+<a href="https://twitter.com/toppspennant" class="twitter-follow-button" data-show-count="true" data-size="large" data-dnt="true">Follow @toppspennantt</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
