@@ -1,5 +1,4 @@
 
-<%= link_to "hi magz", :redirector %>
 
 <div id="top">
 	<div id="logo_box">
@@ -18,10 +17,10 @@
 		<b>celebrate your favorite team!</b>
 	</div>
 
-	<div id="appstore_box">
-		<%= link_to (image_tag "appstore_logo.png", :id => "appstore_logo" ), "#", :id => "appstore_logo_link" %><br>
+		<%= link_to "rar! ok does this work???", "http://google.com", :id => "appstore_logo_link" %><br>
+	
+
 		Available for <b>iPhone</b> and <b>iPad.</b>
-	</div>
 
 	<div id="social_box">
 
@@ -122,7 +121,7 @@ new TWTR.Widget({
 	$("#appstore_logo_link").click(function(event){
   		alert('Hooray!');
   		$("#sms_overlay").show();
-  		//event.preventDefault(); // Prevent link from following its href
+  		event.preventDefault(); // Prevent link from following its href
 	});
 
 
