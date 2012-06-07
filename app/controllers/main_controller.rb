@@ -14,10 +14,12 @@ class MainController < ApplicationController
   end
 
   def redirector
-  	if browser.mobile?
+  	@browser = Browser.new(ua: request.env['HTTP_USER_AGENT'], :accept_language => "en-us")
+  	if @browser.mobile?
   		redirect_to "http://click.linksynergy.com/fs-bin/stat?id=HXDYbs8K8P4&offerid=146261&type=3&subid=0&tmpid=1826&RD_PARM1=http%253A%252F%252Fitunes.apple.com%252Fus%252Fapp%252Ftopps-pennant%252Fid514201097%253Fmt%253D8%2526uo%253D4%2526partnerId%253D30"
+  		#redirect_to "http://google.com"
   	else
-  		redirect_to :welcome
+  		render :json => @browser
   	end
   end
 end
