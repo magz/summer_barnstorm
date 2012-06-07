@@ -33,7 +33,7 @@ disc_layer.transparent('white').write("app/assets/images/large_logo_icons/grey_b
 
 colors_and_team_names.each do |color, team|
 	disc_layer = Image.new(IMAGE_SIZE, IMAGE_SIZE)
-	disc_layer.transparent_color = 'white'
+	disc_layer.transparent_color = 'purple'
 
 	circle = Draw.new
 	circle.fill_color(color)

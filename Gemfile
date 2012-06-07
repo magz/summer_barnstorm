@@ -21,6 +21,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem "browser", "~> 0.1.4"
 
 
 gem "rmagick"

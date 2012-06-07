@@ -22,7 +22,8 @@
 	</div>
 
 	<div id="social_box">
-	<a href="https://twitter.com/ToppsPennant" ><%= image_tag "follow.png" %></a>
+
+	<a href="https://twitter.com/ToppsPennant" ><%#= image_tag "follow.png" %></a>
 		<%= link_to image_tag("tweet.png"), "https://twitter.com/intent/tweet?hashtags=toppspennant,mlb&original_referer=http%3A%2F%2Fsummerbarnstorm.com%2F&related=toppspennant&source=tweetbutton&text=Share%20your%20favorite%20baseball%20memories%20to%20win%20world%20series%20tickets.&url=http%3A%2F%2Fsummerbarnstorm.com%2F&original_referer=http://summerbarnstorm.com/&original_referer=http://summerbarnstorm.com/", :onclick => "OpenPopup(this.href); return false" %>
 		<%= image_tag "like.png" %>
 	</div>
@@ -60,10 +61,7 @@ window.open(c,
 
 </script>
 
-<a href="https://twitter.com/toppspennant" class="twitter-follow-button" data-show-count="true" data-size="large" data-dnt="true">Follow @toppspennantt</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
-<%= image_tag "large_logo_icons/color_disc_cardinals.png" %>
 
 <script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
 <script>
@@ -95,3 +93,6 @@ new TWTR.Widget({
   }
 }).render().start();
 </script>
+	<a href="https://twitter.com/toppspennant" class="twitter-follow-button" data-show-count="true" data-size="small" data-dnt="true" data-width="99px">Follow @toppspennantt</a>
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
