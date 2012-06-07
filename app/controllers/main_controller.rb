@@ -22,4 +22,9 @@ class MainController < ApplicationController
   		render :json => @browser
   	end
   end
+
+  def send_sms
+  	
+  	
+  end
 end

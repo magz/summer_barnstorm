@@ -17,7 +17,7 @@
 	</div>
 
 	<div id="appstore_box">
-		<%= image_tag "appstore_logo.png", :id => "appstore_logo" %><br>
+		<%= link_to (image_tag "appstore_logo.png", :id => "appstore_logo" ), "#" %><br>
 		Available for <b>iPhone</b> and <b>iPad.</b>
 	</div>
 
@@ -96,3 +96,33 @@ new TWTR.Widget({
 	<a href="https://twitter.com/toppspennant" class="twitter-follow-button" data-show-count="true" data-size="small" data-dnt="true" data-width="99px">Follow @toppspennantt</a>
 
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+
+
+
+
+
+<div id="sms_overlay">
+     <div>
+     <h4>Enter a phone number below:</h4>
+      <form action="process" method="GET">
+        <input type="text" name="number" placeholder="Phone Number"><br/>
+        <span>Example: +12125551212</span>
+        <br/>
+        <br/>
+        <button type="submit">Submit</button>
+      </form>
+      <h5>Click here to <a href='' onclick='overlay()'>close</a></h5>
+      </div>
+</div>
+
+<script>
+	$("body").click(function(event){
+  		alert('Hooray!');
+  		$("#sms_overlay").show();
+  		//event.preventDefault(); // Prevent link from following its href
+	});
+
+
+
+</script>
