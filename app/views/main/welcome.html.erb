@@ -17,16 +17,21 @@
 		<b>celebrate your favorite team!</b>
 	</div>
 
-		<%= link_to "rar! ok does this work???", "http://google.com", :id => "appstore_logo_link" %><br>
+		<%= link_to (image_tag "appstore_logo.png", :id => "appstore_logo"), "http://google.com", :id => "appstore_logo_link" %><br>
 	
 
 		Available for <b>iPhone</b> and <b>iPad.</b>
 
 	<div id="social_box">
 
-	<a href="https://twitter.com/ToppsPennant" ><%#= image_tag "follow.png" %></a>
-		<%= link_to image_tag("tweet.png"), "https://twitter.com/intent/tweet?hashtags=toppspennant,mlb&original_referer=http%3A%2F%2Fsummerbarnstorm.com%2F&related=toppspennant&source=tweetbutton&text=Share%20your%20favorite%20baseball%20memories%20to%20win%20world%20series%20tickets.&url=http%3A%2F%2Fsummerbarnstorm.com%2F&original_referer=http://summerbarnstorm.com/&original_referer=http://summerbarnstorm.com/", :onclick => "OpenPopup(this.href); return false" %>
-		<%= image_tag "like.png" %>
+		<a href="https://twitter.com/toppspennant" class="twitter-follow-button" data-show-count="true" data-size="small" data-dnt="true" data-width="99px">Follow @toppspennantt</a>
+		<%= link_to image_tag("tweet.png"), "https://twitter.com/intent/tweet?hashtags=toppspennant,mlb&original_referer=http%3A%2F%2Fsummerbarnstorm.com%2F&related=toppspennant&source=tweetbutton&text=Share%20your%20favorite%20baseball%20memories%20to%20win%20world%20series%20tickets.&url=http%3A%2F%2Fsummerbarnstorm.com%2F&original_referer=http://summerbarnstorm.com/&original_referer=http://summerbarnstorm.com/" %>
+		
+		<a title="send to Facebook" href="http://www.facebook.com/sharer.php?s=100&p[title]='Topps_Pennant'&p[summary]='LIKE_TOPPS'&p[url]='https://www.facebook.com/ToppsPennant'&p[images][0]='assets/like.png'" target="_blank" onclick="OpenPopup(this.href); return false"><span>		
+			<%= image_tag "like.png" %>
+		</a>
+
+
 	</div>
 </div>
 
@@ -119,7 +124,6 @@ new TWTR.Widget({
 
 <script>
 	$("#appstore_logo_link").click(function(event){
-  		alert('Hooray!');
   		$("#sms_overlay").show();
   		event.preventDefault(); // Prevent link from following its href
 	});
