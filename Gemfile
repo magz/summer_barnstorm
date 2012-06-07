@@ -22,7 +22,7 @@ end
 
 gem 'jquery-rails'
 gem "browser", "~> 0.1.4"
-
+gem "moonshado-sms"
 
 gem "rmagick"
 # To use ActiveModel has_secure_password
