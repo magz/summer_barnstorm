@@ -1,11 +1,11 @@
 
-
 <div id="top">
 	<div id="logo_box">
 		<%= image_tag "summerbarnstorm_logo.png", :id => "logo" %>
-			<p><h1>Add your favorite baseball memories</h1></p>
-			<p><h2>to contribute to the Summer Barnstorm scrapbook!</h2></p>
-		</h1>
+		<div id="header">
+      <em>Add your favorite baseball memories</em><br>
+			<span id="smaller">to contribute to the Summer Barnstorm scrapbook!<span>
+		</div>
 	</div>
 
 </div>
@@ -14,25 +14,17 @@
 
 	<div id= "pitch_box">
 		Win World Series Tickets and<br>
-		<b>celebrate your favorite team!</b>
+		celebrate your favorite team!
 	</div>
 
 		<%= link_to (image_tag "appstore_logo.png", :id => "appstore_logo"), "http://google.com", :id => "appstore_logo_link" %><br>
 	
 
-		Available for <b>iPhone</b> and <b>iPad.</b>
+		Available for iPhone and iPad.
 
-	<div id="social_box">
+    <%= render partial: "social_box" %>
+  <div id="twitter_feed_title"><em>Check out these baseball memories</em></div>
 
-	<a href="https://twitter.com/toppspennant" class="twitter-follow-button" data-show-count="false" data-size="small" data-dnt="true" data-width="60px">Follow @toppspennantt</a>
-		<%= link_to image_tag("tweet.png"), "https://twitter.com/intent/tweet?hashtags=toppspennant,mlb&original_referer=http%3A%2F%2Fsummerbarnstorm.com%2F&related=toppspennant&source=tweetbutton&text=Share%20your%20favorite%20baseball%20memories%20to%20win%20world%20series%20tickets.&url=http%3A%2F%2Fsummerbarnstorm.com%2F&original_referer=http://summerbarnstorm.com/&original_referer=http://summerbarnstorm.com/" %>
-		
-		<a title="send to Facebook" href="http://www.facebook.com/sharer.php?s=100&p[title]='Topps_Pennant'&p[summary]='LIKE_TOPPS'&p[url]='https://www.facebook.com/ToppsPennant'&p[images][0]='assets/like.png'" target="_blank" onclick="OpenPopup(this.href); return false">		
-			<%= image_tag "like.png" %>
-		</a>
-
-
-	</div>
 </div>
 
 <div  id="main_content">
@@ -45,27 +37,16 @@
 
 	</div>
 	<div id="news_stories">
-		Recent Headlines:
-		<%= image_tag "techcrunch.png", id: "techcrunch" %>
+		<b>Recent Headlines </b>
+		
+    <%= image_tag "techcrunch.png", id: "techcrunch" %>
 		<%= image_tag "intomobile.png", id: "intomobile" %>
 		<%= image_tag "nytimes.png",  id: "nytimes", :style => "top: 5px" %>
-
-	</div>
-
+  </div>
 </div>
 
-<%= link_to (image_tag "howto_tab.png", :style => "float:right; position: absolute; right: 0px; top: 75px;"), how_to_path %>
+<%= link_to (image_tag "howto_tab.png", :style => "float:right; position: absolute; right: 0px; top: 75px; height: 10%;"), how_to_path %>
 
-
-<script>
-
-function OpenPopup (c) {
-window.open(c,
-'window',
-'width=480,height=480,scrollbars=yes,status=yes');
-}
-
-</script>
 
 
 
@@ -75,19 +56,17 @@ new TWTR.Widget({
   version: 2,
   type: 'search',
   search: '#tigersmemories OR #tigersmemory OR #tigermemories OR #tigermemories',
-  interval: 30000,
-  title: 'It\'s a double rainbow',
-  subject: 'Across the sky',
+  interval: 3000,
   width: 250,
   height: 300,
   theme: {
     shell: {
       background: 'none',
-      color: '#ffffff'
+      color: '#000000'
     },
     tweets: {
       background: 'none',
-      color: '#444444',
+      color: 'black',
       links: '#1985b5'
     }
   },
@@ -111,13 +90,13 @@ new TWTR.Widget({
      <div>
      <h4>Enter a phone number below:</h4>
       <form action="process" method="GET">
-        <input type="text" name="number" placeholder="Phone Number"><br/>
+        <input type="tel" name="number" placeholder="Phone Number"><br/>
         <span>Example: +12125551212</span>
         <br/>
         <br/>
         <button type="submit">Submit</button>
       </form>
-      <h5>Click here to <a href='' onclick='overlay()'>close</a></h5>
+      <h5>Click here to <a href='' onclick='overlay()' id="sms_modal_close">close</a></h5>
       </div>
 </div>
 
@@ -126,7 +105,24 @@ new TWTR.Widget({
   		$("#sms_overlay").show();
   		event.preventDefault(); // Prevent link from following its href
 	});
+	$("#sms_modal_close").click(function(event){
+  		$("#sms_overlay").hide();
+  		event.preventDefault(); // Prevent link from following its href
+	});
+
 
 
 
 </script>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
