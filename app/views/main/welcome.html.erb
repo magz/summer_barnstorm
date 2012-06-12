@@ -20,11 +20,9 @@
 		<%= link_to (image_tag "appstore_logo.png", :id => "appstore_logo"), "http://google.com", :id => "appstore_logo_link" %><br>
 	
 
-		Available for iPhone and iPad.
+		<span style="font-size: .75em; padding-left: 8%;"> Available for iPhone and iPad. </span>
 
     <%= render partial: "social_box" %>
-  <div id="twitter_feed_title"><em>Check out these baseball memories</em></div>
-
 </div>
 
 <div  id="main_content">
@@ -37,49 +35,17 @@
 
 	</div>
 	<div id="news_stories">
-		<b>Recent Headlines </b>
-		
-    <%= image_tag "techcrunch.png", id: "techcrunch" %>
-		<%= image_tag "intomobile.png", id: "intomobile" %>
-		<%= image_tag "nytimes.png",  id: "nytimes", :style => "top: 5px" %>
+		<span style="border-right: solid;"> <b>Recent Headlines </b></span>
+  	  <span id="news_links" style="padding-left: 20px;">	
+        <%= image_tag "techcrunch.png", id: "techcrunch" %>
+    		<%= image_tag "intomobile.png", id: "intomobile" %>
+    		<%= image_tag "nytimes.png",  id: "nytimes", :style => "top: 5px" %>
+      </span>
   </div>
 </div>
 
-<%= link_to (image_tag "howto_tab.png", :style => "float:right; position: absolute; right: 0px; top: 75px; height: 10%;"), how_to_path %>
-
-
-
-
-<script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
-<script>
-new TWTR.Widget({
-  version: 2,
-  type: 'search',
-  search: '#tigersmemories OR #tigersmemory OR #tigermemories OR #tigermemories',
-  interval: 3000,
-  width: 250,
-  height: 300,
-  theme: {
-    shell: {
-      background: 'none',
-      color: '#000000'
-    },
-    tweets: {
-      background: 'none',
-      color: 'black',
-      links: '#1985b5'
-    }
-  },
-  features: {
-    scrollbar: false,
-    loop: true,
-    live: true,
-    behavior: 'default'
-  }
-}).render().start();
-</script>
-
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  <%= link_to (image_tag "howto_tab.png", :style => "float:right; position: absolute; right: 0px; top: 75px; height: 10%;"), how_to_path %>
+  <%= render partial: "twitter_feed" %>
 
 
 
@@ -110,19 +76,5 @@ new TWTR.Widget({
   		event.preventDefault(); // Prevent link from following its href
 	});
 
-
-
-
 </script>
 
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
-
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
