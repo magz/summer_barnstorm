@@ -2,7 +2,11 @@ class MainController < ApplicationController
   require "browser"
   
   def welcome
-  	@teams = Team.all
+    @teams = Team.all
+
+  	unless request.remote_ip == "38.105.199.253" || Rails.env == "development"
+      redirect_to :coming_soon
+    end     
   end
 
   def coming_soon
