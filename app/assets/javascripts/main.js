@@ -51,7 +51,6 @@ $(document).ready(function() {
   		}
   		else {
   		  	$("#sms_overlay").hide();
-
   		}
   		event.preventDefault(); // Prevent link from following its href
 	});

@@ -33,7 +33,7 @@ class MainController < ApplicationController
   		target_number = "1" + target_number
   	end
 
-  	sms = Moonshado::Sms.new(target_number, "this is where the link and such would be")
+  	sms = Moonshado::Sms.new(target_number, "http://www.summerbarnstorm.com/redirector")
   	sms.deliver_sms
   	
   	
