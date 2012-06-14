@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120612211019) do
+ActiveRecord::Schema.define(:version => 20120614201150) do
 
   create_table "team_data", :force => true do |t|
     t.string   "color"
@@ -31,9 +31,11 @@ ActiveRecord::Schema.define(:version => 20120612211019) do
     t.float    "y_map_point"
     t.string   "city"
     t.string   "team_name"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
     t.string   "twitter_tags"
+    t.datetime "promo_start_date"
+    t.datetime "promo_end_date"
   end
 
   create_table "users", :force => true do |t|

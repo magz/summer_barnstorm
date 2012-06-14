@@ -36,7 +36,11 @@ class MainController < ApplicationController
   	sms = Moonshado::Sms.new(target_number, "this is where the link and such would be")
   	sms.deliver_sms
   	
-  	render json: "success!"
   	
+  end
+
+  def team_page
+
+
   end
 end

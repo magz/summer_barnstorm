@@ -7,6 +7,9 @@ SummerBarnstorm::Application.routes.draw do
   match "how_to" => "main#how_to", :as => :how_to
   match "main/coming_soon" => "main#coming_soon", :as => :coming_soon
   match "redirector" => "main#redirector", :as => :redirector
+
+
+  match "/send_sms" => "main#send_sms", :as => :send_sms, :via => :post
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

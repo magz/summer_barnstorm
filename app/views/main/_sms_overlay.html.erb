@@ -1,0 +1,39 @@
+<!-- <div id="sms_overlay">
+     <div>
+     <h4>Enter a phone number below:</h4>
+      <form action="process" method="GET">
+        <input type="tel" name="number" placeholder="Phone Number"><br/>
+        <span>Example: +12125551212</span>
+        <br/>
+        <br/>
+        <button type="submit">Submit</button>
+      </form>
+      <h5>Click here to <a href='' onclick='overlay()' id="sms_modal_close">close</a></h5>
+      </div>
+</div>
+ -->
+
+<div id="sms_overlay">
+  <div id="window">
+    <%= form_tag "/send_sms", :remote => true %>
+      <h4>Enter a phone number below:</h4>
+       <%= telephone_field_tag "phone_number" %>
+       <br>
+       <span>Example: +12125551212</span>
+       <br/>
+       <br/>
+       <%= button_tag "Submit" %>
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+</div>

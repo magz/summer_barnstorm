@@ -1,7 +1,7 @@
 
 <div id="top">
 	<div id="logo_box">
-		<%= image_tag "summerbarnstorm_logo.png", :id => "logo" %>
+		<%= image_tag "pennant_logo.png", :id => "logo" %>
 		<div id="header">
       <em>Add your favorite baseball memories</em><br>
 			<span id="smaller">to contribute to the Summer Barnstorm scrapbook!<span>
@@ -53,104 +53,5 @@
 
 
 
-
-
-<div id="sms_overlay">
-     <div>
-     <h4>Enter a phone number below:</h4>
-      <form action="process" method="GET">
-        <input type="tel" name="number" placeholder="Phone Number"><br/>
-        <span>Example: +12125551212</span>
-        <br/>
-        <br/>
-        <button type="submit">Submit</button>
-      </form>
-      <h5>Click here to <a href='' onclick='overlay()' id="sms_modal_close">close</a></h5>
-      </div>
-</div>
-
-<script>
-	$("#appstore_logo_link").click(function(event){
-  		$("#sms_overlay").show();
-  		event.preventDefault(); // Prevent link from following its href
-	});
-	$("#sms_modal_close").click(function(event){
-  		$("#sms_overlay").hide();
-  		event.preventDefault(); // Prevent link from following its href
-	});
-
-</script>
-
-
-<script type="text/javascript">
-	// $(".team_disc").hover(
-	// 	function() {
-	// 		var new_size = 90;
-	// 		var disc = $(this);
-	// 		var new_top = parseInt(disc.css("top")) - (new_size - disc.height())/2;
-	// 		var new_left = parseInt(disc.css("left")) - (new_size - disc.height())/2;
-	// 		disc.css("top", new_top);
-	// 		disc.css("left", new_left);
-	// 		disc.height(new_size);
-	// 		disc.width(new_size);
-	// 		disc.css("z-index", 5);
-
-	// 	},
-	// 	function() {
-	// 		var new_size = 44;
-	// 		var disc = $(this);
-	// 		var new_top = parseInt(disc.css("top")) - (new_size - disc.height())/2;
-	// 		var new_left = parseInt(disc.css("left")) - (new_size - disc.height())/2;
-	// 		disc.css("top", new_top);
-	// 		disc.css("left", new_left);
-	// 		disc.height(new_size);
-	// 		disc.width(new_size);
-	// 		disc.css("z-index", 4);
-
-	// });
-	// $("#appstore_logo").hover(
-	// 	function() {
-	// 		$(this).attr("src", "/assets/appstore_logo_hover.png");
-	// 	}, 
-	// 	function() {
-	// 		$(this).attr("src", "/assets/appstore_logo.png");
-	// });
-
-	$("div.small_team_disc").hover(
-		function() {
-			var old_size = $(this).height();
-			var old_left = parseInt($(this).css("left"));
-			var old_top = parseInt($(this).css("top"));
-
-			$(this).addClass("large_team_disc");
-			$(this).removeClass("small_team_disc");
-
-			var new_size = $(this).height();
-			var new_left = old_left - (new_size - old_size)/2;
-			var new_top = old_top - (new_size - old_size)/2;
-
-
-	 		$(this).css("top", new_top);
-	 		$(this).css("left", new_left);
-
-		},
-		function() {
-			var old_size = $(this).height();
-			var old_left = parseInt($(this).css("left"));
-			var old_top = parseInt($(this).css("top"));
-
-			$(this).addClass("small_team_disc");
-			$(this).removeClass("large_team_disc");
-
-			var new_size = $(this).height();
-			var new_left = old_left - (new_size - old_size)/2;
-			var new_top = old_top - (new_size - old_size)/2;
-
-
-	 		$(this).css("top", new_top);
-	 		$(this).css("left", new_left);
-
-		}
-	);
-</script>
+<%= render partial: "sms_overlay" %> 
 
