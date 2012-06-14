@@ -17,7 +17,7 @@ def disc(team, size = "large", color=true)
 
 		image_path += team.team_name.downcase
 		if size == "small"
-			side = "30"
+			side = "40"
 		else
 			side = "150"
 		end

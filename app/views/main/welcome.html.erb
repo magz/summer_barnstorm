@@ -80,31 +80,33 @@
 
 
 <script type="text/javascript">
-	$(".team_disc").mouseenter(function() {
-		var new_size = 60;
-		var disc = $(this);
-		var new_top = parseInt(disc.css("top")) - (new_size - disc.height())/2;
-		var new_left = parseInt(disc.css("left")) - (new_size - disc.height())/2;
-		disc.css("top", new_top);
-		disc.css("left", new_left);
-		disc.height(new_size);
-		disc.width(new_size);
+	$(".team_disc").hover(
+		function() {
+			var new_size = 80;
+			var disc = $(this);
+			var new_top = parseInt(disc.css("top")) - (new_size - disc.height())/2;
+			var new_left = parseInt(disc.css("left")) - (new_size - disc.height())/2;
+			disc.css("top", new_top);
+			disc.css("left", new_left);
+			disc.height(new_size);
+			disc.width(new_size);
+		},
+		function() {
+			var new_size = 40;
+			var disc = $(this);
+			var new_top = parseInt(disc.css("top")) - (new_size - disc.height())/2;
+			var new_left = parseInt(disc.css("left")) - (new_size - disc.height())/2;
+			disc.css("top", new_top);
+			disc.css("left", new_left);
+			disc.height(new_size);
+			disc.width(new_size);
 	});
-	$(".team_disc").mouseleave(function() {
-		var new_size = 30;
-		var disc = $(this);
-		var new_top = parseInt(disc.css("top")) - (new_size - disc.height())/2;
-		var new_left = parseInt(disc.css("left")) - (new_size - disc.height())/2;
-		disc.css("top", new_top);
-		disc.css("left", new_left);
-		disc.height(new_size);
-		disc.width(new_size);
-	});
-	$("#appstore_logo").mouseenter(function() {
-		$(this).attr("src", "/assets/appstore_logo_hover.png");
-	});
-	$("#appstore_logo").mouseleave(function() {
-		$(this).attr("src", "/assets/appstore_logo.png");
+	$("#appstore_logo").hover(
+		function() {
+			$(this).attr("src", "/assets/appstore_logo_hover.png");
+		}, 
+		function() {
+			$(this).attr("src", "/assets/appstore_logo.png");
 	});
 
 </script>
