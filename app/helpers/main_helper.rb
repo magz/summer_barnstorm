@@ -23,7 +23,7 @@ def disc(team, size = "large", color=true)
 		end
 		style = "left: #{team.x_map_point.to_f * MAP_RATIO - side.to_f/2}px ; top: #{team.y_map_point.to_f * MAP_RATIO - side.to_f/2}px"
 		
-		image_tag image_path + ".png", :class => "#{size}_disc", :style => style, :size => side + "x" + side
+		image_tag image_path + ".png", :class => "team_disc", :style => style, :size => side + "x" + side
 
 end
 

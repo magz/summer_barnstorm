@@ -80,15 +80,31 @@
 
 
 <script type="text/javascript">
-	$(".small_disc").mouseover(function() {
-		$(this).addClass(".large_disc")
-		$(this).removeClass(".small_disc")
-
-
-		$(this).attr("height", "500");
-		$(this).attr("width", "500");
-
-
+	$(".team_disc").mouseenter(function() {
+		var new_size = 60;
+		var disc = $(this);
+		var new_top = parseInt(disc.css("top")) - (new_size - disc.height())/2;
+		var new_left = parseInt(disc.css("left")) - (new_size - disc.height())/2;
+		disc.css("top", new_top);
+		disc.css("left", new_left);
+		disc.height(new_size);
+		disc.width(new_size);
+	});
+	$(".team_disc").mouseleave(function() {
+		var new_size = 30;
+		var disc = $(this);
+		var new_top = parseInt(disc.css("top")) - (new_size - disc.height())/2;
+		var new_left = parseInt(disc.css("left")) - (new_size - disc.height())/2;
+		disc.css("top", new_top);
+		disc.css("left", new_left);
+		disc.height(new_size);
+		disc.width(new_size);
+	});
+	$("#appstore_logo").mouseenter(function() {
+		$(this).attr("src", "/assets/appstore_logo_hover.png");
+	});
+	$("#appstore_logo").mouseleave(function() {
+		$(this).attr("src", "/assets/appstore_logo.png");
 	});
 
 </script>
