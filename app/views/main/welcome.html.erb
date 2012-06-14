@@ -30,7 +30,10 @@
 	<div id="map">
 		<%= image_tag "blank_us_map.png", :id => "map" %>
 		<% @teams.each do |team| %>
-			<%= disc team, "small" %>
+			<%#= blank_disc team %>
+			<%#= team_logo team %>
+			<%= small_team_disc_generator team %>
+
 		<% end %>
 
 	</div>
@@ -80,34 +83,74 @@
 
 
 <script type="text/javascript">
-	$(".team_disc").hover(
+	// $(".team_disc").hover(
+	// 	function() {
+	// 		var new_size = 90;
+	// 		var disc = $(this);
+	// 		var new_top = parseInt(disc.css("top")) - (new_size - disc.height())/2;
+	// 		var new_left = parseInt(disc.css("left")) - (new_size - disc.height())/2;
+	// 		disc.css("top", new_top);
+	// 		disc.css("left", new_left);
+	// 		disc.height(new_size);
+	// 		disc.width(new_size);
+	// 		disc.css("z-index", 5);
+
+	// 	},
+	// 	function() {
+	// 		var new_size = 44;
+	// 		var disc = $(this);
+	// 		var new_top = parseInt(disc.css("top")) - (new_size - disc.height())/2;
+	// 		var new_left = parseInt(disc.css("left")) - (new_size - disc.height())/2;
+	// 		disc.css("top", new_top);
+	// 		disc.css("left", new_left);
+	// 		disc.height(new_size);
+	// 		disc.width(new_size);
+	// 		disc.css("z-index", 4);
+
+	// });
+	// $("#appstore_logo").hover(
+	// 	function() {
+	// 		$(this).attr("src", "/assets/appstore_logo_hover.png");
+	// 	}, 
+	// 	function() {
+	// 		$(this).attr("src", "/assets/appstore_logo.png");
+	// });
+
+	$("div.small_team_disc").hover(
 		function() {
-			var new_size = 80;
-			var disc = $(this);
-			var new_top = parseInt(disc.css("top")) - (new_size - disc.height())/2;
-			var new_left = parseInt(disc.css("left")) - (new_size - disc.height())/2;
-			disc.css("top", new_top);
-			disc.css("left", new_left);
-			disc.height(new_size);
-			disc.width(new_size);
+			var old_size = $(this).height();
+			var old_left = parseInt($(this).css("left"));
+			var old_top = parseInt($(this).css("top"));
+
+			$(this).addClass("large_team_disc");
+			$(this).removeClass("small_team_disc");
+
+			var new_size = $(this).height();
+			var new_left = old_left - (new_size - old_size)/2;
+			var new_top = old_top - (new_size - old_size)/2;
+
+
+	 		$(this).css("top", new_top);
+	 		$(this).css("left", new_left);
+
 		},
 		function() {
-			var new_size = 40;
-			var disc = $(this);
-			var new_top = parseInt(disc.css("top")) - (new_size - disc.height())/2;
-			var new_left = parseInt(disc.css("left")) - (new_size - disc.height())/2;
-			disc.css("top", new_top);
-			disc.css("left", new_left);
-			disc.height(new_size);
-			disc.width(new_size);
-	});
-	$("#appstore_logo").hover(
-		function() {
-			$(this).attr("src", "/assets/appstore_logo_hover.png");
-		}, 
-		function() {
-			$(this).attr("src", "/assets/appstore_logo.png");
-	});
+			var old_size = $(this).height();
+			var old_left = parseInt($(this).css("left"));
+			var old_top = parseInt($(this).css("top"));
 
+			$(this).addClass("small_team_disc");
+			$(this).removeClass("large_team_disc");
+
+			var new_size = $(this).height();
+			var new_left = old_left - (new_size - old_size)/2;
+			var new_top = old_top - (new_size - old_size)/2;
+
+
+	 		$(this).css("top", new_top);
+	 		$(this).css("left", new_left);
+
+		}
+	);
 </script>
 
