@@ -22,7 +22,7 @@
        <span>Example: +12125551212</span>
        <br/>
        <br/>
-       <%= button_tag "Submit" %>
+       <%= button_tag "Submit", :id => "sms_submit" %>
 
 
   </div>
@@ -43,11 +43,27 @@
 
     $("#sms_overlay")
       .bind('ajax:beforeSend', function() {
-        alert("loading!");
-      $("input[type=submit]").attr("disabled", "disabled");
-        })
-      .bind('ajax:success', function() {alert("success!");})
-      .bind('ajax:error', function() {alert("error!");})
+        $("#sms_submit").attr("disabled", "disabled");
+        $("#sms_submit").text("Sending message...")
+        $("#phone_number").attr("value", "");
+
+      })
+      .bind('ajax:success', function() {
+        alert("Message Sent!");
+        $(this).hide();
+        $("#sms_submit").removeAttr("disabled");
+        $("#sms_submit").text("Submit")
+
+      })
+      .bind('ajax:error', function() {
+        alert("something went wrong...please try again");
+        $("#sms_submit").removeAttr("disabled");
+        $("#sms_submit").text("Submit")
+
+
+
+
+      })
       // .bind('ajax:complete', function() {
       //   alert("complete!");
       

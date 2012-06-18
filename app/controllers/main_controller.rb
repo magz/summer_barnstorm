@@ -7,11 +7,6 @@ class MainController < ApplicationController
   	unless request.remote_ip == "38.105.199.253" || Rails.env == "development"
       redirect_to :coming_soon
     end     
-    if params[:doesthiswork]
-      @doesthiswork = true
-    else
-      @doesthiswork = false
-    end
 
   end
 
