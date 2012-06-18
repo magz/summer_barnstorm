@@ -7,6 +7,12 @@ class MainController < ApplicationController
   	unless request.remote_ip == "38.105.199.253" || Rails.env == "development"
       redirect_to :coming_soon
     end     
+    if params[:doesthiswork]
+      @doesthiswork = true
+    else
+      @doesthiswork = false
+    end
+
   end
 
   def coming_soon
@@ -36,7 +42,7 @@ class MainController < ApplicationController
   	sms = Moonshado::Sms.new(target_number, "http://www.summerbarnstorm.com/redirector")
   	sms.deliver_sms
   	
-  	
+  	render json: "message sent"
   end
 
   def team_page

@@ -15,7 +15,7 @@
 
 <div id="sms_overlay">
   <div id="window">
-    <%= form_tag "/send_sms", :remote => true %>
+    <%= form_tag "/send_sms", :remote => true, :id => "send_sms" %>
       <h4>Enter a phone number below:</h4>
        <%= telephone_field_tag "phone_number" %>
        <br>
@@ -37,3 +37,19 @@
 
 
 </div>
+
+<script>
+  $(document).ready(function() {
+
+    $("#sms_overlay")
+      .bind('ajax:beforeSend', function() {
+        alert("loading!");
+      $("input[type=submit]").attr("disabled", "disabled");
+        })
+      .bind('ajax:success', function() {alert("success!");})
+      .bind('ajax:error', function() {alert("error!");})
+      // .bind('ajax:complete', function() {
+      //   alert("complete!");
+      
+  });
+</script>
