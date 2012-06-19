@@ -1,4 +1,6 @@
 SummerBarnstorm::Application.routes.draw do
+  resources :user_uploaded_images
+
   resources :teams
 
   match "main/welcome" => "main#welcome"

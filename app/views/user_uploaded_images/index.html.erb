@@ -1,0 +1,21 @@
+<h1>Listing user_uploaded_images</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @user_uploaded_images.each do |user_uploaded_image| %>
+  <tr>
+    <td><%= link_to 'Show', user_uploaded_image %></td>
+    <td><%= link_to 'Edit', edit_user_uploaded_image_path(user_uploaded_image) %></td>
+    <td><%= link_to 'Destroy', user_uploaded_image, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New User uploaded image', new_user_uploaded_image_path %>
