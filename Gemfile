@@ -24,7 +24,7 @@ gem 'jquery-rails'
 gem "browser", "~> 0.1.4"
 gem "moonshado-sms"
 
-gem "rmagick"
+gem "rmagick", "2.12.0", :require => 'RMagick'
 gem "paperclip"
 gem 'aws-sdk', '~> 1.3.4'
 
