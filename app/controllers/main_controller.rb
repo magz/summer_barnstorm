@@ -2,7 +2,10 @@ class MainController < ApplicationController
   require "browser"
   
   def welcome
-    redirect_to :redirector if request.url =~ "redirector.toppspennant.com"
+    if request.url =~ /redirector\.toppspennant\.com/
+      team_page_redirector(params[:team])
+      return
+    end
     
     @teams = Team.all
 
@@ -20,39 +23,39 @@ class MainController < ApplicationController
 
   end
 
-  def redirector
-  	@browser = Browser.new(ua: request.env['HTTP_USER_AGENT'], :accept_language => "en-us")
-  	if @browser.mobile?
-  		redirect_to "http://click.linksynergy.com/fs-bin/stat?id=HXDYbs8K8P4&offerid=146261&type=3&subid=0&tmpid=1826&RD_PARM1=http%253A%252F%252Fitunes.apple.com%252Fus%252Fapp%252Ftopps-pennant%252Fid514201097%253Fmt%253D8%2526uo%253D4%2526partnerId%253D30"
-  		#redirect_to "http://google.com"
-  	else
-  		redirect_to :welcome
-  	end
-  end
+  # def redirector
+  # 	@browser = Browser.new(ua: request.env['HTTP_USER_AGENT'], :accept_language => "en-us")
+  # 	if @browser.mobile?
+  # 		redirect_to "http://click.linksynergy.com/fs-bin/stat?id=HXDYbs8K8P4&offerid=146261&type=3&subid=0&tmpid=1826&RD_PARM1=http%253A%252F%252Fitunes.apple.com%252Fus%252Fapp%252Ftopps-pennant%252Fid514201097%253Fmt%253D8%2526uo%253D4%2526partnerId%253D30"
+  # 		#redirect_to "http://google.com"
+  # 	else
+  # 		redirect_to :welcome
+  # 	end
+  # end
 
-  def send_sms
-  	target_number = params[:phone_number]
-  	unless target_number[0] == "1"
-  		target_number = "1" + target_number
-  	end
+  # def send_sms
+  # 	target_number = params[:phone_number]
+  # 	unless target_number[0] == "1"
+  # 		target_number = "1" + target_number
+  # 	end
 
-  	sms = Moonshado::Sms.new(target_number, "http://www.summerbarnstorm.com/redirector")
-  	sms.deliver_sms
+  # 	sms = Moonshado::Sms.new(target_number, "http://www.summerbarnstorm.com/redirector")
+  # 	sms.deliver_sms
   	
-  	render json: "message sent"
-  end
+  # 	render json: "message sent"
+  # end
 
   def team_page
 
 
   end
 
-  def team_page_redirector
-    if params["team"]  
-      if defunct_team?(params["team"])
+  def team_page_redirector(team=nil)
+    if team
+      if defunct_team?(team)
          path = ""
       else
-         path = correct_for_as_and_diamondbacks(params["team"].split("_")[-1])
+         path = correct_for_as_and_diamondbacks(team.split("_")[-1])
       end
     else
       path = ""
