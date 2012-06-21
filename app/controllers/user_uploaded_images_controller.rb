@@ -69,7 +69,7 @@ class UserUploadedImagesController < ApplicationController
       #incorrect access key  
 
 
-
+      end
     else
       #no acess key provided
 
