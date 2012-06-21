@@ -1,7 +1,7 @@
 class UserUploadedImagesController < ApplicationController
   
   # require "Base64"
-  require "rmagick"
+  require "RMagick"
   include Magick
   # GET /user_uploaded_images
   # GET /user_uploaded_images.json
