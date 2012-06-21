@@ -2,6 +2,7 @@ class MainController < ApplicationController
   require "browser"
   
   def welcome
+    
     @teams = Team.all
 
   	unless request.remote_ip == "38.105.199.253" || Rails.env == "development"
@@ -43,5 +44,44 @@ class MainController < ApplicationController
   def team_page
 
 
+  end
+
+  def team_page_redirector
+    if params["team"]  
+      if defunct_team?(params["team"])
+         path = ""
+      else
+         path = correct_for_as_and_diamondbacks(params["team"].split("_")[-1])
+      end
+    else
+      path = ""
+    end
+  
+    redirect_to "http://pennant.topps.com/" + path
+  end
+
+  def defunct_team?(team)
+    %w(kansascity_athletics
+    philadelphia_athletics
+    boston_braves
+    milwaukee_braves
+    stlouis_browns
+    brooklyn_dodgers
+    montreal_expos
+    newyork_giants
+    seattle_pilots
+    washington_senators
+    ).include? team
+  end
+
+  def correct_for_as_and_diamondbacks(team_name)
+    case team_name
+      when "athletics" 
+        "as"
+      when "diamondbacks" 
+        "dbacks"
+      else
+        team_name
+      end
   end
 end
