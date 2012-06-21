@@ -2,6 +2,7 @@ class MainController < ApplicationController
   require "browser"
   
   def welcome
+    redirect_to :redirector if request.url =~ "redirector.toppspennant.com"
     
     @teams = Team.all
 
