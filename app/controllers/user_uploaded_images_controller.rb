@@ -42,53 +42,53 @@ class UserUploadedImagesController < ApplicationController
 
   # POST /user_uploaded_images
   # POST /user_uploaded_images.json
-  def create
-    if params[:access_key]
-      #check if access_key is correct
-      if Digest::MD5.hexdigest(request.body.read + "images_are_great") == params[:access_key]
-        @u = UserUploadedImage.new
-        @u.team = Team.parse_api_team(params[:team1])
-        @u.filename = params[:filename]
+  # def create
+  #   if params[:access_key]
+  #     #check if access_key is correct
+  #     if Digest::MD5.hexdigest(request.body.read + "images_are_great") == params[:access_key]
+  #       @u = UserUploadedImage.new
+  #       @u.team = Team.parse_api_team(params[:team1])
+  #       @u.filename = params[:filename]
         
-        temp_filepath = File.join(Rails.root, "public", "tmp",Time.now.to_s + params[:filetype])
-        i=(Image.from_blob Base64.decode64 request.body.read)[0]
+  #       temp_filepath = File.join(Rails.root, "public", "tmp",Time.now.to_s + params[:filetype])
+  #       i=(Image.from_blob Base64.decode64 request.body.read)[0]
         
         
-        i.write(temp_filepath)
+  #       i.write(temp_filepath)
         
-        @u.screenshot = File.open(temp_filepath)
+  #       @u.screenshot = File.open(temp_filepath)
 
-        @u.save
+  #       @u.save
         
 
 
-        #this needs some kind of parsing probably?  Though maybe not...don't overthink it
-        #@user_uploaded_image.screenshot = request.body.read
+  #       #this needs some kind of parsing probably?  Though maybe not...don't overthink it
+  #       #@user_uploaded_image.screenshot = request.body.read
      
-      else
-      #incorrect access key  
+  #     else
+  #     #incorrect access key  
 
 
-      end
-    else
-      #no acess key provided
+  #     end
+  #   else
+  #     #no acess key provided
 
-    end    
+  #   end    
 
 
 
-    # @user_uploaded_image = UserUploadedImage.new(params[:user_uploaded_image])
+  #   # @user_uploaded_image = UserUploadedImage.new(params[:user_uploaded_image])
 
-    # respond_to do |format|
-    #   if @user_uploaded_image.save
-    #     format.html { redirect_to @user_uploaded_image, notice: 'User uploaded image was successfully created.' }
-    #     format.json { render json: @user_uploaded_image, status: :created, location: @user_uploaded_image }
-    #   else
-    #     format.html { render action: "new" }
-    #     format.json { render json: @user_uploaded_image.errors, status: :unprocessable_entity }
-    #   end
-    # end
-  end
+  #   # respond_to do |format|
+  #   #   if @user_uploaded_image.save
+  #   #     format.html { redirect_to @user_uploaded_image, notice: 'User uploaded image was successfully created.' }
+  #   #     format.json { render json: @user_uploaded_image, status: :created, location: @user_uploaded_image }
+  #   #   else
+  #   #     format.html { render action: "new" }
+  #   #     format.json { render json: @user_uploaded_image.errors, status: :unprocessable_entity }
+  #   #   end
+  #   # end
+  # end
 
   # PUT /user_uploaded_images/1
   # PUT /user_uploaded_images/1.json
