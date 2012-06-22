@@ -4,13 +4,14 @@ class MainController < ApplicationController
   def welcome
     if params[:redirect]
       team_page_redirector(params[:team])
-      return
+      
     end
     
     @teams = Team.all
 
   	unless request.remote_ip == "38.105.199.253" || Rails.env == "development"
       redirect_to :coming_soon
+
     end     
 
   end
