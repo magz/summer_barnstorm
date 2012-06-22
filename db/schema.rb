@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120619154111) do
+ActiveRecord::Schema.define(:version => 20120622154711) do
 
   create_table "team_data", :force => true do |t|
     t.string   "color"
@@ -46,6 +46,8 @@ ActiveRecord::Schema.define(:version => 20120619154111) do
     t.integer  "screenshot_file_size"
     t.datetime "screenshot_updated_at"
     t.integer  "team_id"
+    t.string   "team1"
+    t.string   "team2"
   end
 
   create_table "users", :force => true do |t|

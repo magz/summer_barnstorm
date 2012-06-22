@@ -41,32 +41,29 @@ class UserUploadedImagesController < ApplicationController
     @user_uploaded_image = UserUploadedImage.find(params[:id])
   end
 
-  # POST /user_uploaded_images
-  # POST /user_uploaded_images.json
-  # def create
+  #POST /user_uploaded_images
+  #POST /user_uploaded_images.json
+  def create
   #   if params[:access_key]
   #     #check if access_key is correct
   #     if Digest::MD5.hexdigest(request.body.read + "images_are_great") == params[:access_key]
-  #       @u = UserUploadedImage.new
-  #       @u.team = Team.parse_api_team(params[:team1])
-  #       @u.filename = params[:filename]
+        @u = UserUploadedImage.new
+        @u.team1 = Team.app_team_hash[params[:team1]]
+        @u.team2 = Team.app_team_hash[params[:team2]]
         
-  #       temp_filepath = File.join(Rails.root, "public", "tmp",Time.now.to_s + params[:filetype])
-  #       i=(Image.from_blob Base64.decode64 request.body.read)[0]
+         temp_filepath = File.join(Rails.root, "public", "tmp",Time.now.to_s + "." + params[:filename].split(".").last)
+         i=(Image.from_blob Base64.decode64 request.body.read)[0]
         
         
-  #       i.write(temp_filepath)
+         i.write(temp_filepath)
         
-  #       @u.screenshot = File.open(temp_filepath)
+         @u.screenshot = File.open(temp_filepath)
 
-  #       @u.save
-        
-
-
-  #       #this needs some kind of parsing probably?  Though maybe not...don't overthink it
-  #       #@user_uploaded_image.screenshot = request.body.read
-     
-  #     else
+        if @u.save
+            render json: {status: true, message: "image saved successfully", img_url: @u.screenshot}    
+        else
+            render json: {status: false, message: "there was a problem saving the image"}
+        end
   #     #incorrect access key  
 
 
@@ -75,21 +72,7 @@ class UserUploadedImagesController < ApplicationController
   #     #no acess key provided
 
   #   end    
-
-
-
-  #   # @user_uploaded_image = UserUploadedImage.new(params[:user_uploaded_image])
-
-  #   # respond_to do |format|
-  #   #   if @user_uploaded_image.save
-  #   #     format.html { redirect_to @user_uploaded_image, notice: 'User uploaded image was successfully created.' }
-  #   #     format.json { render json: @user_uploaded_image, status: :created, location: @user_uploaded_image }
-  #   #   else
-  #   #     format.html { render action: "new" }
-  #   #     format.json { render json: @user_uploaded_image.errors, status: :unprocessable_entity }
-  #   #   end
-  #   # end
-  # end
+  end
 
   # PUT /user_uploaded_images/1
   # PUT /user_uploaded_images/1.json
