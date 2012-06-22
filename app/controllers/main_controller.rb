@@ -2,13 +2,7 @@ class MainController < ApplicationController
   require "browser"
   
   def welcome
-    puts "MAGZZZZ" 
-
-    puts request.url
-    puts request.domain
-    puts request.host
-    puts "========="
-    if request.url =~ /redirector\.toppspennant\.com/
+    if params[:redirect]
       team_page_redirector(params[:team])
       return
     end
