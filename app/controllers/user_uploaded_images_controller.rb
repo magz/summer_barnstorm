@@ -53,8 +53,9 @@ class UserUploadedImagesController < ApplicationController
         
          temp_filepath = File.join(Rails.root, "public", "tmp",Time.now.to_s + ".jpg" )
          puts "body data --"
-         puts request.body.read
-         i=(Image.from_blob Base64.decode64 request.body.read)[0]
+         x = request.body.read
+         puts x.class
+         i=(Image.from_blob Base64.decode64 x)[0]
         
         
          i.write(temp_filepath)
