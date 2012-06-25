@@ -51,12 +51,19 @@ class UserUploadedImagesController < ApplicationController
         @u.team1 = Team.app_team_hash[params[:team1]]
         @u.team2 = Team.app_team_hash[params[:team2]]
         
-         temp_filepath = File.join(Rails.root, "public", "tmp",Time.now.to_s + ".jpg" )
-         puts "body data --"
-         x = request.body.read
-         puts x.class
-         puts x
-         i=(Image.from_blob Base64.decode64 x)[0]
+        unless File.directory? "/app/public/tmp"
+          Dir.mkdir "/app/public/tmp"
+          puts "path created"
+        else
+          puts "path already exists"
+        end
+       temp_filepath = File.join(Rails.root, "public", "tmp",Time.now.to_s + ".jpg" )
+       puts temp_filepath
+       puts "body data --"
+       x = request.body.read
+       puts x.class
+       # puts x
+       i=(Image.from_blob Base64.decode64 x)[0]
         
         
          i.write(temp_filepath)
