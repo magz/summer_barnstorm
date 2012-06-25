@@ -51,12 +51,12 @@ class UserUploadedImagesController < ApplicationController
         @u.team1 = Team.app_team_hash[params[:team1]]
         @u.team2 = Team.app_team_hash[params[:team2]]
         
-        unless File.directory? "/app/public/tmp"
-          Dir.mkdir "/app/public/tmp"
-          puts "path created"
-        else
-          puts "path already exists"
-        end
+        # unless File.directory? "/app/public/tmp"
+        #   Dir.mkdir "/app/public/tmp"
+        #   puts "path created"
+        # else
+        #   puts "path already exists"
+        # end
        temp_filepath = File.join(Rails.root, "public", "tmp",Time.now.to_s + ".jpg" )
        puts temp_filepath
        puts "body data --"
@@ -71,14 +71,28 @@ class UserUploadedImagesController < ApplicationController
         puts "mark"
          @u.screenshot = File.open(temp_filepath)
          puts "ok we're here"
-        if @u.save
-            render json: {status: true, message: "image saved successfully", img_url: @u.screenshot}
 
+         if @u.save
+            render json: {message: "successs", image: @u, url: @u.screenshot.url}, status: :created
+         else
+            render json: {message: "something went wrong", image: nil, url: nil}, status: :unprocessable_entity
+         end
+         
+        # if @u.save
+        #     render json: {status: true, message: "image saved successfully", img_url: @u.screenshot}
 
-        else
-            render json: {status: false, message: "there was a problem saving the image"}
-        end
-        return
+        # else
+        #     render json: {status: false, message: "there was a problem saving the image"}
+        # end
+    # respond_to do |format|
+    #   if @u.save
+    #     # format.html { redirect_to @user_uploaded_image, notice: 'User uploaded image was successfully updated.' }
+    #     render json: {status: true, message: "image saved successfully", img_url: @u.screenshot}
+    #   else
+    #     # format.html { render action: "edit" }
+    #     render json: {status: false, message: "there was a problem saving the image"}
+    #   end
+    # end
   #     #incorrect access key  
 
 
@@ -87,6 +101,7 @@ class UserUploadedImagesController < ApplicationController
   #     #no acess key provided
 
   #   end    
+  # redirect_to :root
   end
 
   # PUT /user_uploaded_images/1
