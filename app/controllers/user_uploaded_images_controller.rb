@@ -85,7 +85,7 @@ class UserUploadedImagesController < ApplicationController
         
 
          if @u.save
-            render json: {message: "successs", image: @u, url: @u.screenshot.url}, status: :created
+            render json: {message: "success", image: @u, url: @u.screenshot.url}, status: :created
          else
             render json: {message: "something went wrong", image: nil, url: nil}, status: :unprocessable_entity
          end
