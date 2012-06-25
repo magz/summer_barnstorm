@@ -51,13 +51,8 @@ class UserUploadedImagesController < ApplicationController
         @u.team1 = Team.app_team_hash[params[:team1]]
         @u.team2 = Team.app_team_hash[params[:team2]]
         
-        unless File.directory? "/app/public/tmp"
-          Dir.mkdir "/app/public/tmp"
-          puts "path created"
-        else
-          puts "path already exists"
-        end
        puts "body data --"
+       
        if params["image.jpg"]
          begin
           @u.screenshot = params["image.jpg"]
@@ -66,7 +61,7 @@ class UserUploadedImagesController < ApplicationController
           puts "in rescue"
           temp_filepath = File.join(Rails.root, "public", "tmp",Time.now.to_s + ".jpg" )
 
-          i=(Image.from_blob Base64.decode64 x)[0]
+          i=(Image.from_blob Base64.decode64 params["image.jpg"].read)[0]
           i.write(temp_filepath)
 
           @u.screenshot = File.open(temp_filepath)
@@ -75,7 +70,7 @@ class UserUploadedImagesController < ApplicationController
          puts "image upload param not found"
          temp_filepath = File.join(Rails.root, "public", "tmp",Time.now.to_s + ".jpg" )
 
-         i=(Image.from_blob Base64.decode64 x)[0]
+         i=(Image.from_blob Base64.decode64 request.body.read)[0]
          i.write(temp_filepath)
          @u.screenshot = File.open(temp_filepath)
        end
