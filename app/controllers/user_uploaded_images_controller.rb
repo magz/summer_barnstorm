@@ -55,13 +55,15 @@ class UserUploadedImagesController < ApplicationController
          puts "body data --"
          x = request.body.read
          puts x.class
+         puts x
          i=(Image.from_blob Base64.decode64 x)[0]
         
         
          i.write(temp_filepath)
         
+        puts "mark"
          @u.screenshot = File.open(temp_filepath)
-
+         puts "ok we're here"
         if @u.save
             render json: {status: true, message: "image saved successfully", img_url: @u.screenshot}    
         else
