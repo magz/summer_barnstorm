@@ -48,8 +48,9 @@ class UserUploadedImagesController < ApplicationController
   #     #check if access_key is correct
   #     if Digest::MD5.hexdigest(request.body.read + "images_are_great") == params[:access_key]
         @u = UserUploadedImage.new
-        @u.team1 = Team.app_team_hash[params[:team1]]
-        @u.team2 = Team.app_team_hash[params[:team2]]
+        puts params.inspect
+        @u.team1 = params[:team1]
+        @u.team2 = params[:team2]
         
        puts "body data --"
        
