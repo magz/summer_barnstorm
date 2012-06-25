@@ -72,10 +72,13 @@ class UserUploadedImagesController < ApplicationController
          @u.screenshot = File.open(temp_filepath)
          puts "ok we're here"
         if @u.save
-            render json: {status: true, message: "image saved successfully", img_url: @u.screenshot}    
+            render json: {status: true, message: "image saved successfully", img_url: @u.screenshot}
+
+
         else
             render json: {status: false, message: "there was a problem saving the image"}
         end
+        return
   #     #incorrect access key  
 
 
