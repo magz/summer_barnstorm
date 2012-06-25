@@ -51,12 +51,12 @@ class UserUploadedImagesController < ApplicationController
         @u.team1 = Team.app_team_hash[params[:team1]]
         @u.team2 = Team.app_team_hash[params[:team2]]
         
-        # unless File.directory? "/app/public/tmp"
-        #   Dir.mkdir "/app/public/tmp"
-        #   puts "path created"
-        # else
-        #   puts "path already exists"
-        # end
+        unless File.directory? "/app/public/tmp"
+          Dir.mkdir "/app/public/tmp"
+          puts "path created"
+        else
+          puts "path already exists"
+        end
        temp_filepath = File.join(Rails.root, "public", "tmp",Time.now.to_s + ".jpg" )
        puts temp_filepath
        puts "body data --"
