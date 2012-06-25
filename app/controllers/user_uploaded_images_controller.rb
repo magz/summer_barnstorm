@@ -55,16 +55,21 @@ class UserUploadedImagesController < ApplicationController
        
        if params["image.jpg"]
          begin
-          @u.screenshot = params["image.jpg"]
+          @u.screenshot = params["image.jpg"].open
           puts "ok that went through..."
          rescue
-          puts "in rescue"
-          temp_filepath = File.join(Rails.root, "public", "tmp",Time.now.to_s + ".jpg" )
+          begin
+          puts "in rescue2"
+          @u.screenshot = params["image.jpg"].read
 
-          i=(Image.from_blob Base64.decode64 params["image.jpg"].read)[0]
-          i.write(temp_filepath)
+          rescue
+            temp_filepath = File.join(Rails.root, "public", "tmp",Time.now.to_s + ".jpg" )
 
-          @u.screenshot = File.open(temp_filepath)
+            i=(Image.from_blob Base64.decode64 params["image.jpg"].read)[0]
+            i.write(temp_filepath)
+
+            @u.screenshot = File.open(temp_filepath)
+          end
          end
        else
          puts "image upload param not found"
