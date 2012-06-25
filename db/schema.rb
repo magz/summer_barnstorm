@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120622154711) do
+ActiveRecord::Schema.define(:version => 20120622182620) do
 
   create_table "team_data", :force => true do |t|
     t.string   "color"
@@ -36,6 +36,8 @@ ActiveRecord::Schema.define(:version => 20120622154711) do
     t.string   "twitter_tags"
     t.datetime "promo_start_date"
     t.datetime "promo_end_date"
+    t.string   "abbreviation"
+    t.boolean  "defunct"
   end
 
   create_table "user_uploaded_images", :force => true do |t|

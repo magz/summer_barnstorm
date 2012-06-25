@@ -1,7 +1,7 @@
 class Team < ActiveRecord::Base
 	has_many :user_uploaded_images
 
-	attr_accessible :city, :color, :team_name, :x_map_point, :y_map_point, :twitter_tags
+	attr_accessible :city, :color, :team_name, :x_map_point, :y_map_point, :twitter_tags, :abbreviation, :defunct
 	serialize :twitter_tags, Array
 
 	def self.app_team_hash
@@ -51,5 +51,30 @@ class Team < ActiveRecord::Base
  		"ATL"=>"ATLANTA_BRAVES"}
 	end
 
+	#this is a utility funciton to get a team from different string formats
+	#it'll return the Team object
+	#it may return nil
+	def self.id_team_by_name(name, include_defunct=false)
+		conditions = {}
+		unless include_defunct
+			conditions.update defunct: false
+		end
+
+		if Team.app_team_hash.invert[name]
+			name = Team.app_team_hash.invert[name]
+		end
+		
+		if name.length==3
+			conditions.update abbreviation: name.upcase
+		else
+
+		end
+		
+
+		Team.where(conditions).first
+
+
+
+	end
 end
 
