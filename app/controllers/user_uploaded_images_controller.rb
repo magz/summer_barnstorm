@@ -52,6 +52,8 @@ class UserUploadedImagesController < ApplicationController
         @u.team2 = Team.app_team_hash[params[:team2]]
         
          temp_filepath = File.join(Rails.root, "public", "tmp",Time.now.to_s + ".jpg" )
+         puts "body data --"
+         puts request.body.read
          i=(Image.from_blob Base64.decode64 request.body.read)[0]
         
         
