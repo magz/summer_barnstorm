@@ -57,20 +57,32 @@ class UserUploadedImagesController < ApplicationController
         else
           puts "path already exists"
         end
-       temp_filepath = File.join(Rails.root, "public", "tmp",Time.now.to_s + ".jpg" )
-       puts temp_filepath
        puts "body data --"
-       x = request.body.read
-       puts x.class
-       # puts x
-       i=(Image.from_blob Base64.decode64 x)[0]
-        
-        
+       if params["image.jpg"]
+         begin
+          @u.screenshot = params["image.jpg"]
+          puts "ok that went through..."
+         rescue
+          puts "in rescue"
+          temp_filepath = File.join(Rails.root, "public", "tmp",Time.now.to_s + ".jpg" )
+
+          i=(Image.from_blob Base64.decode64 x)[0]
+          i.write(temp_filepath)
+
+          @u.screenshot = File.open(temp_filepath)
+         end
+       else
+         puts "image upload param not found"
+         temp_filepath = File.join(Rails.root, "public", "tmp",Time.now.to_s + ".jpg" )
+
+         i=(Image.from_blob Base64.decode64 x)[0]
          i.write(temp_filepath)
-        
-        puts "mark"
          @u.screenshot = File.open(temp_filepath)
-         puts "ok we're here"
+       end
+
+        
+        
+        
 
          if @u.save
             render json: {message: "successs", image: @u, url: @u.screenshot.url}, status: :created
@@ -78,30 +90,6 @@ class UserUploadedImagesController < ApplicationController
             render json: {message: "something went wrong", image: nil, url: nil}, status: :unprocessable_entity
          end
          
-        # if @u.save
-        #     render json: {status: true, message: "image saved successfully", img_url: @u.screenshot}
-
-        # else
-        #     render json: {status: false, message: "there was a problem saving the image"}
-        # end
-    # respond_to do |format|
-    #   if @u.save
-    #     # format.html { redirect_to @user_uploaded_image, notice: 'User uploaded image was successfully updated.' }
-    #     render json: {status: true, message: "image saved successfully", img_url: @u.screenshot}
-    #   else
-    #     # format.html { render action: "edit" }
-    #     render json: {status: false, message: "there was a problem saving the image"}
-    #   end
-    # end
-  #     #incorrect access key  
-
-
-  #     end
-  #   else
-  #     #no acess key provided
-
-  #   end    
-  # redirect_to :root
   end
 
   # PUT /user_uploaded_images/1
