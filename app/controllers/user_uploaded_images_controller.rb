@@ -52,26 +52,25 @@ class UserUploadedImagesController < ApplicationController
         @u.team1 = params[:team1]
         @u.team2 = params[:team2]
         
-       puts "body data --"
        
        if params["image.jpg"]
-         begin
+         # begin
           @u.screenshot = params["image.jpg"].open
           puts "ok that went through..."
-         rescue
-          begin
-          puts "in rescue2"
-          @u.screenshot = params["image.jpg"].read
+         # rescue
+         #  begin
+         #  puts "in rescue2"
+         #  @u.screenshot = params["image.jpg"].read
 
-          rescue
-            temp_filepath = File.join(Rails.root, "public", "tmp",Time.now.to_s + ".jpg" )
+         #  rescue
+         #    temp_filepath = File.join(Rails.root, "public", "tmp",Time.now.to_s + ".jpg" )
 
-            i=(Image.from_blob Base64.decode64 params["image.jpg"].read)[0]
-            i.write(temp_filepath)
+         #    i=(Image.from_blob Base64.decode64 params["image.jpg"].read)[0]
+         #    i.write(temp_filepath)
 
-            @u.screenshot = File.open(temp_filepath)
-          end
-         end
+         #    @u.screenshot = File.open(temp_filepath)
+         #  end
+         # end
        else
          puts "image upload param not found"
          temp_filepath = File.join(Rails.root, "public", "tmp",Time.now.to_s + ".jpg" )
@@ -80,10 +79,6 @@ class UserUploadedImagesController < ApplicationController
          i.write(temp_filepath)
          @u.screenshot = File.open(temp_filepath)
        end
-
-        
-        
-        
 
          if @u.save
             render json: {message: "success", image: @u, url: @u.screenshot.url}, status: :created
