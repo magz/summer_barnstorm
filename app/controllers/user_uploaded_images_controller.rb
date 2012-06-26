@@ -50,7 +50,7 @@ class UserUploadedImagesController < ApplicationController
     @u.team2 = params[:team2]
         
     
-    @access_key_accepted = true
+    @access_key_accepted = image_upload_validation(parms["time"], params["access_key"])
     
       
     
@@ -77,7 +77,7 @@ class UserUploadedImagesController < ApplicationController
   end
 
   def image_upload_validation(time, key)
-    (time && key) && Digest::MD5.hexdigest(time + "images_are_great") == key
+    (time && key) && (Digest::MD5.hexdigest(time + "images_are_great") == key)
   end
   # PUT /user_uploaded_images/1
   # PUT /user_uploaded_images/1.json
