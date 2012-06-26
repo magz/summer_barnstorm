@@ -44,50 +44,41 @@ class UserUploadedImagesController < ApplicationController
   #POST /user_uploaded_images
   #POST /user_uploaded_images.json
   def create
-  #   if params[:access_key]
-  #     #check if access_key is correct
-  #     if Digest::MD5.hexdigest(request.body.read + "images_are_great") == params[:access_key]
-        @u = UserUploadedImage.new
-        puts params.inspect
-        @u.team1 = params[:team1]
-        @u.team2 = params[:team2]
+    @u = UserUploadedImage.new
+    puts params.inspect
+    @u.team1 = params[:team1]
+    @u.team2 = params[:team2]
         
-       
-       if params["image.jpg"]
-         # begin
-          @u.screenshot = params["image.jpg"].open
-          puts "ok that went through..."
-         # rescue
-         #  begin
-         #  puts "in rescue2"
-         #  @u.screenshot = params["image.jpg"].read
+    
+    @access_key_accepted = true
+    
+      
+    
 
-         #  rescue
-         #    temp_filepath = File.join(Rails.root, "public", "tmp",Time.now.to_s + ".jpg" )
+    if params["image.jpg"]
 
-         #    i=(Image.from_blob Base64.decode64 params["image.jpg"].read)[0]
-         #    i.write(temp_filepath)
+      @u.screenshot = params["image.jpg"].open
+      puts "ok that went through..."
+    else
+      puts "image upload param not found"
+      temp_filepath = File.join(Rails.root, "public", "tmp",Time.now.to_s + ".jpg" )
 
-         #    @u.screenshot = File.open(temp_filepath)
-         #  end
-         # end
-       else
-         puts "image upload param not found"
-         temp_filepath = File.join(Rails.root, "public", "tmp",Time.now.to_s + ".jpg" )
+      i=(Image.from_blob Base64.decode64 request.body.read)[0]
+      i.write(temp_filepath)
+      @u.screenshot = File.open(temp_filepath)
+    end
 
-         i=(Image.from_blob Base64.decode64 request.body.read)[0]
-         i.write(temp_filepath)
-         @u.screenshot = File.open(temp_filepath)
-       end
-
-         if @u.save
-            render json: {message: "success", image: @u, url: @u.screenshot.url}, status: :created
-         else
-            render json: {message: "something went wrong", image: nil, url: nil}, status: :unprocessable_entity
-         end
+    if @u.save
+      render json: {message: "success", image: @u, url: @u.screenshot.url, access_key_accepted: @access_key_accepted}, status: :created
+    else
+      render json: {message: "something went wrong", image: nil, url: nil, access_key_accepted: @access_key_accepted}, status: :unprocessable_entity
+    end
          
   end
 
+  def image_upload_validation(time, key)
+    (time && key) && Digest::MD5.hexdigest(time + "images_are_great") == key
+  end
   # PUT /user_uploaded_images/1
   # PUT /user_uploaded_images/1.json
   def update
