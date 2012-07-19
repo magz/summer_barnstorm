@@ -3,7 +3,7 @@ class MainController < ApplicationController
   
   def welcome
     if params[:redirect]
-      team_page_redirector(params[:team])
+      team_page_redirector(params[:team1])
     end
     
     @teams = Team.all

@@ -50,7 +50,7 @@ class UserUploadedImagesController < ApplicationController
     @u.team2 = params[:team2]
         
     
-    @access_key_accepted = image_upload_validation(parms["time"], params["access_key"])
+    @access_key_accepted = image_upload_validation(params["time"], params["access_key"])
     
       
     
