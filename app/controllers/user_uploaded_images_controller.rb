@@ -78,7 +78,7 @@ class UserUploadedImagesController < ApplicationController
 
   def image_upload_validation(time, key)
     (time && key) && 
-    ((Time.now - 1.day).to_i..(Time.now + 1.day).to_i).include? Time.now.to_i && 
+    ((Time.now - 1.day).to_i..(Time.now + 1.day).to_i).include?(Time.now.to_i) && 
     (Digest::MD5.hexdigest(time + "images_are_great") == key)
   end
   # PUT /user_uploaded_images/1
