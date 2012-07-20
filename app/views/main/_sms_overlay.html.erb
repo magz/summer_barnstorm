@@ -35,29 +35,19 @@
 <script>
   $(document).ready(function() {
 
-    $("#sms_overlay")
-      .bind('ajax:beforeSend', function() {
-        $("#sms_submit").attr("disabled", "disabled");
-        $("#sms_submit").text("Sending message...")
+    $("#sms_overlay").bind('ajax:beforeSend', function() {
+        $("#sms_overlay").hide();
+        alert("Thank you!  You will receive a link shortly!");
         $("#phone_number").attr("value", "");
-
-      })
-      .bind('ajax:success', function() {
-        alert("Message Sent!");
-        $(this).hide();
-        $("#sms_submit").removeAttr("disabled");
-        $("#sms_submit").text("Submit")
-
-      })
-      .bind('ajax:error', function() {
-        alert("something went wrong...please try again");
-        $("#sms_submit").removeAttr("disabled");
-        $("#sms_submit").text("Submit")
-
+        $("#email_address").attr("value", "");
 
 
 
       });
+
+
+
+
       $("#sms_overlay #close_box").click(function() {
         $("#sms_overlay").hide();
 
@@ -65,14 +55,6 @@
 
       
   });
-// $(document).ready(function() {
-//   $("#sms_overlay #close_box").click(function() {
-//     $("#sms_overlay").hide();
-
-//   });
-
-
-// });
 
 
 </script>
