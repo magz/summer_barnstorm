@@ -1,17 +1,25 @@
-
+<%= stylesheet_link_tag "sms_overlay" %>
 <div id="sms_overlay">
   <div id="window">
-    <%= form_tag "/send_sms", :remote => true, :id => "send_sms" %>
-      <h4>Enter a phone number below:</h4>
+    <%= image_tag "close_box.gif", id: "close_box" %>
+    <%= form_tag :send_link, :remote => true, :id => "sms_overlay_form" do |f|%>
+      <h4>SEND YOURSELF A LINK TO THE APP STORE</h4>
+      <h4>BY text: </h4>
        <%= telephone_field_tag "phone_number" %>
        <br>
        <span>Example: +12125551212</span>
        <br/>
        <br/>
-       <%= button_tag "Submit", :id => "sms_submit" %>
+       <h4>Or by email:</h4>
 
+       <%= text_field_tag "email_address" %>
+       <br><br>
+       <%= submit_tag "Submit", :id => "sms_submit" %>
+       <% end %>
 
   </div>
+
+</div>
 
 
 
@@ -49,7 +57,22 @@
 
 
 
-      })
+      });
+      $("#sms_overlay #close_box").click(function() {
+        $("#sms_overlay").hide();
+
+     });
+
       
   });
+// $(document).ready(function() {
+//   $("#sms_overlay #close_box").click(function() {
+//     $("#sms_overlay").hide();
+
+//   });
+
+
+// });
+
+
 </script>

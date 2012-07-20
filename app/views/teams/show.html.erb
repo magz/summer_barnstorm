@@ -2,17 +2,12 @@
 
 <p>
   <b>Color:</b>
-  <%= @team.color %>
+  #<%= @team.color %>
 </p>
 
 <p>
-  <b>X map point:</b>
-  <%= @team.x_map_point %>
-</p>
-
-<p>
-  <b>Y map point:</b>
-  <%= @team.y_map_point %>
+  <b>Name:</b>
+  <%= @team.name %>
 </p>
 
 <p>
@@ -21,9 +16,24 @@
 </p>
 
 <p>
-  <b>Team name:</b>
-  <%= @team.team_name %>
+  <b>Tagline:</b>
+  <%= @team.tagline %>
 </p>
+<p>
+  <b>alternate names:</b>
+  <%= @team.alternate_names %>
+</p>
+
+
+<p>
+  <b>Promo Start Date:</b>
+  <%= @team.promo_start_date %>
+</p>
+<p>
+  <b>Promo End Date:</b>
+  <%= @team.promo_end_date %>
+</p>
+
 
 
 <%= link_to 'Edit', edit_team_path(@team) %> |

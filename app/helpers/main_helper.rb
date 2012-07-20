@@ -10,7 +10,7 @@ MAP_RATIO = 840.0 / 1491.0
 			image_path = "blank_discs/"
 
 			if color
-				image_path += team.team_name + "_blank_color_disc"
+name				image_path += team.name + "_blank_color_disc"
 			else
 				image_path += "grey_blank_disc"
 			end
@@ -18,18 +18,18 @@ MAP_RATIO = 840.0 / 1491.0
 			image_path += ".png"
 
 			style = team_center_css(team, side)
-			image_tag image_path, :class => "team_disc", :data => {team: team.team_name.downcase}, :style => style, :size => side.to_s + "x" + side.to_s
+			image_tag image_path, :class => "team_disc", :data => {team: team.name.downcase}, :style => style, :size => side.to_s + "x" + side.to_s
 
 	end
 
 	def team_logo(team)
-		image_path = "team_logos/" + team.team_name + "_logo.png"
+		image_path = "team_logos/" + team.name + "_logo.png"
 
 		side = 22
 		style = team_center_css(team, 44)
 
 
-		image_tag image_path, :class => "team_logo", :data => {team: team.team_name.downcase}, :style => style, :size => side.to_s + "x" + side.to_s
+		image_tag image_path, :class => "team_logo", :data => {team: team.name.downcase}, :style => style, :size => side.to_s + "x" + side.to_s
 
 
 
@@ -54,7 +54,7 @@ MAP_RATIO = 840.0 / 1491.0
 		image_path = "blank_discs/"
 
 		if color
-			image_path += team.team_name + "_blank_color_disc"
+			image_path += team.name + "_blank_color_disc"
 		else
 			image_path += "grey_blank_disc"
 		end
@@ -67,9 +67,13 @@ MAP_RATIO = 840.0 / 1491.0
 	end
 
 	def new_team_logo(team)
-		image_path = "team_logos/" + team.team_name + "_logo.png"
+		image_path = "team_logos/" + team.name + "_logo.png"
 		image_tag image_path, :class => "team_logo"
 
 	end
+	def team_name_id_pairs
+		(Team.where(defunct: false).pluck(:name).map {|x| x.gsub("_", " ").capitalize}).zip(Team.pluck(:id))
+	end
+
 
 end

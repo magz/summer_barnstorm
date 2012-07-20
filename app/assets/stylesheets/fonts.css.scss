@@ -17,3 +17,37 @@
 	url("/assets/futura_lt_bold-webfont.otf") format("openttype");
 }
 
+@font-face {
+	font-family: "HelveticaNeueLTStd-Bd";
+	src: url('HelveticaNeueLTStd-Bd.eot');
+	src: local('☺'), 
+	url('HelveticaNeueLTStd-Bd.eot?#iefix') format('eot'), 
+	url('HelveticaNeueLTStd-Bd.eot?#iefix') format('embedded-opentype'), 
+	url("HelveticaNeueLTStd-Bd.otf") format("opentype");
+}
+
+@font-face {
+	font-family: 'FuturaMdBTBold';
+	src: url('FuturaMdBTBold.eot');
+	src: local('☺'), 
+	url('FuturaMdBTBold.woff') format('woff'), 
+	url('FuturaMdBTBold.ttf') format('truetype'), 
+	url('FuturaMdBTBold.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'FuturaMedium';
+	src: url('FuturaMedium.eot');
+	src: local('☺'), 
+	url('FuturaMedium.woff') format('woff'), 
+	url('FuturaMedium.ttf') format('truetype'), 
+	url("FuturaMedium.svg") format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+
+

@@ -11,18 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120622182620) do
+ActiveRecord::Schema.define(:version => 20120719234452) do
 
-  create_table "team_data", :force => true do |t|
-    t.string   "color"
-    t.string   "small_image"
-    t.integer  "x_map_point"
-    t.integer  "y_map_point"
-    t.datetime "created_at",                     :null => false
-    t.datetime "updated_at",                     :null => false
-    t.string   "city"
-    t.string   "team_name"
-    t.boolean  "done",        :default => false
+  create_table "emails", :force => true do |t|
+    t.integer  "team_id"
+    t.string   "address"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "teams", :force => true do |t|
@@ -30,7 +25,7 @@ ActiveRecord::Schema.define(:version => 20120622182620) do
     t.float    "x_map_point"
     t.float    "y_map_point"
     t.string   "city"
-    t.string   "team_name"
+    t.string   "name"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
     t.string   "twitter_tags"
@@ -38,6 +33,8 @@ ActiveRecord::Schema.define(:version => 20120622182620) do
     t.datetime "promo_end_date"
     t.string   "abbreviation"
     t.boolean  "defunct"
+    t.string   "alternate_names"
+    t.string   "tagline"
   end
 
   create_table "user_uploaded_images", :force => true do |t|
@@ -50,14 +47,6 @@ ActiveRecord::Schema.define(:version => 20120622182620) do
     t.integer  "team_id"
     t.string   "team1"
     t.string   "team2"
-  end
-
-  create_table "users", :force => true do |t|
-    t.string   "email"
-    t.string   "password_digest"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
-    t.string   "role"
   end
 
 end

@@ -3,10 +3,8 @@
 <table>
   <tr>
     <th>Color</th>
-    <th>X map point</th>
-    <th>Y map point</th>
+    <th>Name</th>
     <th>City</th>
-    <th>Team name</th>
     <th></th>
     <th></th>
     <th></th>
@@ -14,11 +12,9 @@
 
 <% @teams.each do |team| %>
   <tr>
-    <td><%= team.color %></td>
-    <td><%= team.x_map_point %></td>
-    <td><%= team.y_map_point %></td>
+    <td>#<%= team.color %></td>
+    <td><%= team.name %></td>
     <td><%= team.city %></td>
-    <td><%= team.team_name %></td>
     <td><%= link_to 'Show', team %></td>
     <td><%= link_to 'Edit', edit_team_path(team) %></td>
     <td><%= link_to 'Destroy', team, confirm: 'Are you sure?', method: :delete %></td>

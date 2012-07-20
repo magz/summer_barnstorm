@@ -1,57 +1,216 @@
+<%= stylesheet_link_tag "pennant_main" %>
+<%= stylesheet_link_tag "pennant_team" %>
+<%= stylesheet_link_tag "jquery.fancybox-1.3.4"%>
 
-<div id="top">
-	<div id="logo_box">
-		<%= image_tag "pennant_logo.png", :id => "logo" %>
-		<div id="header">
-      <em>Add your favorite baseball memories</em><br>
-			<span id="smaller">to contribute to the Summer Barnstorm scrapbook!<span>
-		</div>
-	</div>
+<%= javascript_include_tag "jquery.fancybox-1.3.4.pack" %>
+<%= javascript_include_tag "jquery.easing-1.3.pack" %>
 
-</div>
-<br>
-<div id="side_content">
+<%= render partial: "header" %>
 
-	<div id= "pitch_box">
-		Win World Series Tickets and<br>
-		celebrate your favorite team!
-	</div>
+<div id="toppspage-wrapper">
+  <div id="toppspage" class="center2">
+    <div id="topps_leftside"  >
+          <!-- <img id="pennant_logo" src="http://pennant.topps.com/wp-content/themes/weaver-ii-pro/graphics/pennant_logo.png" alt="Topps Pennant Logo" class="pngimg" /> -->
+          <%= image_tag "pennant_logo_large.png", id: "pennant_logo", class: "pngimg" %>
+          <div id="every_team_text" >
+<!--           Every team. Every game. Every play. 1952 to today.
+-->Kaline’s single. Gibby’s homer. Verlander’s no-hitter.<br>
+Every Tigers moment from 1952 to today.          </div>
+        
+                <div id="divider"   >
+            <!-- <img src="http://pennant.topps.com/wp-content/themes/weaver-ii-pro/graphics/divider.png" alt="DIVIDER" class="pngimg" /> --></div>
+  		    <div id="video1_link"><%= link_to image_tag("watch_the_trailer.png"), "http://player.vimeo.com/video/39739697?autoplay=1", class: "topps_video", id: "watch_the_trailer" %></div>
+          <div id="video2_link"><%= link_to (image_tag "watch_the_demo.png"), "http://player.vimeo.com/video/39745318?autoplay=1", class: "topps_video", id: "watch_the_demo" %></div>
 
-		<%= link_to (image_tag "appstore_logo.png", :id => "appstore_logo"), "http://google.com", :id => "appstore_logo_link" %><br>
-	
+          <div id="app_store_black" >
+            <%= link_to image_tag("app_store_button.png", id: "app_store_link", :style => {size: "221×77"}), "http://bit.ly/I9RkAM" %>          
 
-		<span style="font-size: .75em; padding-left: 8%;"> Available for iPhone and iPad. </span>
 
-    <%= render partial: "social_box" %>
-</div>
+          </div>
 
-<div  id="main_content">
+  		    <div id="available_text">
+              Available for <b>iPhone</b> and <b>iPad</b>.
+          </div>
 
-	<div id="map">
-		<%= image_tag "blank_us_map.png", :id => "map" %>
-		<% @teams.each do |team| %>
-			<%#= blank_disc team %>
-			<%#= team_logo team %>
-			<%= small_team_disc_generator team %>
+    </div>
+    <div id="rightside">
+      <div id="popup_page" >
+  <div id="about_text">
+    <span class="about_red">WHAT IS TOPPS PENNANT?</span><br />
+    <br />
+    At Topps, we want to build great things for fans. That’s it. The driving passion behind our products is we build things that we ourselves want to use as fans.
+    <br />
+    <br />
+    <span class="about_bold">Topps Pennant is the modern box score.</span> We, as fans, wanted one place to check out scores from last night’s game as well as relive meaningful baseball moments from 30 years ago. So we acquired the app, added new features, and are excited to bring it to our fellow baseball fans.
+    <br /><br /> 
+    Topps Pennant captures all the teams, all the games, and all the plays from last night’s game back to 1952. That’s nearly 60 years’ worth of baseball data brought to life and presented in elegant, interactive infographics on the iPad and now on the iPhone.
+    <br /><br />
+    With Topps Pennant, you can:
+    <ul>
+    <li>
+    Check out what happened in last night’s game
+    </li>
+    <li>
+    Chart your favorite team's performance and how they stacked up in the league from 1952 to today
+    </li>
+    <li>Relive your favorite baseball memories such as your first game, the games played on the day you were born, the game when you met your favorite player, and more
+    </li>
+    <li>Debate and solve questions around key historical moments
+    </li>
+    </ul>
+    <br />
+    Please check out our <a href="http://vimeo.com/39739697" target="_new">videos</a> or our <a href="https://toppspennant.zendesk.com/home" target="_new">product support page</a> for more detail.
+    <br /><br /> 
+    <span class="about_red"> 
+    HOW CAN I GET IT?
+    </span><br /> 
+    Topps Pennant is currently available in the Apple App Store for both iPhone and iPad. You can find the purchase link to the left. If you like the app, we encourage you to tell your friends. 
+  </div>
+</div> 
 
-		<% end %>
+    <div id="iphone"  > <%= image_tag "iphone_hand.png" %> </div>
+    <div id="iphone-overlay">
+      <div id="image_carousel">
+        <%= @overlay_images.each  do |x|  %>
+        <%= image_tag x, class: "iphone-overlay-image" %>
+        <% end %>
+      </div>
 
-	</div>
-	<div id="news_stories">
-		<span style="border-right: solid;"> <b>Recent Headlines </b></span>
-  	  <span id="news_links" style="padding-left: 20px;">	
-        <%= image_tag "techcrunch.png", id: "techcrunch" %>
-    		<%= image_tag "intomobile.png", id: "intomobile" %>
-    		<%= image_tag "nytimes.png",  id: "nytimes", :style => "top: 5px" %>
-      </span>
+    </div>
+
+      
+
+
+      <div class='pennant-iphone-pic'> </div>
+    
+
+
+
+  </div>
+
+
+
+
+
+
+
   </div>
 </div>
 
-  <%= link_to (image_tag "howto_tab.png", :style => "float:right; position: absolute; right: 0px; top: 75px; height: 10%;"), how_to_path %>
-  <%= render partial: "twitter_feed" %>
+
+
+<div id="about_layer"> 
+  
+  <!-- This is 'ABOUT_link' -->
+  <div id="about_open"> <%= link_to image_tag("about_link_open.png", width: "36", height: "58", alt: "ABOUT", class: "pngimg", border: "0"), "", id: "about_link_open" %></div>
+  <div id="about_close" >  <%= link_to image_tag("about_link_close.png", width: "36", height: "58", alt: "ABOUT", class: "pngimg", border: "0"), "", id: "about_link_close" %></div>
+</div>
+</div>
 
 
 
 
-<%= render partial: "sms_overlay" %> 
+
+
+<%= render partial: "footer" %>
+<%= render partial: "mailing_list_overlay" %>
+<%= render partial: "sms_overlay" %>
+
+<script>
+  $(document).ready(function() {
+    $("#about_link_open").click(function(e){
+      $("#about_open").hide();
+      $("#about_close").show();
+      $("#iphone").hide();
+      $("#iphone-overlay").hide();
+
+
+      $("#popup_page").show();
+      e.preventDefault(); 
+
+      
+
+    });
+    $("#about_link_close").click(function(e){
+      $("#about_close").hide();
+      $("#about_open").show();
+      $("#popup_page").hide();
+      $("#iphone").show();
+      $("#iphone-overlay").show();
+
+      e.preventDefault(); 
+
+      
+
+    });
+    $(".topps_video").fancybox({
+          'padding'   : 4,
+          'autoScale'   : false,
+          'transitionIn'  : 'none',
+          'transitionOut' : 'none',
+          'width'       : 700,
+          'height'    : 500,
+          'type'      : 'iframe',
+          'autoplay'    : 1,
+          'href'      : this.href
+     });
+
+    $("#app_store_link").hover(function() {
+      $(this).attr("src", "assets/app_store_button_hover.png");
+      $(this).attr("height", "77px");
+    },function(){
+      $(this).attr("src", "assets/app_store_button.png");
+    });
+    $("#watch_the_trailer").hover(function() {
+      console.log("hi again");
+      $(this).attr("src", "assets/watch_the_trailer_hover.png");
+    },function(){
+      $(this).attr("src", "assets/watch_the_trailer.png");
+    }
+
+
+
+
+    );
+
+    setTimeout(function() {
+      $("#image_carousel").animate({left: "-=375"}, 1000, function(){});
+          setTimeout(function() {
+            $("#image_carousel").animate({left: "-=375"}, 1000, function(){});
+                setTimeout(function() {
+                  $("#image_carousel").animate({left: "-=375"}, 1000, function(){});
+                }, 2000);
+
+          }, 2000);
+
+    }, 2000);
+
+  });
+
+<% unless @browser.mobile? %>
+  $(document).ready(function() {
+    $("#app_store_link").click(function(event){
+        if($("#sms_overlay").css("display") === "none") {
+          $("#sms_overlay").show();
+        }
+        else {
+          $("#sms_overlay").hide();
+        }
+        
+        event.preventDefault(); // Prevent link from following its href
+    });
+    
+
+
+
+  });
+<% end %>
+
+
+
+
+
+
+
+</script>
 

@@ -1,0 +1,40 @@
+<%= stylesheet_link_tag "email_list_overlay" %>
+
+<div id="email_list_overlay">
+<div id="window">
+    <%= image_tag "close_box.gif", id: "close_box" %>
+    <%= form_tag :email_list_signup, :remote => true, :id => "email_list_form" do |f|%>
+      <h4>Signup for our email list:</h4>
+      <h4>Email: </h4>
+       <br>
+       <%= text_field_tag "address" %>
+       <br><br>
+      <h4>And your favorite team: </h4>
+       <%= select_tag(:team, options_for_select(team_name_id_pairs), id: "team_select") %>
+       <br><br>
+       <%= submit_tag "Submit", :id => "sms_submit" %>
+    <% end %>
+
+  </div>
+ </div>
+
+
+
+
+<script>
+
+  $(document).ready(function() {
+    $("#email_list_overlay #close_box").click(function() {
+      $("#email_list_overlay").hide();});
+
+   $("#email_list_form").bind('ajax:before', function(data, status, xhr) {
+    alert("Thank you for your submission!  You've been added to our email list!");
+    $("#email_list_overlay").hide();
+    });
+   // $("#email_list_form").bind('ajax:failure', function(data, status, xhr) {alert("about to send!");});
+
+   // $("#email_list_form").bind('ajax:success', function(data, status, xhr) {alert("success!");});
+
+  });
+
+</script>

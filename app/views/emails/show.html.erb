@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Team:</b>
+  <%= @email.team_id %>
+</p>
+
+<p>
+  <b>Integer,:</b>
+  <%= @email.integer, %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @email.address %>
+</p>
+
+<p>
+  <b>String:</b>
+  <%= @email.string %>
+</p>
+
+
+<%= link_to 'Edit', edit_email_path(@email) %> |
+<%= link_to 'Back', emails_path %>

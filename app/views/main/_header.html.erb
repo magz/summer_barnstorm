@@ -1,0 +1,50 @@
+<%= stylesheet_link_tag "header" %>
+<header>
+	<div id="header_content_wrap">
+		<div class="link_div "><div class="inner_box"><%= link_to  "TOPPS BUNT", "http://bunt.topps.com" %></div></div>
+
+		<%= link_to (image_tag "white_topps_logo.png", id: "white_topps_logo"), "http://www.topps.com" %>
+		<div class="link_div link_div_current"><div class="inner_box">TOPPS PENNANT</div></div>
+
+		<%#= form_tag "/send_sms", :remote => true, :id => "email_list_signup" do |f| %>
+
+		<%#= text_field_tag :email_address, value="Join Our Mailing List!", id: "email_input" %> 
+		<%# end %>
+		<%= image_tag "mailinglist.png", id: "mailing_list_signup_button" %>
+	</div>
+</header>
+
+<script>
+$(document).ready(function() {
+    $("#mailing_list_signup_button").click(function(event){
+        if($("#email_list_overlay").css("display") === "none") {
+          $("#email_list_overlay").show();
+        }
+        else {
+          $("#email_list_overlay").hide();
+        }
+        
+        event.preventDefault(); // Prevent link from following its href
+    });
+
+
+}); 
+$(document).ready(function() {
+	$(document).keyup(function(e) {
+		 if(e.which == 13 && $("#email_input").attr("value") != "" && $("#email_list_signup #email_input").is(":focus")) {
+	  alert("Thank you for signing up for our email list!  You will start receiving emails shortly!");
+	  	$("#email_input").blur();
+
+	   	$.post("/send_sms", {email_address: $("#email_list_signup #email_input").attr("value"), mailing_list: true});
+	   	$("#email_input").attr("value", "Join Our Mailing List!");
+
+	   }
+	   });
+
+	   
+	  });
+
+
+
+
+</script>

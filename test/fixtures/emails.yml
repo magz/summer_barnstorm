@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  team_id: MyString
+  integer,: MyString
+  address: MyString
+  string: MyString
+
+two:
+  team_id: MyString
+  integer,: MyString
+  address: MyString
+  string: MyString

@@ -1,8 +1,13 @@
 class Team < ActiveRecord::Base
-	has_many :user_uploaded_images
+	has_many :user_uploaded_images 
+	has_many :mailing_list_emails
+ 	serialize :alternate_names, Array
 
-	attr_accessible :city, :color, :team_name, :x_map_point, :y_map_point, :twitter_tags, :abbreviation, :defunct
+
+	attr_accessible :city, :color, :name, :x_map_point, :y_map_point, :twitter_tags, :abbreviation, :defunct
 	serialize :twitter_tags, Array
+
+	default_scope :conditions => { :defunct => false }
 
 	def self.app_team_hash
 		{"CAL"=>"CALIFORNIA_ANGELS",

@@ -40,6 +40,10 @@ class TeamsController < ApplicationController
   # POST /teams
   # POST /teams.json
   def create
+    if params[:team][:alternate_names]
+      params[:team].update(alternate_names: params[:team][:alternate_names].gsub("\"", "").gsub("\\", "").gsub(",", "").gsub("]", "").gsub("[", "").split)
+    end
+    
     @team = Team.new(params[:team])
 
     respond_to do |format|
@@ -56,7 +60,13 @@ class TeamsController < ApplicationController
   # PUT /teams/1
   # PUT /teams/1.json
   def update
+
     @team = Team.find(params[:id])
+    if params[:team][:alternate_names]
+      params[:team].update(alternate_names: params[:team][:alternate_names].gsub("\"", "").gsub("\\", "").gsub(",", "").gsub("]", "").gsub("[", "").split)
+    end
+    logger.info "here it is: " +  params[:team][:alternate_names].to_s
+
 
     respond_to do |format|
       if @team.update_attributes(params[:team])

@@ -1,0 +1,650 @@
+/*
+ *  pennant.css
+ *
+ */
+ 
+ 
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'HelveticaNeueLTStd67MdCn';
+	background: url(<%= asset_path "background.jpeg" %>);
+	text-align: left;
+	font-size: 14px;
+	background-position: 0 0px;
+	min-width: 1000px;
+}
+html, body, div, span, iframe, wrap {
+	border: 0;
+	margin: 0;
+	outline: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+
+#toppspage-wrapper {
+	position: relative;
+	width: 100%;
+	margin: auto;
+}
+#toppspage {
+	background-position: 0 0;
+	left: +0px;
+	top: +0px;
+	width: 1180px;
+	z-index: 20;
+	position:relative;
+}
+/***** Topps Menu Begin *****/
+#topps_menu {
+	position:relative;
+	left: 0px;
+	top: 0px;
+	height: 48px;
+	z-index: 250;
+}
+a#pennant_home_link {
+	font-family: 'HelveticaNeueLTStd-Bd';
+	font-size:15px;
+	text-decoration: none;
+	color:white;
+	letter-spacing:.68px;
+	left: 21px;
+	top: 15px;
+	position: relative;
+}
+a#bunt_home_link {
+	font-family: 'HelveticaNeueLTStd-Bd';
+	font-size:15px;
+	text-decoration: none;
+	color:white;
+	letter-spacing:.68px;
+	left: 15px;
+	top: 15px;
+	position: relative;
+}
+#about_open, #about_close {
+	height: 58px;
+	position: absolute;
+	right:0;
+	top: 125px;
+	width: 36px;
+}
+#about_layer {
+	margin: auto;
+	position: absolute;
+	width: 100%;
+	z-index: 2500;
+}
+#about_close {
+	display:none;
+}
+#topps_logo {
+	position: relative;
+	left: 10px;
+	top: 8px;
+	width: 68px;
+	height: 31px;
+	z-index: 340;
+}
+#topps_logo_graphic {
+	width:68px;
+	height:31px;
+/*	background:url('../graphics/topps_logo.png') no-repeat;
+*/}
+#topps_menu_text {
+	color: #AAA9A9;
+	font-family: 'HelveticaNeueLTStd55Roman';
+	font-size: 15px;
+	height: 15px;
+	left: 450px;
+	letter-spacing: 0.68px;
+	position: absolute;
+	top: 14px;
+	width: 184px;
+	z-index: 330;
+}
+#twitter_linkover {
+	position: absolute;
+	left: 720px;
+	top: 48px;
+	width: 52px;
+	height: 22px;
+	z-index: 270;
+}
+#twitter_link {
+	position: absolute;
+	left: 720px;
+	top: 48px;
+	width: 52px;
+	height: 22px;
+	z-index: 280;
+}
+#facebook2_linkover {
+	position: absolute;
+	left: 645px;
+	top: 48px;
+	width: 52px;
+	height: 22px;
+	z-index: 270;
+}
+#facebook2_link {
+	position: absolute;
+	left: 645px;
+	top: 48px;
+	width: 52px;
+	height: 22px;
+	z-index: 280;
+}
+#facebook_linkover {
+	position: absolute;
+	left: 207px;
+	top: 19px;
+	width: 22px;
+	height: 22px;
+	z-index: 290;
+	display:none;
+}
+#facebook_link {
+	position: absolute;
+	left: 207px;
+	top: 19px;
+	width: 22px;
+	height: 22px;
+	z-index: 300;
+	display:none;
+}
+#bunt_link {
+	height: 48px;
+	left: 800px;
+	position: absolute;
+	top: 0;
+	width: 179px;
+	z-index: 310;
+}
+#pennant_link {
+	position: absolute;
+	left: 615px;
+	top: 0px;
+	width: 179px;
+	height: 48px;
+	z-index: 320;
+}
+#topps_menu a {
+	font-family: 'HelveticaNeueLTStd-Bd';
+	font-size:15px;
+	text-decoration: none;
+	color:white;
+	letter-spacing:.68px;
+}
+body#pennant_home #pennant_link, body#bunt_home #bunt_link, body#pennant_terms #pennant_link, body#pennant_privacy #pennant_link, body#pennant_rules #pennant_link {
+	color: white;
+/*	background:url('../graphics/menu_selected_background.jpg');
+*/}
+/***** Topps Menu End *****/
+
+/***** About Begin ****/
+
+#popup_page {
+	color: black;
+/*	font-family: "Puritan", sans-serif;
+*/	font-family: 'FuturaMedium';
+	font-size: 16px;
+	height: 690px;
+	left: 100px;
+	letter-spacing: 0.0065em;
+	line-height: 17px;
+	position: absolute;
+	top: 125px;
+	width: 497px;
+	z-index: 264;
+	display:none;
+
+}
+.about_red {
+	color: #7D090F;
+	font-weight: bold;	
+	font-family: 'FuturaMdBTBold';
+	font-size:16px;
+}
+.about_bold {
+	color: black;
+	font-weight: bold;
+	font-family: 'FuturaMdBTBold';
+}
+#popup_page ul {
+	margin: 0;
+	padding-left: 16px;
+/*	list-style-image:url('../graphics/red_dot.png');
+*/}
+/***** About End ****/
+
+
+/***** Topps Footer Begin ****/ 
+
+#topps_footer {
+	height: 60px;
+	left: 0;
+	position: absolute;
+	top: 832px;
+	width: 100%;
+	z-index: 70;
+}
+
+body.player #topps_footer, body.team #topps_footer {
+	background-color: #4E4E4E; 
+	z-index:600;
+	
+}
+
+
+#footer_text {
+/*	font-family: 'HelveticaNeueLTStd57Condensed';
+*/	position: absolute;
+	left: 15px;
+	top: 8px;
+	height: 37px;
+	z-index: 80;
+	font-size:11px;
+	color:white;
+	line-height:14px;
+	width: 700px;
+}
+#MLB_link {
+	position: absolute;
+	left: 970px;
+	top: 13px;
+	width: 120px;
+	height: 32px;
+	z-index: 100;
+}
+#MLBPA_link {
+	height: 50px;
+	left: 1110px;
+	position: absolute;
+	top: 6px;
+	width: 53px;
+	z-index: 140;
+}
+#topps_footer a {
+	text-decoration:none;
+	font-weight:bold;
+	color:white;
+	font-size:11px;
+/*	font-family: 'HelveticaNeueLTStd57Condensed';
+*/}
+#topps_footer a:hover {
+	text-decoration:underline;
+}
+*//***** Topps Footer End *** 
+
+/***** Topps Left Side Begin ****/
+
+#topps_leftside {
+	position: absolute;
+	left: 0px;
+	top: 111px;
+	width: 664px;
+	height: 674px;
+	z-index: 110;
+	display:inline;
+}
+/* You named this layer Topps Pennant Logo */
+#pennant_logo {
+	position: absolute;
+	left: 114px;
+	top: 41px;
+	width: 417px;
+	height: 157px;
+	z-index: 240;
+}
+#every_team_text {
+	font-weight: bold;
+	font-family: 'FuturaMdBTBold';
+	font-size: 28px;
+	height: 72px;
+	left: 32px;
+	letter-spacing: 0.0065em;
+	line-height: 41px;
+	position: absolute;
+	text-align: center;
+	top: 211px;
+	width: 599px;
+	z-index: 230;
+}
+#divider {
+	position: absolute;
+	left: 154px;
+	top: 320px;
+	width: 365px;
+	height: 1px;
+	z-index: 220;
+	display:none;
+}
+#video1_link {
+	height: 95px;
+	left: 144px;
+	position: absolute;
+	top: 323px;
+	width: 169px;
+	z-index: 200;
+}
+#video2_link {
+	height: 95px;
+	left: 328px;
+	position: absolute;
+	top: 323px;
+	width: 169px;
+	z-index: 210;
+}
+#video1_link a, #video2_link a, #video1_link a:hover, #video2_link a:hover {
+	height:95px;
+	width: 169px;
+	display:block;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+#app_store_black {
+	position: absolute;
+	left: 234px;
+	top: 447px;
+	width: 175px;
+	height: 61px;
+	z-index: 190;
+}
+#app_store_red {
+	position: absolute;
+	left: 234px;
+	top: 447px;
+	width: 175px;
+	height: 61px;
+	z-index: 192;
+}
+#available_text {
+	font-family: 'FuturaMedium';
+	font-size: 13px;
+	height: 15px;
+	left: 232px;
+	position: absolute;
+	text-align: center;
+	top: 514px;
+	width: 178px;
+	z-index: 180;
+}
+#apple_design_winner {
+	font-family: 'FuturaMdBTBold';
+	font-size: 13px;
+	height: 14px;
+	left: 161px;
+	letter-spacing: 0;
+	position: absolute;
+	top: 549px;
+	width: 245px;
+	z-index: 170;
+}
+#right_arrow {
+	position: absolute;
+	left: 508px;
+	top: 584px;
+	width: 10px;
+	height: 19px;
+	z-index: 140;
+}
+#left_arrow {
+	position: absolute;
+	left: 129px;
+	top: 584px;
+	width: 10px;
+	height: 19px;
+	z-index: 150;
+}
+#quote_text {
+/*	font-family: 'Futuramedium';
+*/	font-size: 0.95em;
+	height: 47px;
+	left: 161px;
+	letter-spacing: 0.024em;
+	line-height: 15px;
+	position: absolute;
+	top: 571px;
+	width: 326px;
+	z-index: 160;
+}
+#source_logo {
+	height: 25px;
+	left: 367px;
+	position: absolute;
+	top: 643px;
+	width: 125px;
+	z-index: 130;
+}
+#source_logo img {
+	border:none;
+}
+/***** Topps Left Side End ***/
+
+
+/**** Topps Rightside Begin***/
+#rightside {
+	display: inline;
+	left: 500px;
+	position: absolute;
+	top: 87px;
+	width: 745px;
+	z-index: 530;
+}
+#iphone {
+	position: absolute;
+	left: 9px;
+	top: 93px;
+	width: 698px;
+	height: 652px;
+	z-index: 40;
+	background-repeat:no-repeat;
+}
+body.player #iphone, body.team #iphone {
+	top: 134px;
+}
+#player-container {
+	display: none;
+}
+body.player #player-container {
+	display:block;
+}
+#team-box {
+	display: none;
+}
+body.team #team-box {
+	display:block;
+}
+#team-box {
+	position: relative;
+	top:6px;
+	left:200px;
+	width:372px;
+	height:149px;
+	z-index: 350;
+	font-size:18px;
+}
+#team-img {
+	position:absolute;
+	top:0;
+	left:0;
+	height:100%;
+	width:100%;
+	z-index:352;
+}
+#player-container {
+	position: relative;
+	top:7px;
+	left:200px;
+	width:373px;
+	height:147px;
+	z-index: 350;
+	-webkit-perspective: 1000px;
+	-moz-perspective: 1000px;
+	-o-perspective: 1000px;
+	-ms-perspective: 1000px;
+	perspective: 1000px;
+	cursor: pointer;
+}
+#player-front-text, #player-back-text, #team-text {
+	width:100%;
+ height:100%  position: absolute;
+	top:0;
+	left:0;
+}
+#team-text {
+/*	font-family: 'FuturaBook';
+*/	font-size: 16px;
+	height: 100%;
+	left: 0;
+	line-height: 25px;
+	padding: 15px 0 0 113px;
+	position: absolute;
+	top: 0;
+	width: 240px;
+	z-index: 355;
+}
+#player-front, #player-back {
+	font-family: "Puritan", sans-serif;
+	font-family: 'FuturaMedium';
+}
+#player-front {
+	padding: 15px 0px 12px 22px;
+	font-size: 18px;
+	line-height: 20px;
+}
+#player-back-text {
+	padding:15px 0px 0px 22px;
+	width:340px;
+	font-size:17px;
+	line-height:20px;
+}
+#player-card {
+	width:100%;
+	height:100%;
+	position: absolute;
+	-webkit-transform-style: preserve-3d;
+ -webkit-transition: all .70s linear;
+	-moz-transform-style: preserve-3d;
+ -moz-transition: all .70s linear;
+	-o-transform-style: preserve-3d;
+ -o-transition: all .70s linear;
+	-ms-transform-style: preserve-3d;
+ -ms-transition: all .70s linear;
+	transform-style: preserve-3d;
+ transition: all .70s linear;
+}
+#player-front, #player-back {
+	background-color:transparent;
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility:hidden;
+	-o-backface-visibility: hidden;
+	-ms-backface-visibility: hidden;
+	-moz-transform-style: preserve-3d;
+ -moz-transition: all .70s linear;
+}
+#player-back {
+	-webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+	-o-transform: rotateY(180deg);
+	-ms-transform: rotateY(180deg);
+	transform: rotateY(180deg);
+	width:100%;
+}
+#player-card.flipped {
+	-webkit-transform: rotateY(-180deg);
+	-moz-transform: rotateY(-180deg);
+	-o-transform: rotateY(-180deg);
+	-ms-transform: rotateY(-180deg);
+	transform: rotateY(-180deg);
+}
+.player-bold {
+	font-family: "Puritan", sans-serif;
+	font-weight: bold;
+	font-family:'FuturaMdBTBold';
+	font-size:18px;
+}
+.team-bold {
+/*	font-family: 'FuturaBook';
+*/	font-size: 18px;
+	font-weight: bold;
+	padding-bottom:8px;
+}
+.player-iphone-pic {
+	left:207px;
+	position:absolute;
+	top:326px;
+	z-index:50;
+}
+#everwonder {
+	color: black;
+	font-family: "Puritan", sans-serif;
+	font-family: 'FuturaMedium';
+	font-size: 26px;
+	height: 63px;
+	left: 187px;
+	letter-spacing: -0.006em;
+	line-height: 34px;
+	position: absolute;
+	top: 33px;
+	width: 440px;
+	z-index: 60;
+}
+body.player #everwonder {
+	display:none;
+}
+
+.fut_bold_red {
+	color: #7D090F;
+	font-family: "Puritan", sans-serif;
+	font-weight: bold;
+	font-family: 'FuturaMdBTBold';
+	font-size: 26px;
+	letter-spacing: 0;
+}
+/**** Topps Rightside End***/
+
+a {
+	cursor: pointer;
+	outline: none;
+}
+.menu_msg {
+	color: white;
+	font-size: 16px;
+	letter-spacing: 0.022em;
+}
+.menu_msg {
+	font-family: 'HelveticaNeueLTStd55Roman';
+}
+.center2 {
+	margin-left: auto;
+	margin-right: auto;
+}
+#terms_text, #privacy_text, #rules_text {
+	width:100%;
+	height:650px;
+	overflow:auto;
+}
+#red_dot_bullet {
+	background: url("<%= asset_path "red_dot.png" %>") no-repeat scroll left top transparent;
+	float: left;
+	height: 6px;
+	position: relative;
+	top: 7px;
+	width: 16px;
+}
+.pennant-iphone-pic {
+	left: 207px;
+	position: absolute;
+	top: 285px;
+	z-index: 70;
+}
