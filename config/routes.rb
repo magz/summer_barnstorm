@@ -13,7 +13,7 @@ SummerBarnstorm::Application.routes.draw do
   match "how_to" => "main#how_to", :as => :how_to
 
 
-  #where is this supposed to go?
+  # #where is this supposed to go?
   match "redirector" => "main#team_page_redirector", :as => :redirector
 
 
@@ -23,10 +23,9 @@ SummerBarnstorm::Application.routes.draw do
   match "/send_link" => "main#send_link", :via => :post, :as => :send_link
   match "mail_list_signup" => "emails#create", via: :post, as: :email_list_signup
 
-  match "/mobile"
 
   
   match "timecapsule" => "main#timecapsule", :as => :timecapsule
-  root :to => 'main#welcome'
 
+  root :to => 'main#welcome'
 end
