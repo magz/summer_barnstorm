@@ -13,14 +13,13 @@
           <!-- <img id="pennant_logo" src="http://pennant.topps.com/wp-content/themes/weaver-ii-pro/graphics/pennant_logo.png" alt="Topps Pennant Logo" class="pngimg" /> -->
           <%= image_tag "pennant_logo_large.png", id: "pennant_logo", class: "pngimg" %>
           <div id="every_team_text" >
-<!--           Every team. Every game. Every play. 1952 to today.
--->Kaline’s single. Gibby’s homer. Verlander’s no-hitter.<br>
+Kaline’s single. Gibby’s homer. Verlander’s no-hitter.<br>
 Every Tigers moment from 1952 to today.          </div>
         
-                <div id="divider"   >
-            <!-- <img src="http://pennant.topps.com/wp-content/themes/weaver-ii-pro/graphics/divider.png" alt="DIVIDER" class="pngimg" /> --></div>
-  		    <div id="video1_link"><%= link_to image_tag("watch_the_trailer.png"), "http://player.vimeo.com/video/39739697?autoplay=1", class: "topps_video", id: "watch_the_trailer" %></div>
-          <div id="video2_link"><%= link_to (image_tag "watch_the_demo.png"), "http://player.vimeo.com/video/39745318?autoplay=1", class: "topps_video", id: "watch_the_demo" %></div>
+  		    <%= link_to image_tag("watch_the_trailer.png", id: "watch_the_trailer"), "http://player.vimeo.com/video/39739697?autoplay=1", class: "topps_video"
+          %>
+          <%= link_to (image_tag "watch_the_demo.png", id: "watch_the_demo"), "http://player.vimeo.com/video/39745318?autoplay=1", class: "topps_video"
+           %>
 
           <div id="app_store_black" >
             <%= link_to image_tag("app_store_button.png", id: "app_store_link", :style => {size: "221×77"}), "http://bit.ly/I9RkAM" %>          
@@ -162,16 +161,19 @@ Every Tigers moment from 1952 to today.          </div>
       $(this).attr("src", "assets/app_store_button.png");
     });
     $("#watch_the_trailer").hover(function() {
-      console.log("hi again");
-      $(this).attr("src", "assets/watch_the_trailer_hover.png");
+      $(this).attr("src", "/assets/watch_the_trailer_hover.png");
     },function(){
-      $(this).attr("src", "assets/watch_the_trailer.png");
-    }
+      $(this).attr("src", "/assets/watch_the_trailer.png");
+    });
+    $("#watch_the_demo").hover(function() {
+      $(this).attr("src", "/assets/watch_the_demo_hover.png");
+    },function(){
+      $(this).attr("src", "/assets/watch_the_demo.png");
+    });
 
 
 
 
-    );
 
     setTimeout(function() {
       $("#image_carousel").animate({left: "-=375"}, 1000, function(){});
