@@ -6,6 +6,7 @@ gem 'pg'
 gem "pony"
 gem "moonshado-sms"
 gem "taps"
+gem "twitter", "~> 3.3.1"
 
 
 group :assets do

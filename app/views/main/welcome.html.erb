@@ -174,18 +174,18 @@ Every Tigers moment from 1952 to today.          </div>
 
 
 
-
+    var slide_delay = 4500;
     setTimeout(function() {
-      $("#image_carousel").animate({left: "-=375"}, 1000, function(){});
+      $("#image_carousel").animate({left: "-=375"}, 1500, function(){});
           setTimeout(function() {
-            $("#image_carousel").animate({left: "-=375"}, 1000, function(){});
+            $("#image_carousel").animate({left: "-=375"}, 1500, function(){});
                 setTimeout(function() {
-                  $("#image_carousel").animate({left: "-=375"}, 1000, function(){});
-                }, 2000);
+                  $("#image_carousel").animate({left: "-=375"}, 1500, function(){});
+                }, slide_delay);
 
-          }, 2000);
+          }, slide_delay);
 
-    }, 2000);
+    }, slide_delay*1.5);
 
   });
 

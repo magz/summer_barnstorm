@@ -12,7 +12,7 @@ class MainController < ApplicationController
       # end
 
       # @overlay_images = get_overlay_images(@team_info[:team])
-      @overlay_images = get_overlay_images(nil)
+      @overlay_images = get_overlay_images(params[:team])
 
 
     end
@@ -47,6 +47,7 @@ class MainController < ApplicationController
     end
 
     if params[:mailing_list] && params[:email_address] != "" 
+      puts "ok we're in the emailer"
       Pony.mail(:to => params[:email_address], :from => 'support@pennant.topps.com', 
         :subject => "Topps Bunt App Store Link", :body => "Topps Pennant in the App Store! http://bit.ly/I9RkAM")
       return_message += "email_message_sent"
