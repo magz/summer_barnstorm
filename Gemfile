@@ -5,7 +5,7 @@ gem 'rails', '3.2.3'
 gem 'pg'
 gem "pony"
 gem "moonshado-sms"
-
+gem "taps"
 
 
 group :assets do
