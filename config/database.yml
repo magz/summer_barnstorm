@@ -18,6 +18,7 @@ defaults: &defaults
   timeout: 5000
   username: postgres
   password: starmane
+  port: 5433
 
 
   
