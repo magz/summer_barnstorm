@@ -1,4 +1,15 @@
 <%= stylesheet_link_tag "header" %>
+<% if @team %>
+	<head>
+		<style type="text/css">
+			header, .link_div {
+				background-color: <%= @team.color %>;
+			}
+			.link_div .inner_box a {color: white;}
+		</style>
+	</head>
+<% end %>
+
 <header>
 	<div id="header_content_wrap">
 		<div class="link_div "><div class="inner_box"><%= link_to  "TOPPS BUNT", "http://bunt.topps.com" %></div></div>

@@ -5,14 +5,9 @@ class MainController < ApplicationController
     def welcome
 
       logger.info @browser
-      # if params[:team]
-      #   @team_info = generate_team_hash(params[:team])
-    
-
-      # end
-
-      # @overlay_images = get_overlay_images(@team_info[:team])
-      @overlay_images = get_overlay_images(params[:team])
+      
+      @team = Team.find_by_name (params[:team] || params[:team1])
+      @overlay_images = get_overlay_images(@team)
 
 
     end

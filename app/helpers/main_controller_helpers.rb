@@ -9,15 +9,15 @@ module MainControllerHelpers
 	end
 
 	def get_overlay_images(team)
-		team ||= "tigers"
+		team ||= Team.find_by_name "tigers"
 		card_path = "iphone_overlay_cards/"
 		overlay_images = []
 
 		if team
-			overlay_images << card_path + team + "_memories.jpg"
-			overlay_images << card_path + team + "_futurecard.jpg"
-			overlay_images << card_path + team + "_sharecard.jpg"
-			overlay_images << card_path + team + "_titlecard.jpg"
+			overlay_images << card_path + team.name + "_memories.jpg"
+			overlay_images << card_path + team.name + "_futurecard.jpg"
+			overlay_images << card_path + team.name + "_sharecard.jpg"
+			overlay_images << card_path + team.name + "_titlecard.jpg"
 		end
 
 		overlay_images

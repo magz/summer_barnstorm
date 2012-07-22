@@ -28,6 +28,7 @@ SummerBarnstorm::Application.routes.draw do
 
   
   match "timecapsule" => "main#timecapsule", :as => :timecapsule
+  match "/:team" => "main#welcome"
   root :to => 'main#welcome'
 
 end
