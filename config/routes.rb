@@ -2,8 +2,8 @@ SummerBarnstorm::Application.routes.draw do
 
 
   resources :emails
-  resources :user_uploaded_images
-  resources :teams
+  #resources :user_uploaded_images
+  #resources :teams
 
 
 
