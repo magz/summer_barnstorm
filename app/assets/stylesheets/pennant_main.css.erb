@@ -22,6 +22,12 @@ html, body, div, span, iframe, wrap {
 	vertical-align: baseline;
 }
 
+/* fix for ie */
+
+a img {border: 0;}
+img a {border: 0;}
+
+
 #toppspage-wrapper {
 	position: relative;
 	width: 100%;
@@ -229,7 +235,7 @@ body#pennant_home #pennant_link, body#bunt_home #bunt_link, body#pennant_terms #
 	top: 832px;
 	width: 100%;
 	z-index: 70;
-	
+
 }
 
 body.player #topps_footer, body.team #topps_footer {
