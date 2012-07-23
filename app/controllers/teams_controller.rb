@@ -67,6 +67,7 @@ class TeamsController < ApplicationController
     end
     logger.info "here it is: " +  params[:team][:alternate_names].to_s
 
+    puts params[:team]
 
     respond_to do |format|
       if @team.update_attributes(params[:team])
