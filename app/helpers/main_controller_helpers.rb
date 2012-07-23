@@ -16,7 +16,7 @@ module MainControllerHelpers
 
 		if team == "default"
 			overlay_images = ["default_memories.jpg", "default_futurecard.jpg", 
-				"default_sharecard", "tigers_3.jpg", "braves_1.jpg", "giants_2.jpg",
+				"default_sharecard.jpg", "tigers_3.jpg", "braves_1.jpg", "giants_2.jpg",
 				"yankees_2.jpg", "red_sox_2.jpg", "cardinals_1.jpg", "default_titlecard.jpg"]
 			overlay_images.map! {|x| card_path + x}
 		else
