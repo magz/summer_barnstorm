@@ -9,7 +9,11 @@ class MainController < ApplicationController
       
       if team_param != nil
         team_param = "athletics" if team_param == "as"
-        team_param = "diamondbacks" if team_param == "dbacks"  
+        team_param = "diamondbacks" if team_param == "dbacks"
+        team_param = "white_sox" if team_param == "whitesox"
+        team_param = "red_sox" if team_param == "redsox"  
+        team_param = "blue_jays" if team_param == "blue_jays"
+          
         team_param = Team.team_hash2[team_param.upcase] if team_param.length == 3
       end
       @team = Team.find_by_name team_param
