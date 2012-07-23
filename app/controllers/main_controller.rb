@@ -6,11 +6,17 @@ class MainController < ApplicationController
 
       logger.info @browser
       team_param = (params[:team] || params[:team1])
-      @team = Team.find_by_name team_param
-      puts team_param
-      if (@team == nil) && team_param
-        @team = Team.find_by_name Team.team_hash2[team_param.upcase]
+      
+      if team_param
+        team_param = "athletics" if team_param == "as"
+        team_param = "diamondbacks" if team_param == "dbacks"  
+        team_param = Team.team_hash2[team_param.upcase] if team_param.length == 3
       end
+      @team = Team.find_by_name team_param
+
+      # if (@team == nil) && team_param
+      #   @team = Team.find_by_name Team.team_hash2[team_param.upcase]
+      # end
       @overlay_images = get_overlay_images(@team)
 
 

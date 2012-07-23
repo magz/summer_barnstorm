@@ -57,7 +57,7 @@ class Team < ActiveRecord::Base
 	end
 
 def self.team_hash2
-			{"ANA"=>"angles",
+			{"ANA"=>"angels",
  		"HOU"=>"astors",
  		"OAK"=>"athletics",
  		"PHA"=>"as",
