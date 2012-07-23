@@ -1,0 +1,300 @@
+
+a img {
+  border:none;
+}
+
+body {
+	background-image: url("promo_page/cloud_background.jpg");
+	min-width: 1134px;
+}
+
+#stadium {
+  display: block;
+  position: absolute;
+  width: 1134px;
+  left: 50%;
+  margin-left: -567px;
+
+}
+#bottom_slogan {
+  left: 50%;
+  margin-left: -567px;
+  position: absolute;
+  display: block;
+  top: 590px;
+  z-index: 1000;
+  min-width: 1134px;
+  width: 1134px;
+}
+#header {
+	width: 100%
+}
+footer {
+  left: 50%;
+  margin-left: -567px;
+  position: absolute;
+  display: block;
+  top: 605px;
+  z-index: 1000;
+  min-width: 1134px;
+  width: 1134px;
+
+
+
+
+}
+
+#focus_avatar {
+	left: 30px;
+}
+
+#focus_avatar_section #focus_avatar_message {
+	left: 60px;
+	font-size: 1.7em;
+	padding-top: 5px;
+}
+
+#focus_avatar_section #user_info {
+	left: 282px;
+}
+
+#focus_avatar_section #team_logo {
+	left: 450px;
+}
+
+
+#focus_avatar_section #get_the_app_button {
+	left: 125px;
+}
+
+.hover_message_box {
+	height: 115px;
+	width: 210px;
+	padding: 8px;
+ }
+
+
+#bear_right_corner{
+	left: 735px;
+	top: 188px;
+}
+
+#bear_right_corner .hover_hotspot {
+	height: 155px;
+	width: 129px;
+	left: 150px;
+	top: 130px;
+
+}
+
+
+#bear_right_of_main{
+	top: 65px;
+	left: 430px;
+}
+
+#bear_right_of_main .hover_hotspot {
+	height: 90px;
+	width: 129px;
+	left: 18px;
+	top: 170px;
+}
+
+#bear_right_of_main .hover_message_box {
+	left: 150px;
+
+}
+
+#beards {
+	left: 325px;
+	top: 47px;
+}
+
+
+#beards .hover_hotspot {
+	height: 150px;
+	width: 150px;
+	top: 130px;
+	left: 60px;
+}
+
+#beards .hover_message_box {
+	left: 180px;
+	top: -3px;
+	height: 105px;
+	width: 200px;	
+}
+
+#hipster {
+	left: 716px;
+	top: 30px;
+}
+
+
+#hipster .hover_hotspot {
+	height: 125px;
+	width: 125px;
+	top: 158px;
+	left: 120px;
+	z-index: 1000;
+}
+
+#hipster .hover_message_box {
+	top: 3px;
+	left: 5px;
+	height: 100px;
+	width: 190px;
+}
+
+
+#kid_right_corner {
+	left: 710px;
+	top: 190px;
+}
+
+
+#kid_right_corner .hover_hotspot {
+	height: 150px;
+	width: 150px;
+	left: 150px;
+	top: 130px;
+}
+
+#kid_right_corner .hover_message_box {
+	left: 8px;
+	height: 100px;
+	width: 190px;
+}
+
+#kid_right_of_main {
+	top: 80px;
+	left: 360px;
+	z-index: 17;
+
+}
+
+#orangekid_left_of_main {
+	z-index: 17;
+	top: 150px;
+	left: -45px;
+}
+#orangekid_right_of_main {}
+
+#orangekid_right_corner {
+	left: 730px;
+	top: 189px;
+}
+
+
+#orangekid_right_corner .hover_hotspot {
+	height: 150px;
+	width: 150px;
+	left: 150px;
+	top: 130px;
+}
+#phanatic {
+	left: 635px;
+	top: 0px;
+}
+
+
+#phanatic .hover_hotspot {
+	height: 140px;
+	width: 150px;
+	left: 250px;	
+}
+
+#cropped_phanatic {
+	left: 636px;
+	top: 0px;
+}
+
+
+#cropped_phanatic .hover_hotspot {
+	height: 140px;
+	width: 150px;
+	left: 250px;	
+}
+
+
+#phanatic .hover_message_box {
+	left: 5px;
+	top: 7px;
+}
+#pigeon {
+	left: 680px;
+	top: 152px;
+}
+
+#pigeon .hover_hotspot {
+	height: 140px;
+	width: 150px;
+	top: 140px;
+	left: 10px;
+}
+
+#pigeon .hover_message_box {
+	top: 5px;
+	left: 120px;
+}
+
+#redgirl {
+	left: 516px;
+	top: 8px;
+}
+
+
+#redgirl .hover_hotspot {
+	top: 30px;
+	left: 60px;
+	height: 140px;
+	width: 150px;
+}
+
+#redgirl .hover_message_box {
+	left: 200px;
+	top: 5px;
+}
+
+
+#bubblegum {
+	left: 590px;
+	top: 120px;
+}
+
+
+#bubblegum .hover_hotspot {
+	height: 140px;
+	width: 120px;
+	left: 150px;
+	top: 110px;
+}
+
+#bubblegum .hover_message_box {
+	height: 100px;
+	width: 190px;
+}
+
+#goat {
+	left: 540px;
+	top: 120px;
+}
+
+
+#goat .hover_hotspot {
+	height: 160px;
+	width: 120px;
+	left: 150px;
+	top: 110px;
+}
+
+#goat .hover_message_box {
+	top: 5px;
+	left: 10px;
+	height: 100px;
+	width: 190px;
+	margin-top: 5px;
+}
+
+
+

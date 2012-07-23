@@ -1,0 +1,31 @@
+/*@font-face {
+	font-family: "HermesBold";
+	src: url('/assets/hermes/HermesFB-Bold.eot');
+	src: url('/assets/hermes/HermesFB-Bold.eot?#iefix') format('embedded-opentype'), 
+	url("hermes/HermesFB-Bold.otf") format("opentype");
+}
+
+@font-face {
+	font-family: "HelveticaNeueBold";
+	src: url('/assets/helvetica_neue/HelveticaNeueLTStd-Bd.eot');
+	src: local('☺'), url('/assets/helvetica_neue/HelveticaNeueLTStd-Bd.eot?#iefix') format('eot'), url('/assets/helvetica_neue/HelveticaNeueLTStd-Bd.eot?#iefix') format('embedded-opentype'), 
+	url("/assets/helvetica_neue/HelveticaNeueLTStd-Bd.otf") format("opentype");
+}
+*/
+
+@font-face {
+	font-family: "HermesBold";
+	src: url('HermesFB-Bold.eot');
+	src: local('☺'), 
+	url('HermesFB-Bold.eot?#iefix') format('eot'), 
+	url('HermesFB-Bold.eot?#iefix') format('embedded-opentype'), 
+	url("HermesFB-Bold.otf") format("opentype");
+}
+@font-face {
+	font-family: "HelveticaNeueBold";
+	src: url('HelveticaNeueLTStd-Bd.eot');
+	src: local('☺'), 
+	url('HelveticaNeueLTStd-Bd.eot?#iefix') format('eot'), 
+	url('HelveticaNeueLTStd-Bd.eot?#iefix') format('embedded-opentype'), 
+	url("HelveticaNeueLTStd-Bd.otf") format("opentype");
+}
