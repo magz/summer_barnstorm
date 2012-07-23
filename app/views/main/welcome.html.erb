@@ -151,12 +151,6 @@
           'href'      : this.href
      });
 
-    // $("#app_store_link").hover(function() {
-    //   $(this).attr("src", "assets/app_store_button_hover.png");
-    //   $(this).attr("height", "77px");
-    // },function(){
-    //   $(this).attr("src", "assets/app_store_button.png");
-    // });
     $("#watch_the_trailer").hover(function() {
       $(this).attr("src", "/assets/watch_the_trailer_hover.png");
     },function(){
@@ -175,8 +169,27 @@
     var x = parseInt(<%= @overlay_images.count %>) - 1
   console.log(x); 
   for(var i = 0; i < x; i++) {
-  $("#image_carousel").delay(3000).animate({left: "-=375"}, 1500, function(){})
+  $("#image_carousel").delay(3000).animate({left: "-=375"}, 1500, function(){});
   }
+  
+    $("#pennant_logo").click(function(){
+      alert("hi magz");
+      var slide_delay = 4500;
+      var x = parseInt(<%= @overlay_images.count %>) - 1;
+      var reset_amount = 375 * x;
+      $("#image_carousel").animate({left: "+=" + x * 375}, 2000, function(){});
+      for(var i = 0; i < x; i++) {
+      $("#image_carousel").delay(3000).animate({left: "-=375"}, 1500, function(){})
+    }
+
+
+
+
+
+    });
+
+
+
   });
 <% unless @browser.mobile? %>
   $(document).ready(function() {
