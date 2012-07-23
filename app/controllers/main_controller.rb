@@ -10,7 +10,7 @@ class MainController < ApplicationController
       if team_param != nil
         team_param = "athletics" if team_param == "as"
         team_param = "diamondbacks" if team_param == "dbacks"  
-        # team_param.gsub!("_", "").gsub!("%20", "")
+        team_param.gsub!("_", "").gsub!("%20", "")
         team_param = Team.team_hash2[team_param.upcase] if team_param.length == 3
       end
       @team = Team.find_by_name team_param
