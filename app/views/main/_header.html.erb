@@ -1,4 +1,15 @@
 <%= stylesheet_link_tag "header" %>
+<% if false %>
+	<head>
+		<style type="text/css">
+			header, .link_div {
+				background-color: <%= @team.color %>;
+			}
+			.link_div .inner_box a {color: white;}
+		</style>
+	</head>
+<% end %>
+
 <header>
 	<div id="header_content_wrap">
 		<div class="link_div "><div class="inner_box"><%= link_to  "TOPPS BUNT", "http://bunt.topps.com" %></div></div>
@@ -6,10 +17,6 @@
 		<%= link_to (image_tag "white_topps_logo.png", id: "white_topps_logo"), "http://www.topps.com" %>
 		<div class="link_div link_div_current"><div class="inner_box">TOPPS PENNANT</div></div>
 
-		<%#= form_tag "/send_sms", :remote => true, :id => "email_list_signup" do |f| %>
-
-		<%#= text_field_tag :email_address, value="Join Our Mailing List!", id: "email_input" %> 
-		<%# end %>
 		<%= image_tag "mailinglist.png", id: "mailing_list_signup_button" %>
 	</div>
 </header>

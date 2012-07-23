@@ -1,20 +1,18 @@
-<%= stylesheet_link_tag "pennant_main" %>
-<%= stylesheet_link_tag "pennant_team" %>
+<%#= stylesheet_link_tag "pennant_main" %>
+<%#= stylesheet_link_tag "pennant_team" %>
 <%= stylesheet_link_tag "jquery.fancybox-1.3.4"%>
 
 <%= javascript_include_tag "jquery.fancybox-1.3.4.pack" %>
 <%= javascript_include_tag "jquery.easing-1.3.pack" %>
 
-<%= render partial: "header" %>
+<%#= render partial: "header" %>
 
 <div id="toppspage-wrapper">
   <div id="toppspage" class="center2">
     <div id="topps_leftside"  >
           <!-- <img id="pennant_logo" src="http://pennant.topps.com/wp-content/themes/weaver-ii-pro/graphics/pennant_logo.png" alt="Topps Pennant Logo" class="pngimg" /> -->
           <%= image_tag "pennant_logo_large.png", id: "pennant_logo", class: "pngimg" %>
-          <div id="every_team_text" >
-Kaline’s single. Gibby’s homer. Verlander’s no-hitter.<br>
-Every Tigers moment from 1952 to today.          </div>
+          <div id="every_team_text"><%= @tagline %> </div>
         
   		    <%= link_to image_tag("watch_the_trailer.png", id: "watch_the_trailer"), "http://player.vimeo.com/video/39739697?autoplay=1", class: "topps_video"
           %>
@@ -111,7 +109,7 @@ Every Tigers moment from 1952 to today.          </div>
 
 
 
-<%= render partial: "footer" %>
+<%#= render partial: "footer" %>
 <%= render partial: "mailing_list_overlay" %>
 <%= render partial: "sms_overlay" %>
 
@@ -175,20 +173,27 @@ Every Tigers moment from 1952 to today.          </div>
 
 
     var slide_delay = 4500;
-    setTimeout(function() {
-      $("#image_carousel").animate({left: "-=375"}, 1500, function(){});
-          setTimeout(function() {
-            $("#image_carousel").animate({left: "-=375"}, 1500, function(){});
-                setTimeout(function() {
-                  $("#image_carousel").animate({left: "-=375"}, 1500, function(){});
-                }, slide_delay);
+    var x = parseInt(<%= @overlay_images.count %>) - 1
+  //   setTimeout(function() {
+  //     $("#image_carousel").animate({left: "-=375"}, 1500, function(){});
+  //         setTimeout(function() {
+  //           $("#image_carousel").animate({left: "-=375"}, 1500, function(){});
+  //               setTimeout(function() {
+  //                 $("#image_carousel").animate({left: "-=375"}, 1500, function(){});
+  //               }, slide_delay);
 
-          }, slide_delay);
+  //         }, slide_delay);
 
-    }, slide_delay*1.5);
+  //   }, slide_delay*1.5);
 
+  // });
+  console.log(x); 
+  for(var i = 0; i < x; i++) {
+  $("#image_carousel").delay(3000).animate({left: "-=375"}, 1500, function(){})
+  console.log("ok still in the loop");
+  }
+  // $("#image_carousel").animate({left: "-=375"}, 1500, function(){})
   });
-
 <% unless @browser.mobile? %>
   $(document).ready(function() {
     $("#app_store_link").click(function(event){

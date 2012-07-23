@@ -9,7 +9,7 @@ class Team < ActiveRecord::Base
 
 	default_scope :conditions => { :defunct => false }
 
-	def self.app_team_hash
+	def self.app_team_hash1
 		{"CAL"=>"CALIFORNIA_ANGELS",
  		"LAA"=>"LOS_ANGELES_ANGELS",
  		"ANA"=>"ANAHEIM_ANGELS",
@@ -56,6 +56,40 @@ class Team < ActiveRecord::Base
  		"ATL"=>"ATLANTA_BRAVES"}
 	end
 
+def self.team_hash2
+			{"ANA"=>"angels",
+ 		"HOU"=>"astros",
+ 		"OAK"=>"athletics",
+ 		"PHA"=>"as",
+ 		"MIL"=>"brewers",
+ 		"SLA"=>"browns",
+ 		"SLN"=>"cardinals",
+ 		"HOC"=>"colts",
+ 		"CHN"=>"cubs",
+ 		"ARI"=>"diamondbacks",
+ 		"LAN"=>"dodgers",
+ 		"SFN"=>"giants",
+ 		"CLE"=>"indians",
+ 		"SEA"=>"mariners",
+		"FLO"=>"marlines",
+ 		"NYN"=>"mets",
+ 		"WAS"=>"nationals",
+ 		"BAL"=>"orioles",
+ 		"SDN"=>"padres",
+ 		"PHI"=>"phillies",
+ 		"PIT"=>"pirates",
+ 		"TEX"=>"rangers",
+ 		"TBA"=>"rays",
+ 		"BOS"=>"red_sox",
+ 		"CIN"=>"reds",
+ 		"COL"=>"rockies",
+ 		"KCA"=>"royals",
+ 		"DET"=>"tigers",
+ 		"MIN"=>"twins",
+ 		"CHA"=>"white_sox",
+ 		"NYA"=>"yankees",
+ 		"ATL"=>"braves"}
+end
 	#this is a utility funciton to get a team from different string formats
 	#it'll return the Team object
 	#it may return nil
