@@ -12,8 +12,7 @@
     <div id="topps_leftside"  >
           <!-- <img id="pennant_logo" src="http://pennant.topps.com/wp-content/themes/weaver-ii-pro/graphics/pennant_logo.png" alt="Topps Pennant Logo" class="pngimg" /> -->
           <%= image_tag "pennant_logo_large.png", id: "pennant_logo", class: "pngimg" %>
-          <div id="every_team_text" >
-Every team. Every game. Every play. 1952 to today.        </div>
+          <div id="every_team_text"><%= @tagline %> </div>
         
   		    <%= link_to image_tag("watch_the_trailer.png", id: "watch_the_trailer"), "http://player.vimeo.com/video/39739697?autoplay=1", class: "topps_video"
           %>

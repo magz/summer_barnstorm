@@ -29,7 +29,7 @@ module MainControllerHelpers
 				f =  card_path + team.name + "_" + x.to_s + ".jpg"
 				logger.info "does file exist?"
 				logger.info File.exists?("app/assets/images/" +f)
-				if File.exists? "app/assets/images/" + f
+				if File.exists?("app/assets/images/" + f)
 					overlay_images << f
 				end
 			end

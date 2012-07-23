@@ -15,6 +15,8 @@ class MainController < ApplicationController
       end
       @team = Team.find_by_name team_param
 
+      @tagline = @team ? @team.tagline : "Every team. Every game. Every play. 1952 to today."
+      
       @overlay_images = get_overlay_images(@team)
 
 
