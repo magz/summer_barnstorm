@@ -9,8 +9,9 @@
 	text-align:center;
 	display: none;
 	z-index: 1000;
-	text-transform: uppercase;
 	font-family: "FuturaMedium";
+	font-size: 1.3em;
+	line-height: 125%;
 }
 
 #sms_overlay #window {

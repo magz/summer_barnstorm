@@ -3,24 +3,22 @@
   <div id="window">
     <%= image_tag "close_box.gif", id: "close_box" %>
     <%= form_tag :send_link, :remote => true, :id => "sms_overlay_form" do |f|%>
-      <h4>SEND YOURSELF A LINK TO THE APP STORE</h4>
-      <h4>BY text: </h4>
+      Send yourself a link <br>
+        to the App Store<Br><br>
+      By text:
        <%= telephone_field_tag "phone_number" %>
        <br>
-       <span>Example: 212-555-1212</span>
        <br/>
-       <br/>
-       <h4>Or by email:</h4>
+       By email:
 
        <%= text_field_tag "email_address" %>
        <br><br>
-       <%= submit_tag "Submit", :id => "sms_submit" %>
+       <%= image_submit_tag("submit_button.png", :id => "sms_submit", style: "height: 45px;") %>
        <% end %>
 
   </div>
 
 </div>
-
 
 
 
