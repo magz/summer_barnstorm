@@ -45,12 +45,15 @@
 	height:60px;
 	display:block;
 }
-#app_store_red, #app_store_black{
-	width:121px;
-	height:77px;
+#app_store_black{
 	left: 225px;
 	top: 430px;
+	background-image:url(<%= asset_path "app_store_button_black.png" %>);
 }
+#app_store_black:hover {
+	background-image:url(<%= asset_path "app_store_button_red.png" %>);	
+}
+
 #available_text {
 	font-size: 16px;
 	height: 15px;
