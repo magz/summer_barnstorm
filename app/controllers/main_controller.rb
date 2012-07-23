@@ -5,8 +5,12 @@ class MainController < ApplicationController
     def welcome
 
       logger.info @browser
-      
-      @team = Team.find_by_name (params[:team] || params[:team1])
+      team_param = (params[:team] || params[:team1])
+      @team = Team.find_by_name team_param
+      puts team_param
+      if (@team == nil) && team_param
+        @team = Team.find_by_name Team.team_hash2[team_param.upcase]
+      end
       @overlay_images = get_overlay_images(@team)
 
 
