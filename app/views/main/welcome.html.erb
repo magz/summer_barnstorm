@@ -170,7 +170,7 @@
   console.log(x); 
   for(var i = 0; i < x; i++) {
   $("#image_carousel").delay(3000).animate({left: "-=375"}, 1500, function(){});
-  
+
   }
   
     $("#pennant_logo").click(function(){
@@ -197,6 +197,7 @@
     $("#app_store_link").click(function(event){
         if($("#sms_overlay").css("display") === "none") {
           $("#sms_overlay").show();
+          $("#email_list_overlay").hide();
         }
         else {
           $("#sms_overlay").hide();

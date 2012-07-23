@@ -26,6 +26,7 @@ $(document).ready(function() {
     $("#mailing_list_signup_button").click(function(event){
         if($("#email_list_overlay").css("display") === "none") {
           $("#email_list_overlay").show();
+          $("#sms_overlay").hide();
         }
         else {
           $("#email_list_overlay").hide();
