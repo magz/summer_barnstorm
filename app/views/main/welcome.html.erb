@@ -20,7 +20,7 @@
            %>
 
           <div id="app_store_black" >
-            <%= link_to image_tag("app_store_button.png", id: "app_store_link", :style => {size: "221×77"}), "http://bit.ly/I9RkAM" %>          
+            <%= link_to image_tag("app_store_button_black.png", id: "app_store_link", :style => {size: "221×77"}), "http://bit.ly/I9RkAM" %>          
 
 
           </div>
@@ -152,12 +152,12 @@
           'href'      : this.href
      });
 
-    $("#app_store_link").hover(function() {
-      $(this).attr("src", "assets/app_store_button_hover.png");
-      $(this).attr("height", "77px");
-    },function(){
-      $(this).attr("src", "assets/app_store_button.png");
-    });
+    // $("#app_store_link").hover(function() {
+    //   $(this).attr("src", "assets/app_store_button_hover.png");
+    //   $(this).attr("height", "77px");
+    // },function(){
+    //   $(this).attr("src", "assets/app_store_button.png");
+    // });
     $("#watch_the_trailer").hover(function() {
       $(this).attr("src", "/assets/watch_the_trailer_hover.png");
     },function(){
