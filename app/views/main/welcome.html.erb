@@ -170,16 +170,17 @@
   console.log(x); 
   for(var i = 0; i < x; i++) {
   $("#image_carousel").delay(3000).animate({left: "-=375"}, 1500, function(){});
+  
   }
   
     $("#pennant_logo").click(function(){
-      alert("hi magz");
+
       var slide_delay = 4500;
       var x = parseInt(<%= @overlay_images.count %>) - 1;
       var reset_amount = 375 * x;
       $("#image_carousel").animate({left: "+=" + x * 375}, 2000, function(){});
       for(var i = 0; i < x; i++) {
-      $("#image_carousel").delay(3000).animate({left: "-=375"}, 1500, function(){})
+      $("#image_carousel").delay(3000).animate({left: "-=375"}, 1500, function(){});
     }
 
 
