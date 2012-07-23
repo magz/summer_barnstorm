@@ -174,25 +174,10 @@
 
     var slide_delay = 4500;
     var x = parseInt(<%= @overlay_images.count %>) - 1
-  //   setTimeout(function() {
-  //     $("#image_carousel").animate({left: "-=375"}, 1500, function(){});
-  //         setTimeout(function() {
-  //           $("#image_carousel").animate({left: "-=375"}, 1500, function(){});
-  //               setTimeout(function() {
-  //                 $("#image_carousel").animate({left: "-=375"}, 1500, function(){});
-  //               }, slide_delay);
-
-  //         }, slide_delay);
-
-  //   }, slide_delay*1.5);
-
-  // });
   console.log(x); 
   for(var i = 0; i < x; i++) {
   $("#image_carousel").delay(3000).animate({left: "-=375"}, 1500, function(){})
-  console.log("ok still in the loop");
   }
-  // $("#image_carousel").animate({left: "-=375"}, 1500, function(){})
   });
 <% unless @browser.mobile? %>
   $(document).ready(function() {
