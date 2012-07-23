@@ -228,7 +228,7 @@ body#pennant_home #pennant_link, body#bunt_home #bunt_link, body#pennant_terms #
 
 /***** Topps Footer Begin ****/ 
 
-#topps_footer {
+footer {
 	height: 80px;
 	left: 0;
 	position: relative;
@@ -239,12 +239,12 @@ body#pennant_home #pennant_link, body#bunt_home #bunt_link, body#pennant_terms #
 
 }
 
-body.player #topps_footer, body.team #topps_footer {
+body.player footer, body.team footer {
 	background-color: #4E4E4E; 
 	z-index:600;
 	
 }
-#topps_footer #footer_content_wrap {
+footer #footer_content_wrap {
 	position:absolute;
 	right: 0;
 	left: 0;
@@ -253,6 +253,16 @@ body.player #topps_footer, body.team #topps_footer {
 
 }
 
+footer img {
+	float: right;
+	position: relative;
+	margin-right: 15px;
+	top: 12px;
+}
+
+footer #mlb_logo {
+	top: 17px;
+}
 #footer_text {
 /*	font-family: 'HelveticaNeueLTStd57Condensed';
 */	position: absolute;
@@ -265,29 +275,14 @@ body.player #topps_footer, body.team #topps_footer {
 	line-height:14px;
 	width: 700px;
 }
-#MLB_link {
-	position: absolute;
-	left: 970px;
-	top: 13px;
-	width: 120px;
-	height: 32px;
-	z-index: 100;
-}
-#MLBPA_link {
-	height: 50px;
-	left: 1110px;
-	position: absolute;
-	top: 6px;
-	width: 53px;
-	z-index: 140;
-}
-#topps_footer a {
+
+footer a {
 	text-decoration:none;
 	font-weight:bold;
 	color:white;
 	font-size:11px;
 }
-#topps_footer a:hover {
+footer a:hover {
 	text-decoration:underline;
 }
 *//***** Topps Footer End *** 

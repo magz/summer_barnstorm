@@ -5,15 +5,11 @@
 		</style>
 	</head>
 <% end %>
-<div id="topps_footer">
+<footer>
 	<div id="footer_content_wrap">
-	<div id="MLB_link">
-		<a href="http://mlb.mlb.com/index.jsp" target="_blank"><%= image_tag "mlb_logo.gif",  alt: "MLB LOGO", class: "pngimg" %></a>
-		</div>
-
-		<div id="MLBPA_link">
-		<a href="http://mlbplayers.mlb.com/pa/index.jsp" target="_blank"><%= image_tag "players_assoc_logo.png", alt: "MLBPA LOGO", class: "pngimg" %></a>
-		</div>
+		<%=link_to image_tag("mlb_logo.gif", class: "pngimg", id: "mlb_logo"), "http://mlb.mlb.com/index.jsp" %>
+		
+		<%= link_to image_tag("players_assoc_logo.png", class: "pngimg", id: "mlbpa_logo", style: "top: +=5px;"), "http://mlbplayers.mlb.com/pa/index.jsp" %> 
 
 
 		<div id="footer_text" >
@@ -25,4 +21,4 @@
 	</div>
 	</div>
 
-</div> <!-- #topps_footer -->
+</footer> <!-- #topps_footer -->
