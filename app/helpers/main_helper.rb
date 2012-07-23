@@ -46,7 +46,8 @@ name				image_path += team.name + "_blank_color_disc"
 
 	def small_team_disc_generator(team, color = true)
 		center_css = get_center_css(team, 45)
-		("<div class=small_team_disc style='" + center_css + "'>" + new_blank_disc(team, color) + new_team_logo(team) + "</div>").html_safe 
+		#yes this is kind of an ungodly mess...sorry future me
+		("<a href='/#{team.name}'><div class=small_team_disc style='#{center_css}'>#{new_blank_disc(team, color)} #{new_team_logo(team)}</div></a>").html_safe 
 
 	end
 

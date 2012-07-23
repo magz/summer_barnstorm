@@ -3,19 +3,14 @@
 	<div id="logo_box">
 		<%= image_tag "pennant_logo.png", :id => "logo" %>
 		<div id="header">
-      <em>Add your favorite baseball memories</em><br>
-			<span id="smaller">to contribute to the Summer Barnstorm scrapbook!<span>
+      <em>How rich is your team’s history?</em><br>
+			<span id="smaller">Share your favorite memories to win autographed prizes!<span>
 		</div>
 	</div>
 
 </div>
 <br>
 <div id="side_content">
-
-	<div id= "pitch_box">
-		Win World Series Tickets and<br>
-		celebrate your favorite team!
-	</div>
 
 		<%= link_to (image_tag "appstore_logo.png", :id => "appstore_logo"), "http://google.com", :id => "appstore_logo_link" %><br>
 	
@@ -30,16 +25,20 @@
 	<div id="map">
 		<%= image_tag "blank_us_map.png", :id => "map" %>
 		<% @teams.each do |team| %>
-			<%#= blank_disc team %>
-			<%#= team_logo team %>
 			<%= small_team_disc_generator team %>
 
 		<% end %>
 
 	</div>
-</div>
+</div> 
 
-  <%= link_to (image_tag "howto_tab.png", :style => "float:right; position: absolute; right: 0px; top: 75px; height: 10%;"), how_to_path %>
+
+
+
+</div>
+  <div id="howto_open"> <%= link_to image_tag("howto_tab.png", class: "pngimg", :style => "float:right; position: absolute; right: 0px; top: 75px; height: 10%;"), "", id: "howto_open" %></div>
+
+  <%#= link_to (image_tag "howto_tab.png", :style => "float:right; position: absolute; right: 0px; top: 75px; height: 10%;"), how_to_path %>
   <%= render partial: "twitter_feed" %>
 
 
@@ -47,3 +46,64 @@
 
 <%= render partial: "sms_overlay" %> 
 
+  <div id="how_to">
+    <span class="about_red">WHAT IS TOPPS PENNANT?</span><br />
+    <br />
+    At Topps, we want to build great things for fans. That’s it. The driving passion behind our products is we build things that we ourselves want to use as fans.
+    <br />
+    <br />
+    <span class="about_bold">Topps Pennant is the modern box score.</span> We, as fans, wanted one place to check out scores from last night’s game as well as relive meaningful baseball moments from 30 years ago. So we acquired the app, added new features, and are excited to bring it to our fellow baseball fans.
+    <br /><br /> 
+    Topps Pennant captures all the teams, all the games, and all the plays from last night’s game back to 1952. That’s nearly 60 years’ worth of baseball data brought to life and presented in elegant, interactive infographics on the iPad and now on the iPhone.
+    <br /><br />
+    With Topps Pennant, you can:
+    <ul>
+    <li>
+    Check out what happened in last night’s game
+    </li>
+    <li>
+    Chart your favorite team's performance and how they stacked up in the league from 1952 to today
+    </li>
+    <li>Relive your favorite baseball memories such as your first game, the games played on the day you were born, the game when you met your favorite player, and more
+    </li>
+    <li>Debate and solve questions around key historical moments
+    </li>
+    </ul>
+    <br />
+    Please check out our <a href="http://vimeo.com/39739697" target="_new">videos</a> or our <a href="https://toppspennant.zendesk.com/home" target="_new">product support page</a> for more detail.
+    <br /><br /> 
+    <span class="about_red"> 
+    HOW CAN I GET IT?
+    </span><br /> 
+    Topps Pennant is currently available in the Apple App Store for both iPhone and iPad. You can find the purchase link to the left. If you like the app, we encourage you to tell your friends. 
+  </div>
+
+<script>
+  $(document).ready(function() {
+      $("#howto_open").click(function(e){
+        $("#main_content").hide();
+        $("#how_to").show();
+      // $("#iphone").hide();
+      // $("#iphone-overlay").hide();
+
+
+      // $("#popup_page").show();
+        e.preventDefault(); 
+
+      
+
+    });
+    // $("#about_link_close").click(function(e){
+    //   $("#about_close").hide();
+    //   $("#about_open").show();
+    //   $("#popup_page").hide();
+    //   $("#iphone").show();
+    //   $("#iphone-overlay").show();
+
+    //   e.preventDefault(); 
+
+      
+
+    // });
+    });
+</script>
