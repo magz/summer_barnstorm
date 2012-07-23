@@ -4,7 +4,7 @@ class Team < ActiveRecord::Base
  	serialize :alternate_names, Array
 
 
-	attr_accessible :city, :color, :name, :x_map_point, :y_map_point, :twitter_tags, :abbreviation, :defunct
+	attr_accessible :city, :color, :name, :x_map_point, :y_map_point, :twitter_tags, :abbreviation, :defunct, :taglines, :promo_start_date, :promo_end_date
 	serialize :twitter_tags, Array
 
 	default_scope :conditions => { :defunct => false }
