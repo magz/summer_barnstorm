@@ -3,6 +3,9 @@
 <%= javascript_include_tag "jquery.fancybox-1.3.4.pack" %>
 <%= javascript_include_tag "jquery.easing-1.3.pack" %>
 <% if browser.ipad? %>
+  <head>    <meta name="viewport" content="width=1400,
+                                 maximum-scale=1.0">
+</head>
   <style type="text/css">
     #footer {
       width: 1400px;
