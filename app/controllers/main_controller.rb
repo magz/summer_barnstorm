@@ -81,6 +81,10 @@ class MainController < ApplicationController
 
   end
 
+  def giveaway_rules
+
+  end
+
   def team_page_redirector(team=nil)
     if team
       if defunct_team?(team)
