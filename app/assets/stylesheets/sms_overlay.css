@@ -20,6 +20,7 @@
      background-color: #fff;
      padding:15px;
      text-align:center;
+     border: solid;
 }
 
 #sms_overlay #close_box {

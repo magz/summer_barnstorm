@@ -66,6 +66,7 @@
 
     <div id="iphone"  > <%= image_tag "iphone_hand.png" %> </div>
     <div id="iphone-overlay">
+      <%= image_tag "replay_button.png", id: "replay_button" %>
       <div id="image_carousel">
         <%= @overlay_images.each  do |x|  %>
         <%= image_tag x, class: "iphone-overlay-image" %>
@@ -167,22 +168,22 @@
 
     var slide_delay = 4500;
     var x = parseInt(<%= @overlay_images.count %>) - 1
-  console.log(x); 
-  for(var i = 0; i < x; i++) {
-  $("#image_carousel").delay(3000).animate({left: "-=375"}, 1500, function(){});
-
+    console.log(x); 
+    for(var i = 0; i < x; i++) {
+    $("#image_carousel").delay(3000).animate({left: "-=375"}, 1500, function(){});
   }
-  
-    $("#pennant_logo").click(function(){
+  $('#replay_button').hide('fast').delay(6000 * x).show('fast');
 
+    $("#replay_button").click(function(){
+      $("#replay_button").hide();
       var slide_delay = 4500;
       var x = parseInt(<%= @overlay_images.count %>) - 1;
       var reset_amount = 375 * x;
       $("#image_carousel").animate({left: "+=" + x * 375}, 2000, function(){});
       for(var i = 0; i < x; i++) {
       $("#image_carousel").delay(3000).animate({left: "-=375"}, 1500, function(){});
-    }
-
+      }
+    $('#replay_button').hide('fast').delay(6000 * x).show('fast');
 
 
 
