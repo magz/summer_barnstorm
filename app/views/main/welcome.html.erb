@@ -220,4 +220,12 @@
 
 
 </script>
+<% if @browser.ie? %>
+  <%= stylesheet_link_tag "header" %>
+  <%= stylesheet_link_tag "footer" %>
+  <script>
+  console.log("hi magz2");
+  </script>
+<% end %>
+
 
