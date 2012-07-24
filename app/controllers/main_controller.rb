@@ -2,7 +2,6 @@ class MainController < ApplicationController
   require "browser"
   include MainControllerHelpers
 
-  caches_action :welcome, :cache_path => Proc.new { |c| c.params }, :expires_in => 2.hours
 
     def welcome
       logger.info @browser
