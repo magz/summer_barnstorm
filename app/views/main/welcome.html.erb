@@ -55,7 +55,7 @@
     </li>
     </ul>
     <br />
-    Please check out our <a href="http://vimeo.com/39739697" target="_new">videos</a> or our <a href="https://toppspennant.zendesk.com/home" target="_new">product support page</a> for more detail.
+    Please check out our <a href="http://vimeo.com/39739697" target="_new">videos</a> or our <a href="https://toppspennant.zendesk.com/home" target="_new" id="product_support_link">product support page</a> for more detail.
     <br /><br /> 
     <span class="about_red"> 
     HOW CAN I GET IT?
@@ -189,7 +189,22 @@
 
 
     });
+  $("#watch_the_trailer").click(function() {
+    _gaq.push(['_trackEvent', 'Videos', 'Play - Every Moment'])
 
+  });
+  $("#watch_the_demo").click(function() {
+    _gaq.push(['_trackEvent', 'Videos', 'Play - App Demo'])
+
+  });
+  $("#app_store_link").click(function() {
+    _gaq.push(['_trackEvent', 'Exit', 'Purchase Funnel'])
+
+  });
+  $("#product_support_link").click(function() {
+    _gaq.push(['_trackEvent', '_trackEvent', 'Internal Nav', 'Support'])
+
+  });
 
 
   });
