@@ -1,12 +1,18 @@
-<%#= stylesheet_link_tag "pennant_main" %>
-<%#= stylesheet_link_tag "pennant_team" %>
 <%= stylesheet_link_tag "jquery.fancybox-1.3.4"%>
 
 <%= javascript_include_tag "jquery.fancybox-1.3.4.pack" %>
 <%= javascript_include_tag "jquery.easing-1.3.pack" %>
+<% if browser.ipad? %>
+  <style type="text/css">
+    #footer {
+      width: 1400px;
+    }
+    #header {
+      width: 1400px;
+    }
 
-<%#= render partial: "header" %>
-
+  </style>
+<% end %>
 <div id="toppspage-wrapper">
   <div id="toppspage" class="center2">
     <div id="topps_leftside"  >
