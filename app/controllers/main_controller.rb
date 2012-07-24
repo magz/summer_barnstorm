@@ -3,8 +3,8 @@ class MainController < ApplicationController
   include MainControllerHelpers
 
     def welcome
-      if params[:redirect]
-        redirect_to "/" + (params[:team] || params[:team1])
+      if params[:redirect] && browser.ie?
+        redirect "http://pennant.topps.com/" + (params[:team1] || params[:team]) 
       end
       logger.info @browser
       team_param = (params[:team] || params[:team1])
