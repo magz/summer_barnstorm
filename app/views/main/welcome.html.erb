@@ -195,7 +195,7 @@
   });
 <% unless @browser.mobile? %>
   $(document).ready(function() {
-    $("#app_store_link").attr("disabled", "disabled");
+    $("#app_store_link").removeAttr("href");
     $("#app_store_link").click(function(event){
         if($("#sms_overlay").css("display") === "none") {
           $("#sms_overlay").show();
