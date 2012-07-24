@@ -3,7 +3,9 @@ class MainController < ApplicationController
   include MainControllerHelpers
 
     def welcome
-
+      if params[:redirect]
+        redirect_to "/" + (params[:team] || params[:team1])
+      end
       logger.info @browser
       team_param = (params[:team] || params[:team1])
       
