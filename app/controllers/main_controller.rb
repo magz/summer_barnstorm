@@ -2,7 +2,8 @@ class MainController < ApplicationController
   require "browser"
   include MainControllerHelpers
 
-  caches_page :welcome
+  caches_action :welcome, :cache_path => Proc.new { |c| c.params }
+  
     def welcome
       logger.info @browser
       team_param = (params[:team] || params[:team1])
@@ -16,6 +17,7 @@ class MainController < ApplicationController
 
         team_param = Team.team_hash2[team_param.upcase] if team_param.length == 3
       end
+
       @team = Team.find_by_name team_param
 
       @tagline = @team ? @team.tagline : "Every team. Every game. Every play. 1952 to today."
