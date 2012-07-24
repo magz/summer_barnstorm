@@ -12,7 +12,7 @@
 <br>
 <div id="side_content">
 
-		<%= link_to (image_tag "appstore_logo.png", :id => "appstore_logo"), "http://google.com", :id => "appstore_logo_link" %><br>
+		<%= link_to (image_tag "appstore_logo.png", :id => "appstore_logo"), "http://bit.ly/I9RkAM", :id => "app_store_link" %><br>
 	
 
 		<span style="font-size: .75em; padding-left: 8%;"> Available for iPhone and iPad. </span>
@@ -101,6 +101,16 @@
     //   $("#iphone-overlay").show();
 
     //   e.preventDefault(); 
+    $("#app_store_link").click(function(event){
+        if($("#sms_overlay").css("display") === "none") {
+          $("#sms_overlay").show();
+          $("#email_list_overlay").hide();
+        }
+        else {
+          $("#sms_overlay").hide();
+        }
+        event.preventDefault();
+    });
 
       
 

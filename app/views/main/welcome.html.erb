@@ -19,10 +19,8 @@
           <%= link_to (image_tag "watch_the_demo.png", id: "watch_the_demo"), "http://player.vimeo.com/video/39745318?autoplay=1", class: "topps_video"
            %>
 
-          <% if @browser.mobile? %><a href="http://bit.ly/I9RkAM" id="app_store_link"><div id="app_store_black" ></div></a>
-          <% else %> <div id="app_store_black" ></div>
-          <% end %>
-
+          <a href="http://bit.ly/I9RkAM" id="app_store_link"><div id="app_store_black" ></div></a>
+          
 
   		    <div id="available_text">
               Available for <b>iPhone</b> and <b>iPad</b>.
@@ -209,7 +207,7 @@
   });
 <% unless @browser.mobile? %>
   $(document).ready(function() {
-    $("#app_store_black").click(function(event){
+    $("#app_store_link").click(function(event){
         if($("#sms_overlay").css("display") === "none") {
           $("#sms_overlay").show();
           $("#email_list_overlay").hide();
@@ -217,7 +215,7 @@
         else {
           $("#sms_overlay").hide();
         }
-        
+        event.preventDefault();
     });
     
 

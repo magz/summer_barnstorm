@@ -2,6 +2,7 @@ class MainController < ApplicationController
   require "browser"
   include MainControllerHelpers
 
+  caches_page :welcome
     def welcome
       logger.info @browser
       team_param = (params[:team] || params[:team1])
