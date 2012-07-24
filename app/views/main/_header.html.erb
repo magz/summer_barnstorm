@@ -2,7 +2,7 @@
 <% if false %>
 	<head>
 		<style type="text/css">
-			header, .link_div {
+			#header, .link_div {
 				background-color: <%= @team.color %>;
 			}
 			.link_div .inner_box a {color: white;}
@@ -10,16 +10,15 @@
 	</head>
 <% end %>
 
-<header>
+<div id="header">
 	<div id="header_content_wrap">
 		<div class="link_div "><div class="inner_box"><%= link_to  "TOPPS BUNT", "http://bunt.topps.com" %></div></div>
 
 		<%= link_to (image_tag "white_topps_logo.png", id: "white_topps_logo"), "http://www.topps.com" %>
 		<div class="link_div link_div_current"><div class="inner_box">TOPPS PENNANT</div></div>
-
 		<%= image_tag "mailinglist.png", id: "mailing_list_signup_button" %>
 	</div>
-</header>
+</div>
 
 <script>
 $(document).ready(function() {
