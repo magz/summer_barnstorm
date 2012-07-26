@@ -19,11 +19,13 @@
 		<%= image_tag "mailinglist.png", id: "mailing_list_signup_button", style: "z-index: 1000;" %>
 	</div>
 </div>
+<%= render partial: "mailing_list_overlay" %>
 
 <script>
 $(document).ready(function() {
     console.log("hi ");
-    $("#header").click(function(e){
+    $("#mailing_list_signup_button").click(function(e){
+    	console.log("hi hih ih");
         if($("#email_list_overlay").css("display") === "none") {
           $("#email_list_overlay").show();
           $("#sms_overlay").hide();
@@ -32,6 +34,7 @@ $(document).ready(function() {
           $("#email_list_overlay").hide();
         }
          });
+
  });
 
 

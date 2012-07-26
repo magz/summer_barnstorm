@@ -2,7 +2,7 @@
 <div id="top">
 	<div id="logo_box">
 		<%= image_tag "pennant_logo.png", :id => "logo" %>
-		<div id="header">
+		<div id="upper_tagline">
       <em>How rich is your team’s history?</em><br>
 			<span id="smaller">Share your favorite memories to win autographed prizes!<span>
 		</div>
@@ -23,15 +23,36 @@
 <div  id="main_content">
 
 	<div id="map">
-		<%= image_tag "blank_us_map.png", :id => "map" %>
+		<%= image_tag "blank_us_map.png", :id => "blank_map" %>
 		<% @teams.each do |team| %>
-			<%= small_team_disc_generator team %>
-
+    <div class="small_team_disc" id="<%=team.name%>"></div>
+    <div class="large_team_disc" id="<%=team.name%>"></div>
 		<% end %>
 
 	</div>
 </div> 
+<script>
+  $(document).ready(function(){
+    console.log("hi magz");
+    $(".small_team_disc").mouseover(function(){
+      var this_id = $(this).attr("id");
+      $(".large_team_disc#" + this_id).show();
+    });
+    
+    $(".large_team_disc").mouseleave(function(){
+      $(this).hide();
 
+    });
+  
+
+
+
+
+  });
+
+
+
+</script>
 
 
 
@@ -81,26 +102,20 @@
 <script>
   $(document).ready(function() {
       $("#howto_open").click(function(e){
-        $("#main_content").hide();
-        $("#how_to").show();
-      // $("#iphone").hide();
-      // $("#iphone-overlay").hide();
+        if($("#main_content").css("display") == "none") {
+          $("#main_content").show();
+          $("#how_to").hide();
+        }
+        else {
+          $("#main_content").hide();
+          $("#how_to").show();
+        }
 
-
-      // $("#popup_page").show();
         e.preventDefault(); 
 
       
 
     });
-    // $("#about_link_close").click(function(e){
-    //   $("#about_close").hide();
-    //   $("#about_open").show();
-    //   $("#popup_page").hide();
-    //   $("#iphone").show();
-    //   $("#iphone-overlay").show();
-
-    //   e.preventDefault(); 
     $("#app_store_link").click(function(event){
         if($("#sms_overlay").css("display") === "none") {
           $("#sms_overlay").show();
@@ -114,6 +129,5 @@
 
       
 
-    // });
     });
 </script>

@@ -37,6 +37,28 @@ class MainController < ApplicationController
     
     @teams = Team.all
 
+    @twitter_feed_hashes = []
+    @teams.each do |t|
+      if t.promo_start_date != nil && t.promo_end_date && t.promo_start_date < Time.now && t.promo_end_date > Time.now
+        @twitter_feed_hashes << t.twitter_tags
+      end
+    end
+    @twitter_feed_hashes = @twitter_feed_hashes.flatten.join(" OR ")
+
+
+
+  end
+
+  def test
+    @teams = Team.all
+    @twitter_feed_hashes = []
+    Team.all.each do |t|
+      if t.promo_start_date != nil && t.promo_end_date && t.promo_start_date < Time.now && t.promo_end_date > Time.now
+        @twitter_feed_hashes << t.twitter_tags
+      end
+    end
+    @twitter_feed_hashes = @twitter_feed_hashes.flatten.join(" OR ")
+
 
   end
   

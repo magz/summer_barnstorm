@@ -19,7 +19,6 @@
 <div id="toppspage-wrapper">
   <div id="toppspage" class="center2">
     <div id="topps_leftside"  >
-          <!-- <img id="pennant_logo" src="http://pennant.topps.com/wp-content/themes/weaver-ii-pro/graphics/pennant_logo.png" alt="Topps Pennant Logo" class="pngimg" /> -->
           <%= image_tag "pennant_logo_large.png", id: "pennant_logo", class: "pngimg" %>
           <div id="every_team_text"><%= @tagline.html_safe %> </div>
         
@@ -115,8 +114,6 @@
 
 
 
-<%#= render partial: "footer" %>
-<%= render partial: "mailing_list_overlay" %>
 <%= render partial: "sms_overlay" %>
 
 <script>

@@ -9,7 +9,7 @@
 new TWTR.Widget({
   version: 2,
   type: 'search',
-  search: '#tigersmemories OR #tigersmemory OR #tigermemories OR #tigermemories',
+  search: "<%= @twitter_feed_hashes %>",
   interval: 3000,
   width: 250,
   height: 300,

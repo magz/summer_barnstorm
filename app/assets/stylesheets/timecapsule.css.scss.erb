@@ -16,18 +16,16 @@ em {
 	color: #7d090f;
 	font-style: normal;
 }
-div #header {
-/*  margin-left: auto;
-  margin-right: auto;
-*/  width: 900px;
+#upper_tagline {
+  width: 900px;
   padding-top: 2%;
   margin-left: 500px;
 }
 
-div#header em {
+#upper_tagline em {
 	font-size: 2.7em;
 }
-div#header #smaller{
+#upper_tagline #smaller{
 	font-size: 1.7em;
 }
 
@@ -56,19 +54,38 @@ div#map  {
 	margin-top: 30px;
 } 
 
-div.small_team_disc {
+.small_team_disc {
 	height: 45px;
 	width: 45px;
-	z-index: 3;
-	position: absolute;
-}
-
-div.large_team_disc {
-	height: 90px;
-	width: 90px;
 	z-index: 6;
 	position: absolute;
 }
+
+.large_team_disc {
+	height: 350px;
+	width: 350px;
+	z-index: 9;
+	position: absolute;
+	display: none;
+}
+<% Team.all.each do |t| %>
+
+	.large_team_disc#<%= t.name %> {
+		background-image: url(<%= asset_path "large_team_icons/"+ t.name + "_blank_color_disc.png"%>);
+
+		left: <%= t.x_map_point * (840.0 / 1491.0) - 175 %>px;
+		top: <%= t.y_map_point * (840.0 / 1491.0) - 175 %>px;
+	}
+	.small_team_disc#<%= t.name %> {
+/*		background-image: url(<%= asset_path "small_team_icons/"+ t.name + "_blank_color_disc.png"%>);
+*/		
+		background-color: <%= t.color %>;
+		left: <%= t.x_map_point * (840.0 / 1491.0) - 22.5 %>px;
+		top: <%= t.y_map_point * (840.0 / 1491.0) - 22.5 %>px;
+
+}
+
+<% end %>
 
  .blank_disc {
 	height: 100%;
@@ -90,7 +107,7 @@ div.large_team_disc {
 }
 
 
-img#map {
+#blank_map {
 	width: 100%;
 }
 
@@ -165,4 +182,6 @@ footer {
 	bottom: 150px;
 	position: relative;
 }
+
+
 
