@@ -68,36 +68,41 @@
 <%= render partial: "sms_overlay" %> 
 
   <div id="how_to">
-    <span class="about_red">WHAT IS TOPPS PENNANT?</span><br />
+    <span class="about_red">TOPPS PENNANT TIME CAPSULE HOW TO</span><br />
     <br />
-    At Topps, we want to build great things for fans. That’s it. The driving passion behind our products is we build things that we ourselves want to use as fans.
+    Relive your favorite baseball memories with the Topps Pennant Time Capsule. Share memories using the
+    Topps Pennant app for iPhone or iPad and be entered to win team-based prizes like autographed photos
+    and autographed baseballs. How rich is your team’s history?
+    It’s easy to enter…
     <br />
     <br />
-    <span class="about_bold">Topps Pennant is the modern box score.</span> We, as fans, wanted one place to check out scores from last night’s game as well as relive meaningful baseball moments from 30 years ago. So we acquired the app, added new features, and are excited to bring it to our fellow baseball fans.
-    <br /><br /> 
-    Topps Pennant captures all the teams, all the games, and all the plays from last night’s game back to 1952. That’s nearly 60 years’ worth of baseball data brought to life and presented in elegant, interactive infographics on the iPad and now on the iPhone.
-    <br /><br />
+    <ol>
+      <li>Use the button on this page to get the app for your iPhone or iPad.</li>
+    <li>Using the app, find your favorite baseball moment.</li>
+    <li>On that screen, click the share image. </li>
+    <li>Enter by sharing your favorite memory, either:
+      <ul>
+        <li>Tweet the picture of the image using the appropriate team-based hashtag</li>
+        <li>Email the picture of the image to timecapsule@topps.com, using the appropriate team-based hashtag in the subject line</li>
+        <li>Post the picture of the image to the Topps Pennant Facebook Timeline at facebook.com/toppspennant</li>
+      </ul>
+    <li>We will collect all the entries and announce the randomly selected winner on the @toppspennant Twitter account!</li>
+    </ol>
+    See the Contest Rules link below for more details. Thanks for sharing!
+    <br><Br><br>
+    <span class="about_red">WHAT IS TOPPS PENNANT?</span> <br><br>
+    Topps Pennant captures all the teams, all the games, and all the plays from last night’s game
+    back to 1952. That’s nearly 60 years’ worth of baseball data brought to life and presented in
+    elegant, interactive infographics on the iPad and now on the iPhone.
+
     With Topps Pennant, you can:
     <ul>
-    <li>
-    Check out what happened in last night’s game
-    </li>
-    <li>
-    Chart your favorite team's performance and how they stacked up in the league from 1952 to today
-    </li>
-    <li>Relive your favorite baseball memories such as your first game, the games played on the day you were born, the game when you met your favorite player, and more
-    </li>
-    <li>Debate and solve questions around key historical moments
-    </li>
+      <li>Check out what happened in last night’s game</li>
+      <li>Chart your favorite team's performance and how they stacked up in the league from 1952 to today</li>
+      <li>Relive your favorite baseball memories such as your first game, the games played on the day you were born, the game when you met your favorite player, and more</li>
+      <li>Debate and solve questions around key historical moments</li>
     </ul>
-    <br />
-    Please check out our <a href="http://vimeo.com/39739697" target="_new">videos</a> or our <a href="https://toppspennant.zendesk.com/home" target="_new">product support page</a> for more detail.
-    <br /><br /> 
-    <span class="about_red"> 
-    HOW CAN I GET IT?
-    </span><br /> 
-    Topps Pennant is currently available in the Apple App Store for both iPhone and iPad. You can find the purchase link to the left. If you like the app, we encourage you to tell your friends. 
-  </div>
+    </div>
 
 <script>
   $(document).ready(function() {
@@ -105,10 +110,13 @@
         if($("#main_content").css("display") == "none") {
           $("#main_content").show();
           $("#how_to").hide();
+          $("#upper_tagline").show();
         }
         else {
           $("#main_content").hide();
           $("#how_to").show();
+          $("#upper_tagline").hide();
+
         }
 
         e.preventDefault(); 
@@ -120,6 +128,7 @@
         if($("#sms_overlay").css("display") === "none") {
           $("#sms_overlay").show();
           $("#email_list_overlay").hide();
+
         }
         else {
           $("#sms_overlay").hide();
