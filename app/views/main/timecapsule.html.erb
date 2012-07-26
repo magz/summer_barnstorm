@@ -25,8 +25,8 @@
 	<div id="map">
 		<%= image_tag "blank_us_map.png", :id => "blank_map" %>
 		<% @teams.each do |team| %>
-    <div class="small_team_disc" id="<%=team.name%>"></div>
-    <div class="large_team_disc" id="<%=team.name%>"></div>
+    <div class="small_team_disc" id="<%=team.name%>"><%= image_tag "team_logos/" + team.name + "_logo.png" %></div>
+    <div class="large_team_disc" id="<%=team.name%>"><%= image_tag "team_logos/" + team.name + "_logo.png" %></div>
 		<% end %>
 
 	</div>

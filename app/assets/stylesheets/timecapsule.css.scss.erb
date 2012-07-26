@@ -61,27 +61,48 @@ div#map  {
 	position: absolute;
 }
 
+.small_team_disc img {
+	height: 35px;
+	position: relative;
+	top: 5px;
+	left: 5px;
+}
+
 .large_team_disc {
-	height: 350px;
-	width: 350px;
+	height: 153px;
+	width: 153px;
 	z-index: 9;
 	position: absolute;
 	display: none;
 }
+
+.large_team_disc img {
+	position: relative;
+	height: 120px;
+	left: 16.5px;
+	top: 16.5px;
+}
 <% Team.all.each do |t| %>
 
 	.large_team_disc#<%= t.name %> {
-		background-image: url(<%= asset_path "large_team_icons/"+ t.name + "_blank_color_disc.png"%>);
+		background-color: <%= t.color %>;
 
-		left: <%= t.x_map_point * (840.0 / 1491.0) - 175 %>px;
-		top: <%= t.y_map_point * (840.0 / 1491.0) - 175 %>px;
+		left: <%= t.x_map_point * (840.0 / 1491.0) - 76.5 %>px;
+		top: <%= t.y_map_point * (840.0 / 1491.0) - 76.5 %>px;
+		border-radius: 76.5px;
+		-moz-border-radius: 76.5px;
+		-webkit-border-radius: 76.5px;
+
 	}
 	.small_team_disc#<%= t.name %> {
-/*		background-image: url(<%= asset_path "small_team_icons/"+ t.name + "_blank_color_disc.png"%>);
-*/		
 		background-color: <%= t.color %>;
+
 		left: <%= t.x_map_point * (840.0 / 1491.0) - 22.5 %>px;
 		top: <%= t.y_map_point * (840.0 / 1491.0) - 22.5 %>px;
+		border-radius: 22.5px;
+		-moz-border-radius: 22.5px;
+		-webkit-border-radius: 22.5px;
+
 
 }
 
