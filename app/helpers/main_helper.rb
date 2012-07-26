@@ -73,7 +73,7 @@ name				image_path += team.name + "_blank_color_disc"
 
 	end
 	def team_name_id_pairs
-		(Team.where(defunct: false).pluck(:name).map {|x| x.gsub("_", " ").capitalize}).zip(Team.pluck(:id))
+		(Team.where(defunct: false).pluck(:name).map {|x| x.gsub("_", " ").titleize}).zip(Team.pluck(:id))
 	end
 
 
