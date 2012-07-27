@@ -11,9 +11,11 @@ class MainController < ApplicationController
       puts "http://#{request.host}:#{request.port.to_s + request.fullpath}"
       match = "http://#{request.host}:#{request.port.to_s + request.fullpath}" =~ /timecapsule/
       puts match
-      if match != nil && (params[:team] || params[:team1])
-        puts "redirecting"
-        redirect_to "/timecapsule/" + (params[:team] || params[:team1]) and return
+      unless params[:redirect] == false
+        if match != nil && (params[:team] || params[:team1])
+          puts "redirecting"
+          redirect_to "/timecapsule/" + (params[:team] || params[:team1]) and return
+        end
       end
       @team = parse_team_name(params)
       
