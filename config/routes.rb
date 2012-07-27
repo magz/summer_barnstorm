@@ -26,10 +26,10 @@ SummerBarnstorm::Application.routes.draw do
   match "mail_list_signup" => "emails#create", via: :post, :as => :email_list_signup
 
 
-  match "timecapsule/:team" => "main#timecapsule", :as => :timecapsule
-  match "timecapsule" => "main#timecapsule"
+  match "timecapsule/:team" => "main#timecapsule"
+  match "timecapsule" => "main#timecapsule", :as => :timecapsule
   match "test" => "main#test"
   match "/:team" => "main#welcome"  
 
-  root :to => 'main#welcome'
+  root :to => 'main#welcome', :as => :welcome
 end

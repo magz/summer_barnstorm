@@ -13,9 +13,18 @@
 <div id="header">
 	<div id="header_content_wrap">
 		<div class="link_div "><div class="inner_box"><%= link_to  "TOPPS BUNT", "http://bunt.topps.com" %></div></div>
-
+		
+		<% if @current_action == "welcome" %>
+			<div class="link_div "><div class="inner_box"><%= link_to "TIME CAPSULE", "/timecapsule" %></div></div>
+			<div class="link_div link_div_current"><div class="inner_box">TOPPS PENNANT</div></div>
+		<% elsif @current_action == "timecapsule" %>
+			<div class="link_div link_div_current"><div class="inner_box">TIME CAPSULE</div></div>
+			<div class="link_div "><div class="inner_box"><%= link_to  "TOPPS PENNANT", :welcome %></div></div>
+		<% else %>
+			<div class="link_div "><div class="inner_box"><%= link_to "TIME CAPSULE", "/timecapsule" %></div></div>
+			<div class="link_div link_div_current"><div class="inner_box"><%= link_to  "TOPPS PENNANT", :welcome %></div></div>
+		<% end %>
 		<%= link_to (image_tag "white_topps_logo.png", id: "white_topps_logo"), "http://www.topps.com" %>
-		<div class="link_div link_div_current"><div class="inner_box">TOPPS PENNANT</div></div>
 		<%= image_tag "mailinglist.png", id: "mailing_list_signup_button", style: "z-index: 1000;" %>
 	</div>
 </div>
