@@ -7,7 +7,9 @@ class MainController < ApplicationController
     def welcome
       puts "mobile browser"
       puts @browser.mobile?
-
+      if request.host =~ /toppspennnant/
+        redirect_to "timecapsule/" + (params[:team] || params[:team1]) and return
+      end
       @team = parse_team_name(params)
       
       @tagline = @team ? @team.tagline : "Every team. Every game. Every play. 1952 to today."
