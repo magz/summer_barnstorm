@@ -19,7 +19,8 @@ em {
 #upper_tagline {
   width: 900px;
   padding-top: 2%;
-  margin-left: 500px;
+  position: relative;
+  left: 500px;
 }
 
 #upper_tagline em {
@@ -37,13 +38,13 @@ em {
 div#side_content {
 	width: 27%;
 	clear: both;
+	margin-left: 40px;
 }
 
 img#logo {
 	height: 125px;
-	display: inline;
-	float: left;
-	vertical-align: middle
+	position: relative;
+	top: -200px;
 }
 
 div#map  {
@@ -51,7 +52,9 @@ div#map  {
 	width: 840px;
 	position: relative;
 	left: 325px;
-	margin-top: 30px;
+	top: -500px;
+	margin-left: 60px;
+
 } 
 
 .small_team_disc {
@@ -137,9 +140,15 @@ div#map  {
 
 #appstore_logo {
 	height: 85px;
-	padding-top: 5px;
+	position: relative;
+	top: -180px;
+	background: url("<%= asset_path "app_store_button_black.png" %>");
+	width: 260px;
+	height: 95px;
 }
-
+#appstore_logo:hover {
+	background: url("<%= asset_path "app_store_button_red.png" %>");
+}
 #logo_box h1 {
 	position: relative;
 	top: 50%;
@@ -207,5 +216,30 @@ footer {
 	font-family: helvetica;
 }
 
+#social_box {
+	padding-top: 8px;
+	padding-bottom: 10px;
+	position: relative;
+	top: -165px;
+}
+
+.fb-like {	
+	position: relative;
+	bottom: 5px;
+	
+}
+
+#twitter_feed_title {
+	padding-left: 5px;
+	padding-top: 20px;
+	font-size: .9em;
+	border-top: solid;
+	width: 236px;
+	text-align: center;
+}
+#twitter_feed {
+	position: relative;
+	top: -165px;
+}
 
 

@@ -1,23 +1,23 @@
 <%= stylesheet_link_tag "timecapsule" %>
 <div id="top">
-	<div id="logo_box">
-		<%= image_tag "pennant_logo.png", :id => "logo" %>
 		<div id="upper_tagline">
       <em>How rich is your team’s history?</em><br>
 			<span id="smaller">Share your favorite memories to win autographed prizes!<span>
 		</div>
-	</div>
 
 </div>
 <br>
 <div id="side_content">
+    <%= image_tag "pennant_logo.png", :id => "logo" %>
 
-		<%= link_to (image_tag "appstore_logo.png", :id => "appstore_logo"), "http://bit.ly/I9RkAM", :id => "app_store_link" %><br>
+		<%= link_to (content_tag(:div, "", id: "appstore_logo")), "http://bit.ly/I9RkAM", :id => "app_store_link" %><br>
 	
 
-		<span style="font-size: .75em; padding-left: 8%;"> Available for iPhone and iPad. </span>
+		<span style="font-size: .75em; padding-left: 8%; position: relative; top: -200px; left: 15px;"> Available for iPhone and iPad. </span>
 
     <%= render partial: "social_box" %>
+    <%= render partial: "twitter_feed" %>
+
 </div>
 
 <div  id="main_content">
@@ -60,7 +60,6 @@
   <div id="howto_open"> <%= link_to image_tag("howto_tab.png", class: "pngimg", :style => "float:right; position: absolute; right: 0px; top: 75px; height: 10%;"), "", id: "howto_open" %></div>
 
   <%#= link_to (image_tag "howto_tab.png", :style => "float:right; position: absolute; right: 0px; top: 75px; height: 10%;"), how_to_path %>
-  <%= render partial: "twitter_feed" %>
 
 
 
@@ -124,10 +123,8 @@
 
     });
       var current_team = "<%= @team_name %>";
-      alert(current_team);
       if(!current_team=="") {
         $(".large_team_disc#" + current_team).show();
-        $(".large_team_disc#" + current_team).mouseleave("")
       }
 
     $("#app_store_link").click(function(event){

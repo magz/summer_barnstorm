@@ -8,20 +8,8 @@ class MainController < ApplicationController
       puts "mobile browser"
       puts @browser.mobile?
 
-      team_param = (params[:team] || params[:team1])
+      @team = parse_team_name(params)
       
-      if team_param != nil
-        team_param = "athletics" if team_param == "as"
-        team_param = "diamondbacks" if team_param == "dbacks"
-        team_param = "white_sox" if team_param == "whitesox"
-        team_param = "red_sox" if team_param == "redsox"  
-        team_param = "blue_jays" if team_param == "bluejays"
-
-        team_param = Team.team_hash2[team_param.upcase] if team_param.length == 3
-      end
-
-      @team = Team.find_by_name team_param
-
       @tagline = @team ? @team.tagline : "Every team. Every game. Every play. 1952 to today."
       
       @overlay_images = get_overlay_images(@team)
@@ -31,23 +19,9 @@ class MainController < ApplicationController
 
   
   def timecapsule
-    # if params[:redirect]
-    #   team_page_redirector(params[:team1])
-    # end
     
-    team_param = (params[:team] || params[:team1])
-      
-    if team_param != nil
-      team_param = "athletics" if team_param == "as"
-      team_param = "diamondbacks" if team_param == "dbacks"
-      team_param = "white_sox" if team_param == "whitesox"
-      team_param = "red_sox" if team_param == "redsox"  
-      team_param = "blue_jays" if team_param == "bluejays"
-
-      team_param = Team.team_hash2[team_param.upcase] if team_param.length == 3
-    end
-    @team_name = team_param || ""
-    
+    team = parse_team_name(params)
+    @team_name = (team == nil) ? nil : team.name
 
     @teams = Team.all
 
