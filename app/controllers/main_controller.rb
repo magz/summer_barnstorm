@@ -103,42 +103,42 @@ class MainController < ApplicationController
 
   end
 
-  def team_page_redirector(team=nil)
-    if team
-      if defunct_team?(team)
-         path = ""
-      else
-         path = correct_for_as_and_diamondbacks(team.split("_")[-1])
-      end
-    else
-      path = ""
-    end
+  # def team_page_redirector(team=nil)
+  #   if team
+  #     if defunct_team?(team)
+  #        path = ""
+  #     else
+  #        path = correct_for_as_and_diamondbacks(team.split("_")[-1])
+  #     end
+  #   else
+  #     path = ""
+  #   end
   
-    redirect_to "http://pennant.topps.com/" + path
-  end
+  #   redirect_to "http://pennant.topps.com/" + path
+  # end
 
-  def defunct_team?(team)
-    %w(kansascity_athletics
-    philadelphia_athletics
-    boston_braves
-    milwaukee_braves
-    stlouis_browns
-    brooklyn_dodgers
-    montreal_expos
-    newyork_giants
-    seattle_pilots
-    washington_senators
-    ).include? team
-  end
+  # # def defunct_team?(team)
+  # #   %w(kansascity_athletics
+  # #   philadelphia_athletics
+  # #   boston_braves
+  # #   milwaukee_braves
+  # #   stlouis_browns
+  # #   brooklyn_dodgers
+  # #   montreal_expos
+  # #   newyork_giants
+  # #   seattle_pilots
+  # #   washington_senators
+  # #   ).include? team
+  # # end
 
-  def correct_for_as_and_diamondbacks(team_name)
-    case team_name
-      when "athletics" 
-        "as"
-      when "diamondbacks" 
-        "dbacks"
-      else
-        team_name
-      end
-  end
+  # def correct_for_as_and_diamondbacks(team_name)
+  #   case team_name
+  #     when "athletics" 
+  #       "as"
+  #     when "diamondbacks" 
+  #       "dbacks"
+  #     else
+  #       team_name
+  #     end
+  # end
 end
