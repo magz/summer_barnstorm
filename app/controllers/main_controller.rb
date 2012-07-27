@@ -7,7 +7,7 @@ class MainController < ApplicationController
     def welcome
       puts "mobile browser"
       puts @browser.mobile?
-      if request.host =~ /toppspennnant/
+      if (("http://#{request.host}:#{request.port.to_s + request.fullpath}" =~ /toppspennnant/) && (params[:team] || params[:team1]))
         redirect_to "timecapsule/" + (params[:team] || params[:team1]) and return
       end
       @team = parse_team_name(params)
