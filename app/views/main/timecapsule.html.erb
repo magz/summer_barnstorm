@@ -141,7 +141,7 @@
       if(!current_team=="") {
         $(".large_team_disc#" + current_team).show();
       }
-
+<% unless @browser.mobile? %>
     $("#app_store_link").click(function(event){
         if($("#sms_overlay").css("display") === "none") {
           $("#sms_overlay").show();
@@ -153,7 +153,7 @@
         }
         event.preventDefault();
     });
-
+<% end %>
 
 
     });
