@@ -9,11 +9,11 @@ class MainController < ApplicationController
       puts @browser.mobile?
       puts "and here it is again"
       puts "http://#{request.host}:#{request.port.to_s + request.fullpath}"
-      match = "http://#{request.host}:#{request.port.to_s + request.fullpath}" =~ /toppspennant/
+      match = "http://#{request.host}:#{request.port.to_s + request.fullpath}" =~ /timecapsule/
       puts match
       if match != nil
         puts "redirecting"
-        redirect_to "timecapsule/" + (params[:team] || params[:team1]) and return
+        redirect_to "/timecapsule/" + (params[:team] || params[:team1]) and return
       end
       @team = parse_team_name(params)
       
