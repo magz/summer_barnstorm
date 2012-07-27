@@ -121,9 +121,15 @@
 
         e.preventDefault(); 
 
-      
 
     });
+      var current_team = "<%= @team_name %>";
+      alert(current_team);
+      if(!current_team=="") {
+        $(".large_team_disc#" + current_team).show();
+        $(".large_team_disc#" + current_team).mouseleave("")
+      }
+
     $("#app_store_link").click(function(event){
         if($("#sms_overlay").css("display") === "none") {
           $("#sms_overlay").show();
@@ -136,7 +142,7 @@
         event.preventDefault();
     });
 
-      
+
 
     });
 </script>

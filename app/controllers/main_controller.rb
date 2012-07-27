@@ -31,10 +31,24 @@ class MainController < ApplicationController
 
   
   def timecapsule
-    if params[:redirect]
-      team_page_redirector(params[:team1])
-    end
+    # if params[:redirect]
+    #   team_page_redirector(params[:team1])
+    # end
     
+    team_param = (params[:team] || params[:team1])
+      
+    if team_param != nil
+      team_param = "athletics" if team_param == "as"
+      team_param = "diamondbacks" if team_param == "dbacks"
+      team_param = "white_sox" if team_param == "whitesox"
+      team_param = "red_sox" if team_param == "redsox"  
+      team_param = "blue_jays" if team_param == "bluejays"
+
+      team_param = Team.team_hash2[team_param.upcase] if team_param.length == 3
+    end
+    @team_name = team_param || ""
+    
+
     @teams = Team.all
 
     @twitter_feed_hashes = []
@@ -44,7 +58,6 @@ class MainController < ApplicationController
       end
     end
     @twitter_feed_hashes = @twitter_feed_hashes.flatten.join(" OR ")
-
 
 
   end
