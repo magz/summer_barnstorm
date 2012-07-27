@@ -8,12 +8,12 @@
 </div>
 <br>
 <div id="side_content">
-    <%= image_tag "pennant_logo.png", :id => "logo" %>
+    <%= image_tag "time_capsule_logo.png", :id => "logo" %>
 
 		<%= link_to (content_tag(:div, "", id: "appstore_logo")), "http://bit.ly/I9RkAM", :id => "app_store_link" %><br>
 	
 
-		<span style="font-size: .75em; padding-left: 8%; position: relative; top: -200px; left: 15px;"> Available for iPhone and iPad. </span>
+		<span style="padding-left: 8%; position: relative; top: -200px; left: -10px;"> Available for iPhone and iPad. </span>
 
     <%= render partial: "social_box" %>
     <%= render partial: "twitter_feed" %>
@@ -25,8 +25,8 @@
 	<div id="map">
 		<%= image_tag "blank_us_map.png", :id => "blank_map" %>
 		<% @teams.each do |team| %>
-    <div class="small_team_disc" id="<%=team.name%>"><%= image_tag "team_logos/" + team.name + "_logo.png" %></div>
-    <div class="large_team_disc" id="<%=team.name%>"><%= image_tag "team_logos/" + team.name + "_logo.png" %></div>
+    <a href="<%= team.name %>"><div class="small_team_disc" id="<%=team.name%>"><%= image_tag "team_logos/" + team.name + "_logo.png" %></div>
+    <div class="large_team_disc" id="<%=team.name%>"><%= image_tag "team_logos/" + team.name + "_logo.png" %></div></a>
 		<% end %>
 
 	</div>
