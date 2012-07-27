@@ -131,7 +131,10 @@ div#map  {
 
 
 }
-
+	.ie_small_team_disc#<%= t.name %> {
+		left: <%= t.x_map_point * (840.0 / 1491.0) - 22.5 %>px;
+		top: <%= t.y_map_point * (840.0 / 1491.0) - 22.5 %>px;
+	}
 <% end %>
 
  .blank_disc {
