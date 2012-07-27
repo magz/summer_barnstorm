@@ -2,7 +2,7 @@ class MainController < ApplicationController
   require "browser"
   include MainControllerHelpers
 
-    caches_action :welcome, :if => proc {!@browser.mobile?}, :cache_path => Proc.new {|c| (c.params[:team] || c.params[:team1])}, :expires_in => 2.hours
+    # caches_action :welcome, :if => proc {!@browser.mobile?}, :cache_path => Proc.new {|c| (c.params[:team] || c.params[:team1])}, :expires_in => 2.hours
 
     def welcome
       puts "mobile browser"
@@ -11,7 +11,7 @@ class MainController < ApplicationController
       puts "http://#{request.host}:#{request.port.to_s + request.fullpath}"
       match = "http://#{request.host}:#{request.port.to_s + request.fullpath}" =~ /timecapsule/
       puts match
-      if match != nil
+      if match != nil && (params[:team] || params[:team1])
         puts "redirecting"
         redirect_to "/timecapsule/" + (params[:team] || params[:team1]) and return
       end
