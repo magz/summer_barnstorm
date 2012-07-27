@@ -1,4 +1,19 @@
 <%= stylesheet_link_tag "timecapsule" %>
+<% if browser.mobile? %>
+  <head>    <meta name="viewport" content="width=1400,
+                                 maximum-scale=1.0">
+</head>
+  <style type="text/css">
+    #footer {
+      width: 1400px;
+    }
+    #header {
+      width: 1400px;
+    }
+
+  </style>
+<% end %>
+
 <div id="top">
 		<div id="upper_tagline">
       <em>How rich is your team’s history?</em><br>
