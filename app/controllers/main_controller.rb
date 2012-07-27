@@ -7,11 +7,14 @@ class MainController < ApplicationController
     def welcome
       puts "mobile browser"
       puts @browser.mobile?
-      puts "and here it is again"
-      puts "http://#{request.host}:#{request.port.to_s + request.fullpath}"
       match = "http://#{request.host}:#{request.port.to_s + request.fullpath}" =~ /timecapsule/
-      puts match
-      unless params[:redirect] == false
+      puts "params"
+      params.each do |k,v|
+        puts k
+        puts v
+        puts "-----"
+      end
+      unless params[:redirect] == "false"
         if match != nil && (params[:team] || params[:team1])
           puts "redirecting"
           redirect_to "/timecapsule/" + (params[:team] || params[:team1]) and return
