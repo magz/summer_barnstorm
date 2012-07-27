@@ -14,6 +14,9 @@ class MainController < ApplicationController
         puts v
         puts "-----"
       end
+      puts params[:redirect] == "false"
+      puts params[:redirect] == false
+      puts params[:redirect].class
       unless params[:redirect] == "false"
         if match != nil && (params[:team] || params[:team1])
           puts "redirecting"
