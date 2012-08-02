@@ -48,7 +48,7 @@ class MainController < ApplicationController
     end
     @twitter_feed_hashes = @twitter_feed_hashes.flatten.join(" OR ")
 
-
+    if params[:test] then @test = true end
   end
 
   def test
