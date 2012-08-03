@@ -40,13 +40,18 @@ class MainController < ApplicationController
 
     @teams = Team.all
 
-    @twitter_feed_hashes = []
+    current_promo_teams = []
     @teams.each do |t|
       if t.promo_start_date != nil && t.promo_end_date && t.promo_start_date < Time.now && t.promo_end_date > Time.now
-        @twitter_feed_hashes << t.twitter_tags
+        current_promo_teams << t
       end
     end
+    current_promo_teams.sort {|x,y| y.promo_start_date <=> x.promo_start_date}
+    current_promo_teams = current_promo_teams.slice(0..4)
+    current_promo_teams.each {|x| puts x.name}
+    @twitter_feed_hashes = (current_promo_teams.map {|t| t.twitter_tags})
     @twitter_feed_hashes = @twitter_feed_hashes.flatten.join(" OR ")
+    puts @twitter_feed_hashes + " and here they are"
 
     if params[:test] then @test = true end
   end
