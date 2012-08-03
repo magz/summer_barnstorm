@@ -14,9 +14,7 @@ class MainController < ApplicationController
         puts v
         puts "-----"
       end
-      puts params[:redirect] == "false"
-      puts params[:redirect] == false
-      puts params[:redirect].class
+
       unless params[:redirect] == "false"
         if match != nil
           puts "redirecting"
@@ -40,18 +38,10 @@ class MainController < ApplicationController
 
     @teams = Team.all
 
-    current_promo_teams = []
-    @teams.each do |t|
-      if t.promo_start_date != nil && t.promo_end_date && t.promo_start_date < Time.now && t.promo_end_date > Time.now
-        current_promo_teams << t
-      end
-    end
-    current_promo_teams.sort {|x,y| y.promo_start_date <=> x.promo_start_date}
-    current_promo_teams = current_promo_teams.slice(0..4)
-    current_promo_teams.each {|x| puts x.name}
-    @twitter_feed_hashes = (current_promo_teams.map {|t| t.twitter_tags})
-    @twitter_feed_hashes = @twitter_feed_hashes.flatten.join(" OR ")
-    puts @twitter_feed_hashes + " and here they are"
+    current_promo_teams = (Team.where("promo_start_date <= :date AND promo_end_date >= :date", 
+               date: Date.today.to_formatted_s(:db))).sort {|x,y| y.promo_start_date <=> x.promo_start_date}
+    @twitter_feed_hashes = (current_promo_teams.slice(0..4).map {|t| t.twitter_tags}).flatten.join(" OR ")
+
 
     if params[:test] then @test = true end
   end
