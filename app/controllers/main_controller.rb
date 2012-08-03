@@ -18,9 +18,9 @@ class MainController < ApplicationController
       puts params[:redirect] == false
       puts params[:redirect].class
       unless params[:redirect] == "false"
-        if match != nil && (params[:team] || params[:team1])
+        if match != nil
           puts "redirecting"
-          redirect_to "/timecapsule/" + (params[:team] || params[:team1]) and return
+          redirect_to "/timecapsule/" + (params[:team] || params[:team1]).to_s and return
         end
       end
       @team = parse_team_name(params)
