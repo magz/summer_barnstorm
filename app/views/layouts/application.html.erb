@@ -40,5 +40,33 @@
   })();
  
 </script>
+<% if @test %>
+  <style>
+    body {width: 320px;}
+    #top {display: none;}
+    #main_content {display: none;}
+    #header {
+     display: none;
+    }
+    #side_content {
+      position: relative;
+      top: 200px;
+    }
+    #footer {
+      width: 320px;
+    }
+    #howto_open {display: none;}
+    #footer div {
+      float: left;
+    }
+    #footer_text {
+      position: static;
+      float: left;
+      padding-top: 30px;
+      width: auto;
+    }
 
+  </style>
+
+<% end %>
 </html>
