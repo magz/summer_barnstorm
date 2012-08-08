@@ -2,9 +2,7 @@ class TeamsController < ApplicationController
   before_filter :check_for_topps_ip_address
 
   def check_for_topps_ip_address
-    unless(request.remote_ip == "38.105.199.253" || Rails.env.development?)
-      redirect_to :root
-    end
+    
 
   end
 
